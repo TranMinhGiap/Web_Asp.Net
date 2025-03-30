@@ -44,10 +44,10 @@
                     <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
                 </li>
                 <li class="nav-item d-none d-sm-inline-block">
-                    <a href="index3.html" class="nav-link">Home</a>
+                    <a href="~/Admin/Home" class="nav-link">Home</a>
                 </li>
                 <li class="nav-item d-none d-sm-inline-block">
-                    <a href="#" class="nav-link">Contact</a>
+                    @RenderSection("childNavBar", false)
                 </li>
             </ul>
 
@@ -240,10 +240,10 @@
                             </ul>
                         </li>
                         <li class="nav-item">
-                            <a href="pages/widgets.html" class="nav-link">
+                            <a href="~/Admin/Category" class="nav-link">
                                 <i class="nav-icon fas fa-th"></i>
                                 <p>
-                                    Widgets
+                                    Category
                                     <span class="right badge badge-danger">New</span>
                                 </p>
                             </a>
@@ -850,29 +850,28 @@
 
         <!-- Content Wrapper. Contains page content -->
         <div class="content-wrapper">
-            <!-- Content Header (Page header) -->
-            <!--<div class="content-header">
+            <div class="content-header">
                 <div class="container-fluid">
                     <div class="row mb-2">
                         <div class="col-sm-6">
-                            <h1 class="m-0">Dashboard</h1>
-                        </div>--><!-- /.col -->
-                        <!--<div class="col-sm-6">
+                            <h1 class="m-0">@ViewBag.title</h1>
+                        </div> 
+                        <div class="col-sm-6">
                             <ol class="breadcrumb float-sm-right">
-                                <li class="breadcrumb-item"><a href="#">Home</a></li>
-                                <li class="breadcrumb-item active">Dashboard v1</li>
+                                <li class="breadcrumb-item"><a href="#">@ViewBag.title</a></li>
+                                <li class="breadcrumb-item active">@ViewBag.action</li>
                             </ol>
-                        </div>--><!-- /.col -->
-                    <!--</div>--><!-- /.row -->
-                <!--</div>--><!-- /.container-fluid -->
-            <!--</div>-->
+                        </div> 
+                    </div> 
+                </div> 
+            </div>
             <!-- /.content-header -->
             <!-- Main content -->
             <section class="content">
                 <div class="container-fluid">
                     <!-- Small boxes (Stat box) -->
                     <div class="row">
-                        @RenderBody();
+                        @RenderBody()
                     </div>
                 </div>
             </section>
@@ -925,7 +924,7 @@
     <!-- AdminLTE App -->
     <script src="~/assets/Admin/dist/js/adminlte.js"></script>
     <!-- AdminLTE for demo purposes -->
-    <script src="~/assets/Admin/dist/js/demo.js"></script>
+    @*<script src="~/assets/Admin/dist/js/demo.js"></script>*@
     <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
     <script src="~/assets/Admin/dist/js/pages/dashboard.js"></script>
 

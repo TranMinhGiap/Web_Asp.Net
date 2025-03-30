@@ -1,0 +1,76 @@
+﻿@model IEnumerable<YT1.Models.EF.Category>
+@{
+    ViewBag.title = "Category";
+    ViewBag.action = "";
+    Layout = "~/Areas/Admin/Views/Shared/_LayoutAdmin.cshtml";
+    int cnt = 0;
+}
+
+<div class="col-12">
+    <a href="~/Admin/Category/Create" class="btn-create btn btn-success">Create</a>
+    <table class="table table-hover table-bordered">
+        <thead>
+            <tr>
+                <th>STT</th>
+                <th>Tên Danh Mục</th>
+                <th>*</th>
+            </tr>
+        </thead>
+        <tbody>
+            @if(Model != null)
+            {
+                foreach(var item in Model)
+                {
+                    <tr id="trow_@item.Id">
+                        <td>@(++cnt)</td>
+                        <td>@item.Title</td>
+                        <td>
+                            <a href="@Url.Action("Update", "Category", new { id = item.Id })" class="btn btn-primary">Update</a>
+                            <a data-id="@item.Id" class="btn-delete btn btn-danger">Delete</a>
+                        </td>
+                    </tr>
+                }
+            }
+            else
+            {
+                <tr>
+                    <td colspan="4">Không có dữ liệu</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
+
+@section childNavBar{
+    <a href="~/Admin/Category" class="nav-link">Category</a>    
+}
+
+@section style{
+    <style>
+        .btn-create{
+            margin: 10px 0px;
+        }
+    </style>   
+}
+@section script{
+    <script>
+        $(document).ready(function () {
+            $('body').on('click', '.btn-delete', function () {
+                var id = $(this).data("id");
+                var conf = confirm('Bạn có muốn xóa bản ghi này không?');
+                if (conf == true) {
+                    $.ajax({
+                        url: '/Admin/Category/Delete',
+                        type: 'POST',
+                        data: { id: id },
+                        success: function (rs) {
+                            if (rs.success) {
+                                $('#trow_' + id).remove();
+                            }
+                        }
+                    });
+                }
+            });
+        });
+    </script>    
+}
