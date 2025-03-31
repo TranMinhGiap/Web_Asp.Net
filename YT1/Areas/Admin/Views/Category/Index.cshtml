@@ -13,17 +13,21 @@
             <tr>
                 <th>STT</th>
                 <th>Tên Danh Mục</th>
+                <th>Hiển Thị</th>
                 <th>*</th>
             </tr>
         </thead>
         <tbody>
-            @if(Model != null)
+            @if(Model != null && Model.Any())
             {
                 foreach(var item in Model)
                 {
                     <tr id="trow_@item.Id">
                         <td>@(++cnt)</td>
                         <td>@item.Title</td>
+                        <td>
+                            <input type="checkbox" @(item.IsActive ? "checked" : "") disabled/>
+                        </td>
                         <td>
                             <a href="@Url.Action("Update", "Category", new { id = item.Id })" class="btn btn-primary">Update</a>
                             <a data-id="@item.Id" class="btn-delete btn btn-danger">Delete</a>

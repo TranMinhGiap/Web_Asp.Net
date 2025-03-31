@@ -110,3 +110,8 @@ D:\C#\Web_ASP\CNPM2\YT1\YT1\obj\Debug\YT1.Migrations.CreateDataBase.resources
 D:\C#\Web_ASP\CNPM2\YT1\YT1\obj\Debug\YT1.csproj.GenerateResource.cache
 D:\C#\Web_ASP\CNPM2\YT1\YT1\obj\Debug\YT1.Migrations.UpdateCategory.resources
 D:\C#\Web_ASP\CNPM2\YT1\YT1\obj\Debug\YT1.Migrations.UpdateData.resources
+D:\C#\Web_ASP\CNPM2\YT1\YT1\obj\Debug\YT1.Migrations.UpdateModelNews.resources
+D:\C#\Web_ASP\CNPM2\YT1\YT1\obj\Debug\YT1.Migrations.UpdateContinueNews1.resources
+D:\C#\Web_ASP\CNPM2\YT1\YT1\obj\Debug\YT1.Migrations.RemoveRequiredFromDetail.resources
+D:\C#\Web_ASP\CNPM2\YT1\YT1\obj\Debug\YT1.Migrations.RemoveRequireImagesNews.resources
+D:\C#\Web_ASP\CNPM2\YT1\YT1\obj\Debug\YT1.Migrations.AddIsActive.resources

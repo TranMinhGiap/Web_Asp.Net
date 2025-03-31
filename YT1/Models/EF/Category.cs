@@ -31,6 +31,7 @@ namespace YT1.Models.EF
         public string SeoDesc { get; set; }
         [StringLength(500, ErrorMessage = "Seo Description không được quá 200 ký tự")]
         public string SeoKeyWord { get; set; }
+        public bool IsActive { get; set; }
 
         public ICollection<News> News { get; set; }
         public ICollection<Posts> Posts { get; set; }
