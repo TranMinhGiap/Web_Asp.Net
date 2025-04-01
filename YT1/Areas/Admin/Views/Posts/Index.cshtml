@@ -1,20 +1,20 @@
-﻿@model PagedList.PagedList<YT1.Models.EF.News>
+﻿@model PagedList.PagedList<YT1.Models.EF.Posts>
 @using PagedList.Mvc;
 @{
-    ViewBag.title = "Tin Tức";
-    ViewBag.action = "Trang Chủ";
+    ViewBag.title = "Bài Đăng";
+    ViewBag.action = "List";
     Layout = "~/Areas/Admin/Views/Shared/_LayoutAdmin.cshtml";
     int cnt = ViewBag.indexItem;
 }
 
 <div class="col-12" id="containerParent">
-    <div class="actionNav">
-        <a href="~/Admin/News/Create" class="btn-create btn btn-success">Tạo Mới</a>
-        <a href="#" class="btn btn-danger" id="btnDeleteAll">Xóa</a>
+    <div>
+        <a href="~/Admin/Posts/Create" class="btn-create btn btn-success">Tạo Mới</a>
+        <a href="#" class="btn btn-danger" id="btnDeleteAll">Xóa Nhiều</a>
     </div>
     <div class="row inputSearch">
         <div class="col-12">
-            <form method="get" action="@Url.Action("Index", "News", new { area = "Admin" })">
+            <form method="get" action="@Url.Action("Index", "Posts", new { area = "Admin" })">
                 <div class="input-group input-group-sm">
                     <input class="form-control" name="txtSearch" value="@ViewBag.SearchText" placeholder="Nhập từ khóa..." />
                     <span class="input-group-append">
@@ -31,10 +31,10 @@
                     <input type="checkbox" id="selectAll" />
                 </th>
                 <th>STT</th>
-                <th>Tên Bài Viết</th>
+                <th>Tên Bài Đăng</th>
                 <th>Ảnh Đại Diện</th>
                 <th>Hiển Thị</th>
-                <th>Ngày Tạo</th>
+                <th>Ngày Đăng</th>
                 <th>*</th>
             </tr>
         </thead>
@@ -59,8 +59,8 @@
                         </td>
                         <td>@item.CreatedDate.ToString("dd/MM/yyyy")</td>
                         <td>
-                            <a href="@Url.Action("Update", "News", new { id = item.Id })" class="btn btn-primary">Sửa</a>
-                            <a data-id="@item.Id" class="btn-delete btn btn-danger">Xóa</a>
+                            <a href="@Url.Action("Update", "News", new { id = item.Id })" class="btn btn-primary">Update</a>
+                            <a data-id="@item.Id" class="btn-delete btn btn-danger">Delete</a>
                         </td>
                     </tr>
                 }
@@ -74,12 +74,12 @@
         </tbody>
     </table>
     <div class="navPagination">
-        @Html.PagedListPager(Model, page => Url.Action("Index", "News", new { area = "Admin", page }))
+        @Html.PagedListPager(Model, page => Url.Action("Index", "Posts", new { area = "Admin", page }))
     </div>
 </div>
 
 @section childNavBar{
-    <a href="~/Admin/News" class="nav-link">News</a>
+    <a href="~/Admin/Posts" class="nav-link">Posts</a>
 }
 
 @section style{
@@ -98,8 +98,7 @@
                 height: 100%;
                 object-fit: cover;
             }
-
-        .navPagination {
+        .navPagination{
             text-align: right;
         }
         .inputSearch{
@@ -135,7 +134,7 @@
                     var conf = confirm("Bạn có chắc chắn muốn xóa hay không ?");
                     if (conf == true) {
                         $.ajax({
-                            url: '/Admin/News/DeleteAll',
+                            url: '/Admin/Posts/DeleteAll',
                             type: 'POST',
                             data: { ids: str },
                             success: function (rs) {
@@ -153,7 +152,7 @@
                 var conf = confirm('Bạn có muốn xóa bản ghi này không?');
                 if (conf == true) {
                     $.ajax({
-                        url: '/Admin/News/Delete',
+                        url: '/Admin/Posts/Delete',
                         type: 'POST',
                         data: { id: id },
                         success: function (rs) {

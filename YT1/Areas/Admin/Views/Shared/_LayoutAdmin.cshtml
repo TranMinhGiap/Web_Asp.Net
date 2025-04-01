@@ -26,6 +26,8 @@
     <link rel="stylesheet" href="~/assets/Admin/plugins/daterangepicker/daterangepicker.css">
     <!-- summernote -->
     <link rel="stylesheet" href="~/assets/Admin/plugins/summernote/summernote-bs4.min.css">
+    <!--Page List-->
+    <link href="~/Content/PagedList.css" rel="stylesheet" />
     @RenderSection("style", false);
 </head>
 <body class="hold-transition sidebar-mini layout-fixed">
@@ -220,19 +222,19 @@
                             </a>
                             <ul class="nav nav-treeview">
                                 <li class="nav-item">
-                                    <a href="./index.html" class="nav-link active">
+                                    <a href="~/Admin/Category" class="nav-link @(ViewBag.click == 1 ? "active" : "")">
                                         <i class="far fa-circle nav-icon"></i>
-                                        <p>Dashboard v1</p>
+                                        <p>Category</p>
                                     </a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="./index2.html" class="nav-link">
+                                    <a href="~/Admin/Posts" class="nav-link @(ViewBag.click == 2 ? "active" : "")">
                                         <i class="far fa-circle nav-icon"></i>
-                                        <p>Dashboard v2</p>
+                                        <p>Posts</p>
                                     </a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="~/Admin/News" class="nav-link">
+                                    <a href="~/Admin/News" class="nav-link @(ViewBag.click == 3 ? "active" : "")">
                                         <i class="far fa-circle nav-icon"></i>
                                         <p>News</p>
                                     </a>

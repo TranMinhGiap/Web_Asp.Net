@@ -1,0 +1,162 @@
+﻿@model YT1.Models.EF.Posts
+
+@{
+    ViewBag.title = "Tạo Bài Đăng";
+    ViewBag.action = "Create";
+    Layout = "~/Areas/Admin/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<div class="col-12">
+
+    @using (Html.BeginForm("Create", "Posts", FormMethod.Post, new { enctype = "multipart/form-data" }))
+    {
+        @Html.AntiForgeryToken()
+
+        <div class="form-horizontal">
+            <hr />
+            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+            <div class="form-group">
+                <label class="control-label col-md-2">Tên Bài Viết</label>
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.Title, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.Title, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label class="control-label col-md-2">Loại Danh Mục</label>
+                <div class="col-md-10">
+                    <select name="CategoryId" class="form-control">
+                        @if (ViewBag.listCategory != null && ViewBag.listCategory.Count >= 1)
+                        {
+                            foreach (var item in ViewBag.listCategory)
+                            {
+                                <option value="@item.Id">@item.Title</option>
+                            }
+                        }
+                        else
+                        {
+                            <option>Không có danh mục</option>
+                        }
+                    </select>
+                    @Html.ValidationMessageFor(model => model.CategoryId, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label class="control-label col-md-2">Mô Tả</label>
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.Description, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.Description, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label class="control-label col-md-2">Chi Tiết</label>
+                <div class="col-md-10">
+                    @Html.TextAreaFor(model => model.Detail, new { @class = "form-control", @id = "txtDetail" })
+                    @Html.ValidationMessageFor(model => model.Detail, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label class="control-label col-md-2">Ảnh Đại Diện</label>
+                <div class="input-group col-md-10">
+                    <div class="custom-file">
+                        <input type="file" class="custom-file-input form-control" id="exampleInputFile" name="Img">
+                        <label class="custom-file-label" for="exampleInputFile">Chọn File</label>
+                        @Html.ValidationMessageFor(model => model.Images, "", new { @class = "text-danger" })
+                    </div>
+                    <div class="input-group-append">
+                        <span class="input-group-text">Tải Lên</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label class="control-label col-md-2">Hiển Thị</label>
+                <div class="col-md-10">
+                    <input type="checkbox" name="IsActive" value="true" />
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label class="control-label col-md-2">SeoTitle</label>
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.SeoTitle, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.SeoTitle, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label class="control-label col-md-2">SeoDescription</label>
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.SeoDescription, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.SeoDescription, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label class="control-label col-md-2">SeoKeyWord</label>
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.SeoKeyWord, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.SeoKeyWord, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                <div class="col-md-10">
+                    <input type="hidden" name="CreatedDate" class="form-control" value="@DateTime.Now.ToString("yyyy-MM-dd")">
+                </div>
+            </div>
+
+            <div class="form-group">
+                <div class="col-md-10">
+                    <input type="hidden" name="ModifierDate" class="form-control" value="@DateTime.Now.ToString("yyyy-MM-dd")">
+                </div>
+            </div>
+
+            <div class="form-group">
+                <div class="col-md-offset-2 col-md-10">
+                    <input type="submit" value="Create" class="btn-create btn btn-success" />
+                </div>
+            </div>
+        </div>
+    }
+</div>
+
+@section childNavBar{
+    <a href="~/Admin/Posts/Create" class="nav-link">Create Posts</a>
+}
+
+@section style{
+    <style>
+        .btn-create {
+            margin: 10px 0px;
+        }
+    </style>
+}
+
+@section script{
+    <script>
+        $(document).ready(function () {
+            // Khởi tạo CKEditor
+            CKEDITOR.replace('txtDetail', {
+                customConfig: '~/assets/Plugin/ckeditor/ckeditor/config.js',
+                extraAllowedContent: 'span',
+            });
+
+            // Cập nhật tên file khi chọn ảnh
+            $('#exampleInputFile').on('change', function () {
+                var fileName = $(this)[0].files[0] ? $(this)[0].files[0].name : 'Chọn File';
+                $(this).next('.custom-file-label').text(fileName);
+            });
+
+            // Đồng bộ dữ liệu từ CKEditor khi submit
+            $('form').submit(function (e) {
+                var editorContent = CKEDITOR.instances['txtDetail'].getData();
+                $('textarea#txtDetail').val(editorContent);
+            });
+        });
+    </script>
+}

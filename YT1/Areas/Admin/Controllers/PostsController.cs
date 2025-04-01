@@ -5,35 +5,34 @@ using System.IO;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
-using System.Xml.Linq;
 using YT1.Models;
 using YT1.Models.Common;
 using YT1.Models.EF;
 
 namespace YT1.Areas.Admin.Controllers
 {
-    public class NewsController : Controller
+    public class PostsController : Controller
     {
         ApplicationDbContext _dbConect = new ApplicationDbContext();
-        // GET: Admin/News
+        // GET: Admin/Posts
         public ActionResult Index(int? page, string txtSearch)
         {
             int pageSize = 12;
             int pageIndex = page ?? 1;
 
-            var news = _dbConect.News.AsQueryable();
+            var posts = _dbConect.Posts.AsQueryable();
 
             if (!string.IsNullOrEmpty(txtSearch))
             {
-                news = news.Where(x => x.Title.Contains(txtSearch));
+                posts = posts.Where(x => x.Title.Contains(txtSearch));
                 ViewBag.SearchText = txtSearch;
             }
 
-            var items = news.OrderByDescending(x => x.Id).ToPagedList(pageIndex, pageSize);
+            var items = posts.OrderByDescending(x => x.Id).ToPagedList(pageIndex, pageSize);
             ViewBag.indexItem = (pageIndex - 1) * pageSize;
-
             return View(items);
         }
+
         public ActionResult Create()
         {
             List<Category> tmp = _dbConect.Categories.ToList();
@@ -42,7 +41,7 @@ namespace YT1.Areas.Admin.Controllers
         }
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create(News document, HttpPostedFileBase Img)
+        public ActionResult Create(Posts document, HttpPostedFileBase Img)
         {
             if (ModelState.IsValid)
             {
@@ -83,8 +82,8 @@ namespace YT1.Areas.Admin.Controllers
 
                 document.Alias = ConvertStr.FilterChar(document.Title);
 
-                _dbConect.News.Add(document);
-                _dbConect.SaveChanges(); 
+                _dbConect.Posts.Add(document);
+                _dbConect.SaveChanges();
 
                 return RedirectToAction("Index");
             }
@@ -98,8 +97,8 @@ namespace YT1.Areas.Admin.Controllers
         // Update
         public ActionResult Update(int id)
         {
-            var items = _dbConect.News.Find(id);
-            if(items != null)
+            var items = _dbConect.Posts.Find(id);
+            if (items != null)
             {
                 List<Category> tmp = _dbConect.Categories.ToList();
                 ViewBag.listCategory = tmp;
@@ -111,12 +110,12 @@ namespace YT1.Areas.Admin.Controllers
             }
         }
         [HttpPost]
-        public ActionResult Update(News news, HttpPostedFileBase Img)
+        public ActionResult Update(Posts news, HttpPostedFileBase Img)
         {
             if (ModelState.IsValid)
             {
-                News items = _dbConect.News.Find(news.Id);
-                if(items != null)
+                Posts items = _dbConect.Posts.Find(news.Id);
+                if (items != null)
                 {
                     TryUpdateModel(items);
                     // Images
@@ -168,10 +167,10 @@ namespace YT1.Areas.Admin.Controllers
         [HttpPost]
         public ActionResult Delete(int id)
         {
-            var item = _dbConect.News.Find(id);
+            var item = _dbConect.Posts.Find(id);
             if (item != null)
             {
-                _dbConect.News.Remove(item);
+                _dbConect.Posts.Remove(item);
                 _dbConect.SaveChanges();
                 return Json(new { success = true });
             }
@@ -186,12 +185,12 @@ namespace YT1.Areas.Admin.Controllers
             if (!string.IsNullOrEmpty(ids))
             {
                 var items = ids.Split(',');
-                if(items != null && items.Any())
+                if (items != null && items.Any())
                 {
-                    foreach(var item in items)
+                    foreach (var item in items)
                     {
-                        var obj = _dbConect.News.Find(Convert.ToInt32(item));
-                        _dbConect.News.Remove(obj);
+                        var obj = _dbConect.Posts.Find(Convert.ToInt32(item));
+                        _dbConect.Posts.Remove(obj);
                         _dbConect.SaveChanges();
                     }
                 }

@@ -115,3 +115,8 @@ D:\C#\Web_ASP\CNPM2\YT1\YT1\obj\Debug\YT1.Migrations.UpdateContinueNews1.resourc
 D:\C#\Web_ASP\CNPM2\YT1\YT1\obj\Debug\YT1.Migrations.RemoveRequiredFromDetail.resources
 D:\C#\Web_ASP\CNPM2\YT1\YT1\obj\Debug\YT1.Migrations.RemoveRequireImagesNews.resources
 D:\C#\Web_ASP\CNPM2\YT1\YT1\obj\Debug\YT1.Migrations.AddIsActive.resources
+D:\C#\Web_ASP\CNPM2\YT1\YT1\obj\Debug\YT1.Migrations.UpdateAnnotationPosts.resources
+D:\C#\Web_ASP\CNPM2\YT1\YT1\bin\PagedList.dll
+D:\C#\Web_ASP\CNPM2\YT1\YT1\bin\PagedList.Mvc.dll
+D:\C#\Web_ASP\CNPM2\YT1\YT1\bin\PagedList.xml
+D:\C#\Web_ASP\CNPM2\YT1\YT1\bin\PagedList.Mvc.xml
