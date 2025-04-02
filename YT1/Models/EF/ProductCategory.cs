@@ -16,8 +16,12 @@ namespace YT1.Models.EF
         }
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public int Id { get; set; } 
-        public string Title { get; set; } 
+        public int Id { get; set; }
+        [Required(ErrorMessage = "Tiêu đề không được để trống")]
+        [StringLength(150, ErrorMessage = "Tiêu đề không được vượt quá 150 ký tự")]
+        public string Title { get; set; }
+        public string Alias { get; set; }
+        [StringLength(250, ErrorMessage = "Mô tả không được vượt quá 250 ký tự")]
         public string Description { get; set; } 
         public string Icon { get; set; }
         public string SeoTitle { get; set; }

@@ -179,6 +179,8 @@
     <Compile Include="Areas\Admin\Controllers\HomeController.cs" />
     <Compile Include="Areas\Admin\Controllers\NewsController.cs" />
     <Compile Include="Areas\Admin\Controllers\PostsController.cs" />
+    <Compile Include="Areas\Admin\Controllers\ProductCategoryController.cs" />
+    <Compile Include="Areas\Admin\Controllers\ProductController.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
@@ -220,6 +222,18 @@
     <Compile Include="Migrations\202503311349034_UpdateAnnotationPosts.cs" />
     <Compile Include="Migrations\202503311349034_UpdateAnnotationPosts.Designer.cs">
       <DependentUpon>202503311349034_UpdateAnnotationPosts.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202504011156004_AddAntProduct.cs" />
+    <Compile Include="Migrations\202504011156004_AddAntProduct.Designer.cs">
+      <DependentUpon>202504011156004_AddAntProduct.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202504020025104_AddAntPrdCategory.cs" />
+    <Compile Include="Migrations\202504020025104_AddAntPrdCategory.Designer.cs">
+      <DependentUpon>202504020025104_AddAntPrdCategory.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202504020449192_AddAliasPrdCategory.cs" />
+    <Compile Include="Migrations\202504020449192_AddAliasPrdCategory.Designer.cs">
+      <DependentUpon>202504020449192_AddAliasPrdCategory.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -3156,6 +3170,12 @@
     <Content Include="Areas\Admin\Views\Posts\Index.cshtml" />
     <Content Include="Areas\Admin\Views\Posts\Create.cshtml" />
     <Content Include="Areas\Admin\Views\Posts\Update.cshtml" />
+    <Content Include="Areas\Admin\Views\Product\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\Product\Create.cshtml" />
+    <Content Include="Areas\Admin\Views\Product\Update.cshtml" />
+    <Content Include="Areas\Admin\Views\ProductCategory\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\ProductCategory\Create.cshtml" />
+    <Content Include="Areas\Admin\Views\ProductCategory\Update.cshtml" />
     <None Include="Scripts\jquery-3.7.0.intellisense.js" />
     <Content Include="Scripts\jquery-3.7.0.js" />
     <Content Include="Scripts\jquery-3.7.0.min.js" />
@@ -3262,6 +3282,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202503311349034_UpdateAnnotationPosts.resx">
       <DependentUpon>202503311349034_UpdateAnnotationPosts.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202504011156004_AddAntProduct.resx">
+      <DependentUpon>202504011156004_AddAntProduct.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202504020025104_AddAntPrdCategory.resx">
+      <DependentUpon>202504020025104_AddAntPrdCategory.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202504020449192_AddAliasPrdCategory.resx">
+      <DependentUpon>202504020449192_AddAliasPrdCategory.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

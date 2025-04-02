@@ -1,0 +1,158 @@
+﻿@model YT1.Models.EF.ProductCategory
+
+@{
+    ViewBag.title = "Tạo Danh Mục";
+    ViewBag.action = "Create";
+    Layout = "~/Areas/Admin/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<section class="content" style="width: 100%">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-12">
+                <!-- Default box -->
+                <div class="card">
+                    <div class="card-header">
+                        <h3 class="card-title">Nhập thông tin danh mục sản phẩm</h3>
+
+                        <div class="card-tools">
+                            <button type="button" class="btn btn-tool" data-card-widget="collapse" title="Collapse">
+                                <i class="fas fa-minus"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        @using (Html.BeginForm("Create", "ProductCategory", FormMethod.Post, new { enctype = "multipart/form-data" }))
+                        {
+                            @Html.AntiForgeryToken()
+
+                            <div class="form-horizontal">
+                                <hr />
+                                @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                                <div class="form-group">
+                                    <label class="control-label col-12">Tên Danh Mục</label>
+                                    <div class="col-md-10">
+                                        @Html.EditorFor(model => model.Title, new { htmlAttributes = new { @class = "form-control" } })
+                                        @Html.ValidationMessageFor(model => model.Title, "", new { @class = "text-danger" })
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label class="control-label col-12">Mô Tả</label>
+                                    <div class="col-md-10">
+                                        @Html.TextAreaFor(model => model.Description, new { @class = "form-control" })
+                                        @Html.ValidationMessageFor(model => model.Description, "", new { @class = "text-danger" })
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label class="control-label col-12">Icon</label>
+                                    <div class="input-group col-md-10">
+                                        <div class="custom-file">
+                                            <input type="file" class="custom-file-input form-control" id="exampleInputFile" name="Img">
+                                            <label class="custom-file-label" for="exampleInputFile">Chọn File</label>
+                                            @Html.ValidationMessageFor(model => model.Icon, "", new { @class = "text-danger" })
+                                        </div>
+                                        <div class="input-group-append">
+                                            <span class="input-group-text">Tải Lên</span>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    @Html.LabelFor(model => model.SeoTitle, htmlAttributes: new { @class = "control-label col-md-2" })
+                                    <div class="col-md-10">
+                                        @Html.EditorFor(model => model.SeoTitle, new { htmlAttributes = new { @class = "form-control" } })
+                                        @Html.ValidationMessageFor(model => model.SeoTitle, "", new { @class = "text-danger" })
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    @Html.LabelFor(model => model.SeoDesc, htmlAttributes: new { @class = "control-label col-md-2" })
+                                    <div class="col-md-10">
+                                        @Html.EditorFor(model => model.SeoDesc, new { htmlAttributes = new { @class = "form-control" } })
+                                        @Html.ValidationMessageFor(model => model.SeoDesc, "", new { @class = "text-danger" })
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    @Html.LabelFor(model => model.SeoKeyWord, htmlAttributes: new { @class = "control-label col-md-2" })
+                                    <div class="col-md-10">
+                                        @Html.EditorFor(model => model.SeoKeyWord, new { htmlAttributes = new { @class = "form-control" } })
+                                        @Html.ValidationMessageFor(model => model.SeoKeyWord, "", new { @class = "text-danger" })
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <div class="col-md-10">
+                                        <input type="hidden" name="CreatedDate" class="form-control" value="@DateTime.Now.ToString("yyyy-MM-dd")">
+                                    </div>
+                                </div>
+
+                                @*<div class="form-group">
+                                        @Html.LabelFor(model => model.CreatedBy, htmlAttributes: new { @class = "control-label col-md-2" })
+                                        <div class="col-md-10">
+                                            @Html.EditorFor(model => model.CreatedBy, new { htmlAttributes = new { @class = "form-control" } })
+                                            @Html.ValidationMessageFor(model => model.CreatedBy, "", new { @class = "text-danger" })
+                                        </div>
+                                    </div>*@
+
+                                @*<div class="form-group">
+                                        @Html.LabelFor(model => model.ModifierBy, htmlAttributes: new { @class = "control-label col-md-2" })
+                                        <div class="col-md-10">
+                                            @Html.EditorFor(model => model.ModifierBy, new { htmlAttributes = new { @class = "form-control" } })
+                                            @Html.ValidationMessageFor(model => model.ModifierBy, "", new { @class = "text-danger" })
+                                        </div>
+                                    </div>*@
+
+                                <div class="form-group">
+                                    <div class="col-md-10">
+                                        <input type="hidden" name="ModifierDate" class="form-control" value="@DateTime.Now.ToString("yyyy-MM-dd")">
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <div class="col-md-offset-2 col-md-10">
+                                        <input type="submit" value="Create" class="btn-create btn btn-success" />
+                                    </div>
+                                </div>
+                            </div>
+                        }
+                    </div>
+                    <!-- /.card-body -->
+                    <div class="card-footer">
+                        <div class="navPagination">
+                            <hr />
+                        </div>
+                    </div>
+                    <!-- /.card-footer-->
+                </div>
+                <!-- /.card -->
+            </div>
+        </div>
+    </div>
+</section>
+
+@section childNavBar{
+    <a href="~/Admin/ProductCategory/Create" class="nav-link">Create ProductCategory</a>
+}
+
+@section style{
+    <style>
+        .btn-create {
+            margin: 10px 0px;
+        }
+    </style>
+}
+
+@section script{
+    <script>
+        $(document).ready(function () {
+            // Cập nhật tên file khi chọn ảnh
+            $('#exampleInputFile').on('change', function () {
+                var fileName = $(this)[0].files[0] ? $(this)[0].files[0].name : 'Chọn File';
+                $(this).next('.custom-file-label').text(fileName);
+            });
+        });
+    </script>
+}

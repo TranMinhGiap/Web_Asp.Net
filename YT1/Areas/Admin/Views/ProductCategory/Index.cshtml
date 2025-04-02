@@ -1,0 +1,197 @@
+﻿@model PagedList.PagedList<YT1.Models.EF.ProductCategory>
+@using PagedList.Mvc;
+@{
+    ViewBag.title = "Danh Mục Sản Phẩm";
+    ViewBag.action = "List";
+    Layout = "~/Areas/Admin/Views/Shared/_LayoutAdmin.cshtml";
+    int cnt = ViewBag.indexItem;
+}
+
+<section class="content" style="width: 100%">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-12">
+                <!-- Default box -->
+                <div class="card">
+                    <div class="card-header">
+                        <h3 class="card-title">Navigation</h3>
+
+                        <div class="card-tools">
+                            <button type="button" class="btn btn-tool" data-card-widget="collapse" title="Collapse">
+                                <i class="fas fa-minus"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <div class="col-12" id="containerParent">
+                            <div class="actionNav">
+                                <a href="~/Admin/ProductCategory/Create" class="btn-create btn btn-success">Tạo Mới</a>
+                                <a href="#" class="btn btn-danger" id="btnDeleteAll">Xóa</a>
+                            </div>
+                            <div class="row inputSearch">
+                                <div class="col-12">
+                                    <form method="get" action="@Url.Action("Index", "ProductCategory", new { area = "Admin" })">
+                                        <div class="input-group input-group-sm">
+                                            <input class="form-control" name="txtSearch" value="@ViewBag.SearchText" placeholder="Nhập từ khóa..." />
+                                            <span class="input-group-append">
+                                                <button type="submit" class="btn btn-info btn-flat">Tìm Kiếm</button>
+                                            </span>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                            <table class="table table-hover table-bordered" id="tableParent">
+                                <thead>
+                                    <tr>
+                                        <th>
+                                            <input type="checkbox" id="selectAll" />
+                                        </th>
+                                        <th>STT</th>
+                                        <th>Tên Danh Mục</th>
+                                        <th>Icon</th>
+                                        <th>*</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    @if (Model != null && Model.Any())
+                                    {
+                                        foreach (var item in Model)
+                                        {
+                                            <tr id="trow_@item.Id">
+                                                <td>
+                                                    <input type="checkbox" class="cbkItem" value="@item.Id" />
+                                                </td>
+                                                <td>@(++cnt)</td>
+                                                <td>@item.Title</td>
+                                                <td>
+                                                    <div class="news_images">
+                                                        @*<img src="@(!string.IsNullOrEmpty(item.Images) ? item.Images : "/path/to/default-image.jpg")" alt="Images" />*@
+                                                        <img src="@item.Icon" alt="Images" />
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    <a href="@Url.Action("Update", "ProductCategory", new { id = item.Id })" class="btn btn-primary">Sửa</a>
+                                                    <a data-id="@item.Id" class="btn-delete btn btn-danger">Xóa</a>
+                                                </td>
+                                            </tr>
+                                        }
+                                    }
+                                    else
+                                    {
+                                        <tr>
+                                            <td colspan="5">Không có dữ liệu</td>
+                                        </tr>
+                                    }
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <!-- /.card-body -->
+                    <div class="card-footer">
+                        <div class="navPagination">
+                            @Html.PagedListPager(Model, page => Url.Action("Index", "ProductCategory", new { area = "Admin", page }))
+                        </div>
+                    </div>
+                    <!-- /.card-footer-->
+                </div>
+                <!-- /.card -->
+            </div>
+        </div>
+    </div>
+</section>
+
+
+@section childNavBar{
+    <a href="~/Admin/ProductCategory" class="nav-link">Danh Mục Sản Phẩm</a>
+}
+
+@section style{
+    <style>
+        .btn-create {
+            margin: 10px 0px;
+        }
+
+        .news_images {
+            width: 220px;
+            aspect-ratio: 4/3;
+        }
+
+            .news_images img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
+
+        .navPagination {
+            text-align: right;
+        }
+
+        .inputSearch {
+            margin: 10px 0px;
+        }
+    </style>
+}
+@section script{
+    <script>
+        $(document).ready(function () {
+            $('body').on('click', '#btnDeleteAll', function (e) {
+                e.preventDefault();
+                var str = "";
+                var checkboxes = $(this).parents('#containerParent').find('.cbkItem');
+                var i = 0;
+                checkboxes.each(function () {
+                    if (this.checked) {
+                        $(this).attr('selected', 'checked');
+                        var _id = $(this).val();
+                        if (i == 0) {
+                            str += _id;
+                        }
+                        else {
+                            str += "," + _id;
+                        }
+                        i++;
+                    } else {
+                        $(this).attr('selected', '');
+                    }
+                });
+                if (str.length > 0) {
+                    debugger;
+                    var conf = confirm("Bạn có chắc chắn muốn xóa hay không ?");
+                    if (conf == true) {
+                        $.ajax({
+                            url: '/Admin/ProductCategory/DeleteAll',
+                            type: 'POST',
+                            data: { ids: str },
+                            success: function (rs) {
+                                if (rs.success) {
+                                    location.reload();
+                                }
+                            }
+                        });
+                    }
+                }
+            });
+
+            $('body').on('click', '.btn-delete', function () {
+                var id = $(this).data("id");
+                var conf = confirm('Bạn có muốn xóa bản ghi này không?');
+                if (conf == true) {
+                    $.ajax({
+                        url: '/Admin/ProductCategory/Delete',
+                        type: 'POST',
+                        data: { id: id },
+                        success: function (rs) {
+                            if (rs.success) {
+                                $('#trow_' + id).remove();
+                            }
+                        }
+                    });
+                }
+            });
+            $('body').on('change', '#selectAll', function () {
+                var checkStatus = this.checked;
+                $(this).parents('#tableParent').find('.cbkItem').prop('checked', checkStatus);
+            });
+        });
+    </script>
+}

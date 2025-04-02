@@ -120,3 +120,6 @@ D:\C#\Web_ASP\CNPM2\YT1\YT1\bin\PagedList.dll
 D:\C#\Web_ASP\CNPM2\YT1\YT1\bin\PagedList.Mvc.dll
 D:\C#\Web_ASP\CNPM2\YT1\YT1\bin\PagedList.xml
 D:\C#\Web_ASP\CNPM2\YT1\YT1\bin\PagedList.Mvc.xml
+D:\C#\Web_ASP\CNPM2\YT1\YT1\obj\Debug\YT1.Migrations.AddAntProduct.resources
+D:\C#\Web_ASP\CNPM2\YT1\YT1\obj\Debug\YT1.Migrations.AddAntPrdCategory.resources
+D:\C#\Web_ASP\CNPM2\YT1\YT1\obj\Debug\YT1.Migrations.AddAliasPrdCategory.resources

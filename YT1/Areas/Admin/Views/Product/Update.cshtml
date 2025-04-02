@@ -1,0 +1,288 @@
+﻿@model YT1.Models.EF.Product
+
+@{
+    ViewBag.Title = "Update";
+    Layout = "~/Areas/Admin/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<div class="col-12">
+
+    @using (Html.BeginForm("Update", "Product", FormMethod.Post, new { enctype = "multipart/form-data" }))
+    {
+        @Html.AntiForgeryToken()
+
+        <div class="form-horizontal">
+            <hr />
+            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+            @Html.HiddenFor(model => model.Id)
+
+            <div class="form-group">
+                <label class="control-label col-md-2">Mã Sản Phẩm</label>
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.ProductCode, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.ProductCode, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label class="control-label col-md-2">Tên Sản Phẩm</label>
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.Title, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.Title, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label class="control-label col-md-2">Loại Sản Phẩm</label>
+                <div class="col-md-10">
+                    <select name="ProductCategoryId" class="form-control">
+                        @if (ViewBag.lstproductCategory != null && ViewBag.lstproductCategory.Count >= 1)
+                        {
+                            foreach (var item in ViewBag.listCategory)
+                            {
+                                <option value="@item.Id" @(item.Id == Model.ProductCategoryId ? "selected" : "")>@item.Title</option>
+                            }
+                        }
+                        else
+                        {
+                            <option>Không có danh mục</option>
+                        }
+                    </select>
+                    @Html.ValidationMessageFor(model => model.ProductCategoryId, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label class="control-label col-md-2">Mô Tả</label>
+                <div class="col-md-10">
+                    @Html.TextAreaFor(model => model.Description, new { @class = "form-control" })
+                    @Html.ValidationMessageFor(model => model.Description, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label class="control-label col-md-2">Chi Tiết</label>
+                <div class="col-md-10">
+                    @Html.TextAreaFor(model => model.Detail, new { @class = "form-control", @id = "txtDetail" })
+                    @Html.ValidationMessageFor(model => model.Detail, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label class="control-label col-md-2">Ảnh Đại Diện</label>
+                <div class="col-12">
+                    @if (!string.IsNullOrEmpty(Model.Images))
+                    {
+                        <div class="current-image">
+                            <img src="@Model.Images" alt="ImagesNow" />
+                        </div>
+                    }
+                    <div class="preview-image" style="display: none;">
+                        <img id="previewImg" src="#" alt="Preview" />
+                    </div>
+                </div>
+                <div class="input-group col-md-10">
+                    <div class="custom-file">
+                        <input type="file" class="custom-file-input form-control" id="exampleInputFile" name="Img">
+                        <label class="custom-file-label" for="exampleInputFile">Chọn File</label>
+                        @Html.ValidationMessageFor(model => model.Images, "", new { @class = "text-danger" })
+                    </div>
+                    <div class="input-group-append">
+                        <span class="input-group-text">Tải Lên</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label class="control-label col-md-2">Giá Bán</label>
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.Price, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.Price, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label class="control-label col-md-2">Giảm Giá</label>
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.PriceSale, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.PriceSale, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label class="control-label col-md-2">Số Lượng</label>
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.Quantity, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.Quantity, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label class="control-label col-md-2">Hiển Thị</label>
+                <div class="col-md-10">
+                    @Html.CheckBoxFor(model => model.IsActive)
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label class="control-label col-md-2">Hiển Thị Home</label>
+                <div class="col-md-10">
+                    @Html.CheckBoxFor(model => model.IsHome)
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label class="control-label col-md-2">Được Giảm Giá</label>
+                <div class="col-md-10">
+                    @Html.CheckBoxFor(model => model.IsSale)
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label class="control-label col-md-2">Hiển Thị Feature</label>
+                <div class="col-md-10">
+                    @Html.CheckBoxFor(model => model.IsFeature)
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label class="control-label col-md-2">Sản Phẩm Hot</label>
+                <div class="col-md-10">
+                    @Html.CheckBoxFor(model => model.IsHot)
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.SeoTitle, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.SeoTitle, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.SeoTitle, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.SeoDescription, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.SeoDescription, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.SeoDescription, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.SeoKeyWord, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.SeoKeyWord, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.SeoKeyWord, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            @*<div class="form-group">
+                    @Html.LabelFor(model => model.CreatedDate, htmlAttributes: new { @class = "control-label col-md-2" })
+                    <div class="col-md-10">
+                        @Html.EditorFor(model => model.CreatedDate, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.CreatedDate, "", new { @class = "text-danger" })
+                    </div>
+                </div>*@
+
+            @*<div class="form-group">
+                    @Html.LabelFor(model => model.CreatedBy, htmlAttributes: new { @class = "control-label col-md-2" })
+                    <div class="col-md-10">
+                        @Html.EditorFor(model => model.CreatedBy, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.CreatedBy, "", new { @class = "text-danger" })
+                    </div>
+                </div>*@
+
+            @*<div class="form-group">
+                    @Html.LabelFor(model => model.ModifierBy, htmlAttributes: new { @class = "control-label col-md-2" })
+                    <div class="col-md-10">
+                        @Html.EditorFor(model => model.ModifierBy, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.ModifierBy, "", new { @class = "text-danger" })
+                    </div>
+                </div>*@
+
+            <div class="form-group">
+                <div class="col-md-10">
+                    <input type="hidden" name="ModifierDate" value="@DateTime.Now.ToString("yyyy-MM-dd")">
+                </div>
+            </div>
+
+            <div class="form-group">
+                <div class="col-md-offset-2 col-md-10">
+                    <input type="submit" value="Save" class="btn-update btn btn-success" />
+                </div>
+            </div>
+        </div>
+    }
+</div>
+
+@section childNavBar{
+    <a href="~/Admin/Product/Update" class="nav-link">Update</a>
+}
+
+@section style{
+    <style>
+        .btn-update {
+            margin: 10px 0px;
+        }
+
+        .current-image, .preview-image {
+            width: 420px;
+            aspect-ratio: 4/3;
+            margin: 0px 0px 12px;
+        }
+
+            .current-image img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
+
+            .preview-image img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
+    </style>
+}
+
+@section script{
+    <script>
+        $(document).ready(function () {
+            // Khởi tạo CKEditor
+            CKEDITOR.replace('txtDetail', {
+                customConfig: '~/assets/Plugin/ckeditor/ckeditor/config.js',
+                extraAllowedContent: 'span',
+            });
+            // Show Content in Ckeditor
+            CKEDITOR.instances['txtDetail'].setData('@Html.Raw(HttpUtility.JavaScriptStringEncode(Model.Detail ?? ""))');
+
+            $('#exampleInputFile').on('change', function () {
+                var file = this.files[0];
+                var fileName = file ? file.name : 'Chọn File';
+                $(this).next('.custom-file-label').text(fileName);
+
+                // Xem trước ảnh
+                if (file) {
+                    var reader = new FileReader();
+                    reader.onload = function (e) {
+                        // Ẩn ảnh cũ
+                        $('.current-image').hide();
+                        // Hiển thị ảnh mới trong phần preview
+                        $('#previewImg').attr('src', e.target.result);
+                        $('.preview-image').show();
+                    };
+                    reader.readAsDataURL(file);
+                } else {
+                    // Nếu không chọn file, hiển thị lại ảnh cũ và ẩn preview
+                    $('.current-image').show();
+                    $('.preview-image').hide();
+                }
+            });
+
+            // Đồng bộ dữ liệu từ CKEditor khi submit
+            $('form').submit(function () {
+                CKEDITOR.instances['txtDetail'].updateElement(); // Tự động đồng bộ
+            });
+        });
+    </script>
+}
