@@ -1,0 +1,225 @@
+﻿@model YT1.Models.EF.Product
+
+@{
+    ViewBag.Title = "Chi tiết sản phẩm";
+    Layout = "~/Areas/Admin/Views/Shared/_LayoutEmpty.cshtml";
+}
+
+<div class="product-details">
+    <h2>Chi tiết sản phẩm: @Model.Title</h2>
+    <hr />
+
+    <!-- Thông tin cơ bản -->
+    <div class="section">
+        <h3>Thông tin cơ bản</h3>
+        <table class="details-table">
+            <tr>
+                <th>@Html.DisplayNameFor(model => model.ProductCode)</th>
+                <td>@Html.DisplayFor(model => model.ProductCode)</td>
+            </tr>
+            <tr>
+                <th>@Html.DisplayNameFor(model => model.Title)</th>
+                <td>@Html.DisplayFor(model => model.Title)</td>
+            </tr>
+            <tr>
+                <th>@Html.DisplayNameFor(model => model.Alias)</th>
+                <td>@Html.DisplayFor(model => model.Alias)</td>
+            </tr>
+            <tr>
+                <th>@Html.DisplayNameFor(model => model.ProductCategory.Title)</th>
+                <td>@Html.DisplayFor(model => model.ProductCategory.Title)</td>
+            </tr>
+        </table>
+    </div>
+
+    <!-- Mô tả và chi tiết -->
+    <div class="section">
+        <h3>Mô tả sản phẩm</h3>
+        <table class="details-table">
+            <tr>
+                <th>@Html.DisplayNameFor(model => model.Description)</th>
+                <td>@Html.DisplayFor(model => model.Description)</td>
+            </tr>
+            <tr>
+                <th>@Html.DisplayNameFor(model => model.Detail)</th>
+                <td>@Html.Raw(Model.Detail)</td> <!-- Sử dụng Html.Raw nếu Detail chứa HTML -->
+            </tr>
+        </table>
+    </div>
+
+    <!-- Giá và số lượng -->
+    <div class="section">
+        <h3>Giá và số lượng</h3>
+        <table class="details-table">
+            <tr>
+                <th>@Html.DisplayNameFor(model => model.Price)</th>
+                <td>@Html.DisplayFor(model => model.Price, "{0:#,##0} VNĐ")</td>
+            </tr>
+            <tr>
+                <th>@Html.DisplayNameFor(model => model.PriceSale)</th>
+                <td>@Html.DisplayFor(model => model.PriceSale, "{0:#,##0} VNĐ")</td>
+            </tr>
+            <tr>
+                <th>@Html.DisplayNameFor(model => model.Quantity)</th>
+                <td>@Html.DisplayFor(model => model.Quantity)</td>
+            </tr>
+        </table>
+    </div>
+
+    <!-- Hình ảnh -->
+    <div class="section">
+        <h3>Hình ảnh</h3>
+        <table class="details-table">
+            <tr>
+                <th>@Html.DisplayNameFor(model => model.Images)</th>
+                <td>
+                    @if (!string.IsNullOrEmpty(Model.Images))
+                    {
+                        <img src="@Model.Images" alt="@Model.Title" class="product-image" />
+                    }
+                    else
+                    {
+                        <span>Không có ảnh</span>
+                    }
+                </td>
+            </tr>
+        </table>
+    </div>
+
+    <!-- Trạng thái hiển thị -->
+    <div class="section">
+        <h3>Trạng thái</h3>
+        <table class="details-table">
+            <tr>
+                <th>@Html.DisplayNameFor(model => model.IsActive)</th>
+                <td>@(Model.IsActive ? "Có" : "Không")</td>
+            </tr>
+            <tr>
+                <th>@Html.DisplayNameFor(model => model.IsHome)</th>
+                <td>@(Model.IsHome ? "Có" : "Không")</td>
+            </tr>
+            <tr>
+                <th>@Html.DisplayNameFor(model => model.IsSale)</th>
+                <td>@(Model.IsSale ? "Có" : "Không")</td>
+            </tr>
+            <tr>
+                <th>@Html.DisplayNameFor(model => model.IsFeature)</th>
+                <td>@(Model.IsFeature ? "Có" : "Không")</td>
+            </tr>
+            <tr>
+                <th>@Html.DisplayNameFor(model => model.IsHot)</th>
+                <td>@(Model.IsHot ? "Có" : "Không")</td>
+            </tr>
+        </table>
+    </div>
+
+    <!-- SEO -->
+    <div class="section">
+        <h3>SEO</h3>
+        <table class="details-table">
+            <tr>
+                <th>@Html.DisplayNameFor(model => model.SeoTitle)</th>
+                <td>@Html.DisplayFor(model => model.SeoTitle)</td>
+            </tr>
+            <tr>
+                <th>@Html.DisplayNameFor(model => model.SeoDescription)</th>
+                <td>@Html.DisplayFor(model => model.SeoDescription)</td>
+            </tr>
+            <tr>
+                <th>@Html.DisplayNameFor(model => model.SeoKeyWord)</th>
+                <td>@Html.DisplayFor(model => model.SeoKeyWord)</td>
+            </tr>
+        </table>
+    </div>
+
+    <!-- Thông tin hệ thống -->
+    <div class="section">
+        <h3>Thông tin hệ thống</h3>
+        <table class="details-table">
+            <tr>
+                <th>@Html.DisplayNameFor(model => model.CreatedDate)</th>
+                <td>@Html.DisplayFor(model => model.CreatedDate)</td>
+            </tr>
+            <tr>
+                <th>@Html.DisplayNameFor(model => model.CreatedBy)</th>
+                <td>@Html.DisplayFor(model => model.CreatedBy)</td>
+            </tr>
+            <tr>
+                <th>@Html.DisplayNameFor(model => model.ModifierDate)</th>
+                <td>@Html.DisplayFor(model => model.ModifierDate)</td>
+            </tr>
+            <tr>
+                <th>@Html.DisplayNameFor(model => model.ModifierBy)</th>
+                <td>@Html.DisplayFor(model => model.ModifierBy)</td>
+            </tr>
+        </table>
+    </div>
+</div>
+
+<style>
+    .product-details {
+        padding: 20px;
+        font-family: Arial, sans-serif;
+        /*max-height: 560px;*/ /* Giới hạn chiều cao để vừa dialog */
+        overflow-y: auto; /* Cho phép cuộn nếu nội dung dài */
+    }
+
+    h2 {
+        color: #333;
+        font-size: 24px;
+        margin-bottom: 10px;
+    }
+
+    .section {
+        margin-bottom: 20px;
+        border: 1px solid #ddd;
+        padding: 15px;
+        border-radius: 5px;
+        background-color: #f9f9f9;
+    }
+
+    h3 {
+        color: #007bff;
+        font-size: 18px;
+        margin-bottom: 10px;
+    }
+
+    .details-table {
+        width: 100%;
+        border-collapse: collapse;
+    }
+
+        .details-table th,
+        .details-table td {
+            padding: 8px;
+            border-bottom: 1px solid #ddd;
+            text-align: left;
+        }
+
+        .details-table th {
+            width: 200px; /* Độ rộng cố định cho cột nhãn */
+            font-weight: bold;
+            color: #555;
+            background-color: #f1f1f1;
+            vertical-align: top;
+        }
+
+        .details-table td {
+            color: #333;
+            word-wrap: break-word;
+        }
+
+    .product-image {
+        max-width: 300px;
+        max-height: 200px;
+        object-fit: cover;
+        border: 1px solid #ddd;
+        border-radius: 5px;
+    }
+
+    hr {
+        border: 0;
+        border-top: 1px solid #ddd;
+        margin: 10px 0;
+    }
+</style>

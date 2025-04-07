@@ -123,3 +123,7 @@ D:\C#\Web_ASP\CNPM2\YT1\YT1\bin\PagedList.Mvc.xml
 D:\C#\Web_ASP\CNPM2\YT1\YT1\obj\Debug\YT1.Migrations.AddAntProduct.resources
 D:\C#\Web_ASP\CNPM2\YT1\YT1\obj\Debug\YT1.Migrations.AddAntPrdCategory.resources
 D:\C#\Web_ASP\CNPM2\YT1\YT1\obj\Debug\YT1.Migrations.AddAliasPrdCategory.resources
+D:\C#\Web_ASP\CNPM2\YT1\YT1\bin\CKFinder.dll
+D:\C#\Web_ASP\CNPM2\YT1\YT1\bin\CKFinder.pdb
+D:\C#\Web_ASP\CNPM2\YT1\YT1\obj\Debug\YT1.Migrations.UpdateFKProduct.resources
+D:\C#\Web_ASP\CNPM2\YT1\YT1\obj\Debug\YT1.Migrations.RepairAntPriceProduct.resources

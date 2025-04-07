@@ -1,0 +1,129 @@
+﻿@model IEnumerable<YT1.Models.EF.ProductImages>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Areas/Admin/Views/Shared/_LayoutEmpty.cshtml";
+}
+
+<div>
+    <h3>Danh Sách Ảnh Sản Phẩm</h3>
+    <div card_tool>
+        <button type="button" class="btn btn-outline-danger">
+            Xóa Hết
+        </button>
+        <button type="button" class="btn btn-outline-success" onclick="BrowseServer()">
+            Thêm Ảnh
+        </button>
+    </div>
+    <ul class="image_list">
+        @if (Model != null)
+        {
+            foreach (var item in Model)
+            {
+                <li class="image_item" id="trow_@item.Id">
+                    <img src="@item.Image"/>
+                    <div class="image_active">
+                        <a href="#" data-id="@item.Id" class="btn btn-sm btn-danger btnDelete"><i class="fa fa-trash"></i></a>
+                        @if (item.isDefault == true)
+                        {
+                            <a href="#" data-isDefault="@item.Id" class="btn btn-sm btn-success"><i class="fa fa-check"></i></a>
+                        }
+                        else
+                        {
+                            <a href="#" data-isDefault="@item.Id" class="btn btn-sm btn-primary"><i class="fa fa-circle"></i></a>
+                        }
+                    </div>
+                </li>
+            }
+        }
+    </ul>
+</div>
+
+@section style {
+    <style>
+        .image_list{
+            list-style-type: none;
+            margin: 0;
+            padding: 10px 0px;
+            display: flex;
+            gap: 11px;
+        }
+        .image_item {
+            width: 200px;
+            aspect-ratio: 4/3;
+            position: relative;
+            box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+        }
+        .image_item img{
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        .image_item .image_active{
+            position: absolute;
+            right: 0;
+            top: 0;
+        }
+    </style>
+}
+
+@section script {
+    <script>
+        function AddImage(id, url) {
+            $.ajax({
+                url: '/Admin/ProductImage/Add',
+                type: 'POST',
+                data: { productId: id, url: url },
+                success: function (rs) {
+                    if (rs.success) {
+                        window.location.reload();
+                    }
+                }
+            });
+        }
+
+        function BrowseServer() {
+            var finder = new CKFinder();
+            finder.selectActionFunction = function (fileUrl) {
+                AddImage('@ViewBag.ProductId', fileUrl)
+            }
+            finder.popup();
+        }
+
+        $(document).ready(function () {
+            $('body').on('click', '.btnDelete', function () {
+                var id = $(this).data('id');
+                var conf = confirm('Bạn có muốn xóa không ?');
+                if (conf == true) {
+                    $.ajax({
+                        url: '/Admin/ProductImage/Delete',
+                        type: 'POST',
+                        data: { id: id },
+                        success: function (rs) {
+                            if (rs.success) {
+                                $('#trow_' + id).remove();
+                            }
+                        }
+                    });
+                }
+            });
+            $('body').on('click', 'a.btn-primary[data-isDefault]', function (e) {
+                e.preventDefault();
+                var id = $(this).attr('data-isDefault');
+                var conf = confirm('Bạn có muốn đặt ảnh này làm ảnh đại diện không?');
+                if (conf == true) {
+                    $.ajax({
+                        url: '/Admin/ProductImage/SetDefault',
+                        type: 'POST',
+                        data: { id: id },
+                        success: function (rs) {
+                            if (rs.success) {
+                                window.location.reload();
+                            }
+                        }
+                    });
+                }
+            });
+        });
+    </script>
+}
+

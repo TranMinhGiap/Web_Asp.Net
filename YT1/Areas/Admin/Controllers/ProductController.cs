@@ -38,54 +38,48 @@ namespace YT1.Areas.Admin.Controllers
         // Create
         public ActionResult Create()
         {
-            List<ProductCategory> listProductCategory = _dbConect.ProductCategories.ToList();
-            ViewBag.lstproductCategory = listProductCategory;
+            // Cách thông thường + foreach
+            //List<ProductCategory> listProductCategory = _dbConect.ProductCategories.ToList();
+            //ViewBag.lstproductCategory = listProductCategory;
+            ViewBag.ProductCategory = new SelectList(_dbConect.ProductCategories.ToList(), "Id", "Title");
             return View();
         }
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create(Product item, HttpPostedFileBase Img)
+        public ActionResult Create(Product item, List<string> Img, List<int> radioButton)
         {
             if (ModelState.IsValid)
             {
-                // Kiểm tra xem có file không
-                if (Img != null && Img.ContentLength > 0)
+                if (Img != null && Img.Count > 0)
                 {
-                    // Lấy danh sách đuôi file hợp lệ
-                    string[] allowedExtensions = { ".jpg", ".jpeg", ".png", ".gif" };
-                    string fileExtension = Path.GetExtension(Img.FileName).ToLower();
-
-                    if (!allowedExtensions.Contains(fileExtension))
+                    for (int i = 0; i < Img.Count; i++)
                     {
-                        List<ProductCategory> listProductCategory = _dbConect.ProductCategories.ToList();
-                        ViewBag.lstproductCategory = listProductCategory;
-                        ModelState.AddModelError("", "Chỉ được phép tải lên file ảnh (.jpg, .jpeg, .png, .gif)");
-                        return View(item);
+                        if(i + 1 == radioButton[0])
+                        {
+                            item.Images = Img[i];
+                            item.ProductImages.Add(new ProductImages
+                            {
+                                ProductId = item.Id,
+                                Image = Img[i],
+                                isDefault = true
+                            });
+                        }
+                        else
+                        {
+                            item.ProductImages.Add(new ProductImages
+                            {
+                                ProductId = item.Id,
+                                Image = Img[i],
+                                isDefault = false
+                            });
+                        }
                     }
-
-                    // Lấy đường dẫn thư mục lưu ảnh
-                    string rootFolder = Server.MapPath("~/assets/Admin/Img/");
-                    if (!Directory.Exists(rootFolder))
-                    {
-                        Directory.CreateDirectory(rootFolder);
-                    }
-
-                    // Tạo tên file duy nhất để tránh trùng lặp
-                    string uniqueFileName = Path.GetFileNameWithoutExtension(Img.FileName) + "_" + Guid.NewGuid().ToString("N") + fileExtension;
-                    string filePath = Path.Combine(rootFolder, uniqueFileName);
-
-                    // Lưu file vào server
-                    Img.SaveAs(filePath);
-
-                    // Lưu đường dẫn file vào đối tượng News
-                    item.Images = "/assets/Admin/Img/" + uniqueFileName;
-                }
-                else
-                {
-                    item.Images = ""; // Không có ảnh thì để trống
                 }
                 item.Alias = ConvertStr.FilterChar(item.Title);
-
+                if (string.IsNullOrEmpty(item.SeoTitle))
+                {
+                    item.SeoTitle = item.Title;
+                }
                 _dbConect.products.Add(item);
                 _dbConect.SaveChanges();
 
@@ -93,8 +87,7 @@ namespace YT1.Areas.Admin.Controllers
             }
             else
             {
-                List<ProductCategory> listProductCategory = _dbConect.ProductCategories.ToList();
-                ViewBag.lstproductCategory = listProductCategory;
+                ViewBag.ProductCategory = new SelectList(_dbConect.ProductCategories.ToList(), "Id", "Title");
                 return View(item);
             }
         }
@@ -106,8 +99,7 @@ namespace YT1.Areas.Admin.Controllers
             Product item = _dbConect.products.Find(id);
             if(item != null)
             {
-                List<ProductCategory> listProductCategory = _dbConect.ProductCategories.ToList();
-                ViewBag.lstproductCategory = listProductCategory;
+                ViewBag.ProductCategory = new SelectList(_dbConect.ProductCategories.ToList(), "Id", "Title");
                 return View(item);
             }
             else
@@ -133,8 +125,7 @@ namespace YT1.Areas.Admin.Controllers
 
                         if (!allowedExtensions.Contains(fileExtension))
                         {
-                            List<ProductCategory> listProductCategory = _dbConect.ProductCategories.ToList();
-                            ViewBag.lstproductCategory = listProductCategory;
+                            ViewBag.ProductCategory = new SelectList(_dbConect.ProductCategories.ToList(), "Id", "Title");
                             ModelState.AddModelError("", "Chỉ được phép tải lên file ảnh (.jpg, .jpeg, .png, .gif)");
                             return View(productItem);
                         }
@@ -165,12 +156,26 @@ namespace YT1.Areas.Admin.Controllers
             }
             else
             {
-                List<ProductCategory> listProductCategory = _dbConect.ProductCategories.ToList();
-                ViewBag.lstproductCategory = listProductCategory;
+                ViewBag.ProductCategory = new SelectList(_dbConect.ProductCategories.ToList(), "Id", "Title");
                 return View(productItem);
             }
         }
         // End Update
+
+        // Details
+        public ActionResult Details(int id)
+        {
+            Product item = _dbConect.products.Find(id);
+            if(item != null)
+            {
+                return View(item);
+            }
+            else
+            {
+                return HttpNotFound();
+            }
+        }
+        // End Details
 
         // Delete
         [HttpPost]

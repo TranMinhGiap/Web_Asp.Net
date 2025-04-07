@@ -59,7 +59,7 @@
                         </td>
                         <td>@item.CreatedDate.ToString("dd/MM/yyyy")</td>
                         <td>
-                            <a href="@Url.Action("Update", "News", new { id = item.Id })" class="btn btn-primary">Update</a>
+                            <a href="@Url.Action("Update", "Posts", new { id = item.Id })" class="btn btn-primary">Update</a>
                             <a data-id="@item.Id" class="btn-delete btn btn-danger">Delete</a>
                         </td>
                     </tr>

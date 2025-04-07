@@ -48,7 +48,7 @@
             <div class="form-group">
                 <label class="control-label col-md-2">Hiển Thị</label>
                 <div class="col-md-10">
-                    <input type="checkbox" name="IsActive" value="true" />
+                    <input type="checkbox" name="IsActive" value="true" @(Model != null && Model.IsActive == true ? "checked" : "")/>
                 </div>
             </div>
 

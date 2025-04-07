@@ -37,6 +37,7 @@ namespace YT1.Models
         public DbSet<Setting> Settings { get; set; }
         public DbSet<ProductCategory> ProductCategories { get; set; }
         public DbSet<Product> products { get; set; }
+        public DbSet<ProductImages> ProductImages { get; set; }
         public DbSet<Contact> Contacts { get; set; }
         public DbSet<Order> Orders { get; set; }
         public DbSet<OrderDetail> OrderDetails { get; set; }

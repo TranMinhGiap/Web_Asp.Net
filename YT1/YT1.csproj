@@ -46,6 +46,10 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="CKFinder, Version=2.4.0.2631, Culture=neutral, PublicKeyToken=579e7adc719a1423, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\webTemplate\Plugin\ckfinder\ckfinder\bin\Release\CKFinder.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="PagedList, Version=1.17.0.0, Culture=neutral, PublicKeyToken=abbb863e9397c5e1, processorArchitecture=MSIL">
       <HintPath>..\packages\PagedList.1.17.0.0\lib\net40\PagedList.dll</HintPath>
@@ -181,6 +185,7 @@
     <Compile Include="Areas\Admin\Controllers\PostsController.cs" />
     <Compile Include="Areas\Admin\Controllers\ProductCategoryController.cs" />
     <Compile Include="Areas\Admin\Controllers\ProductController.cs" />
+    <Compile Include="Areas\Admin\Controllers\ProductImageController.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
@@ -234,6 +239,14 @@
     <Compile Include="Migrations\202504020449192_AddAliasPrdCategory.cs" />
     <Compile Include="Migrations\202504020449192_AddAliasPrdCategory.Designer.cs">
       <DependentUpon>202504020449192_AddAliasPrdCategory.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202504040039409_UpdateFKProduct.cs" />
+    <Compile Include="Migrations\202504040039409_UpdateFKProduct.Designer.cs">
+      <DependentUpon>202504040039409_UpdateFKProduct.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202504040611281_RepairAntPriceProduct.cs" />
+    <Compile Include="Migrations\202504040611281_RepairAntPriceProduct.Designer.cs">
+      <DependentUpon>202504040611281_RepairAntPriceProduct.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -3176,6 +3189,9 @@
     <Content Include="Areas\Admin\Views\ProductCategory\Index.cshtml" />
     <Content Include="Areas\Admin\Views\ProductCategory\Create.cshtml" />
     <Content Include="Areas\Admin\Views\ProductCategory\Update.cshtml" />
+    <Content Include="Areas\Admin\Views\Shared\_LayoutEmpty.cshtml" />
+    <Content Include="Areas\Admin\Views\ProductImage\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\Product\Details.cshtml" />
     <None Include="Scripts\jquery-3.7.0.intellisense.js" />
     <Content Include="Scripts\jquery-3.7.0.js" />
     <Content Include="Scripts\jquery-3.7.0.min.js" />
@@ -3291,6 +3307,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202504020449192_AddAliasPrdCategory.resx">
       <DependentUpon>202504020449192_AddAliasPrdCategory.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202504040039409_UpdateFKProduct.resx">
+      <DependentUpon>202504040039409_UpdateFKProduct.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202504040611281_RepairAntPriceProduct.resx">
+      <DependentUpon>202504040611281_RepairAntPriceProduct.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

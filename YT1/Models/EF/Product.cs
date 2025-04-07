@@ -10,7 +10,11 @@ namespace YT1.Models.EF
 {
     [Table("tb_Product")]
     public class Product : CommonAbs 
-    {
+    {   
+        public Product() { 
+            this.ProductImages = new HashSet<ProductImages>();
+            this.OrderDetail = new HashSet<OrderDetail>();
+        }
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int Id { get; set; }
@@ -27,7 +31,7 @@ namespace YT1.Models.EF
         public string Detail { get; set; }
         public string Images { get; set; }
         [Required(ErrorMessage = "Giá sản phẩm không được để trống")]
-        [Range(0, double.MaxValue, ErrorMessage = "Giá sản phẩm phải lớn hơn hoặc bằng 0")]
+        [Range(1000, double.MaxValue, ErrorMessage = "Giá sản phẩm phải lớn hơn hoặc bằng 1000")]
         public decimal Price { get; set; }
         [Range(0, double.MaxValue, ErrorMessage = "Giá khuyến mãi phải lớn hơn hoặc bằng 0")]
         public decimal PriceSale { get; set; }
@@ -45,5 +49,7 @@ namespace YT1.Models.EF
         public bool IsActive { get; set; }
 
         public virtual ProductCategory ProductCategory { get; set; }
+        public virtual ICollection<ProductImages> ProductImages { get; set; }
+        public virtual ICollection<OrderDetail> OrderDetail { get; set; }
     }
 }

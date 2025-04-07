@@ -8,7 +8,7 @@
 
 <div class="col-12">
 
-    @using (Html.BeginForm("Create", "Product", FormMethod.Post, new { enctype = "multipart/form-data" }))
+    @using (Html.BeginForm("Create", "Product", FormMethod.Post, new { enctype = "multipart/form-data", id = "productForm" }))
     {
         @Html.AntiForgeryToken()
 
@@ -44,22 +44,39 @@
                                     </div>
                                 </div>
 
+                                @*<div class="form-group">
+                                        <label class="control-label col-md-2">Loại Sản Phẩm</label>
+                                        <div class="col-md-10">
+                                            <select name="ProductCategoryId" class="form-control">
+                                                @if (ViewBag.lstproductCategory != null && ViewBag.lstproductCategory.Count >= 1)
+                                                {
+                                                    foreach (var item in ViewBag.lstproductCategory)
+                                                    {
+                                                        <option value="@item.Id">@item.Title</option>
+                                                    }
+                                                }
+                                                else
+                                                {
+                                                    <option>Không có danh mục</option>
+                                                }
+                                            </select>
+                                            @Html.ValidationMessageFor(model => model.ProductCategoryId, "", new { @class = "text-danger" })
+                                        </div>
+                                    </div>*@
+
                                 <div class="form-group">
                                     <label class="control-label col-md-2">Loại Sản Phẩm</label>
                                     <div class="col-md-10">
-                                        <select name="ProductCategoryId" class="form-control">
-                                            @if (ViewBag.lstproductCategory != null && ViewBag.lstproductCategory.Count >= 1)
-                                            {
-                                                foreach (var item in ViewBag.lstproductCategory)
-                                                {
-                                                    <option value="@item.Id">@item.Title</option>
-                                                }
-                                            }
-                                            else
-                                            {
+                                        @if (ViewBag.ProductCategory != null && ((SelectList)ViewBag.ProductCategory).Any())
+                                        {
+                                            @Html.DropDownListFor(model => model.ProductCategoryId, (SelectList)ViewBag.ProductCategory, "Chọn danh mục", new { @class = "form-control" })
+                                        }
+                                        else
+                                        {
+                                            <select name="ProductCategoryId" class="form-control" disabled>
                                                 <option>Không có danh mục</option>
-                                            }
-                                        </select>
+                                            </select>
+                                        }
                                         @Html.ValidationMessageFor(model => model.ProductCategoryId, "", new { @class = "text-danger" })
                                     </div>
                                 </div>
@@ -85,7 +102,7 @@
                                         <div class="form-group">
                                             <label class="control-label">Số Lượng</label>
                                             <div>
-                                                <input type="number" name="Quantity" class="form-control" />
+                                                <input type="number" name="Quantity" class="form-control" value="1" />
                                             </div>
                                         </div>
                                     </div>
@@ -93,15 +110,16 @@
                                         <div class="form-group">
                                             <label class="control-label">Giá Bán</label>
                                             <div>
-                                                <input type="number" name="Price" class="form-control" />
+                                                <input type="text" name="Price" class="form-control" value="0" />
                                             </div>
+                                            @Html.ValidationMessageFor(model => model.Price, "", new { @class = "text-danger" })
                                         </div>
                                     </div>
                                     <div class="col-4">
                                         <div class="form-group">
                                             <label class="control-label">Giá Khuyến Mại</label>
                                             <div>
-                                                <input type="number" name="PriceSale" class="form-control" />
+                                                <input type="text" name="PriceSale" class="form-control" value="0" />
                                             </div>
                                         </div>
                                     </div>
@@ -111,7 +129,7 @@
                                     <div class="col-3">
                                         <div class="form-group">
                                             <div class="custom-control custom-switch">
-                                                <input name="IsActive" value="true" type="checkbox" class="custom-control-input" id="customSwitch1">
+                                                <input name="IsActive" value="true" type="checkbox" class="custom-control-input" id="customSwitch1" checked>
                                                 <label class="custom-control-label" for="customSwitch1">Hiển Thị</label>
                                             </div>
                                         </div>
@@ -144,149 +162,82 @@
                             </div>
                             <!-- /.tab-pane -->
                             <div class="tab-pane" id="timeline">
-                                <!-- The timeline -->
-                                <div class="timeline timeline-inverse">
-                                    <!-- timeline time label -->
-                                    <div class="time-label">
-                                        <span class="bg-danger">
-                                            10 Feb. 2014
-                                        </span>
+                                <div class="row">
+                                    <div class="col-md-12 text-right">
+                                        <input class="btn_upload btn btn-outline-primary" type="button" id="iTaiAnh" onclick="BrowseServer()" value="Upload" />
                                     </div>
-                                    <!-- /.timeline-label -->
-                                    <!-- timeline item -->
-                                    <div>
-                                        <i class="fas fa-envelope bg-primary"></i>
-
-                                        <div class="timeline-item">
-                                            <span class="time"><i class="far fa-clock"></i> 12:05</span>
-
-                                            <h3 class="timeline-header"><a href="#">Support Team</a> sent you an email</h3>
-
-                                            <div class="timeline-body">
-                                                Etsy doostang zoodles disqus groupon greplin oooj voxy zoodles,
-                                                weebly ning heekya handango imeem plugg dopplr jibjab, movity
-                                                jajah plickers sifteo edmodo ifttt zimbra. Babblely odeo kaboodle
-                                                quora plaxo ideeli hulu weebly balihoo...
-                                            </div>
-                                            <div class="timeline-footer">
-                                                <a href="#" class="btn btn-primary btn-sm">Read more</a>
-                                                <a href="#" class="btn btn-danger btn-sm">Delete</a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <!-- END timeline item -->
-                                    <!-- timeline item -->
-                                    <div>
-                                        <i class="fas fa-user bg-info"></i>
-
-                                        <div class="timeline-item">
-                                            <span class="time"><i class="far fa-clock"></i> 5 mins ago</span>
-
-                                            <h3 class="timeline-header border-0">
-                                                <a href="#">Sarah Young</a> accepted your friend request
-                                            </h3>
-                                        </div>
-                                    </div>
-                                    <!-- END timeline item -->
-                                    <!-- timeline item -->
-                                    <div>
-                                        <i class="fas fa-comments bg-warning"></i>
-
-                                        <div class="timeline-item">
-                                            <span class="time"><i class="far fa-clock"></i> 27 mins ago</span>
-
-                                            <h3 class="timeline-header"><a href="#">Jay White</a> commented on your post</h3>
-
-                                            <div class="timeline-body">
-                                                Take me to your leader!
-                                                Switzerland is small and neutral!
-                                                We are more like Germany, ambitious and misunderstood!
-                                            </div>
-                                            <div class="timeline-footer">
-                                                <a href="#" class="btn btn-warning btn-flat btn-sm">View comment</a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <!-- END timeline item -->
-                                    <!-- timeline time label -->
-                                    <div class="time-label">
-                                        <span class="bg-success">
-                                            3 Jan. 2014
-                                        </span>
-                                    </div>
-                                    <!-- /.timeline-label -->
-                                    <!-- timeline item -->
-                                    <div>
-                                        <i class="fas fa-camera bg-purple"></i>
-
-                                        <div class="timeline-item">
-                                            <span class="time"><i class="far fa-clock"></i> 2 days ago</span>
-
-                                            <h3 class="timeline-header"><a href="#">Mina Lee</a> uploaded new photos</h3>
-
-                                            <div class="timeline-body">
-                                                <img src="https://placehold.it/150x100" alt="...">
-                                                <img src="https://placehold.it/150x100" alt="...">
-                                                <img src="https://placehold.it/150x100" alt="...">
-                                                <img src="https://placehold.it/150x100" alt="...">
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <!-- END timeline item -->
-                                    <div>
-                                        <i class="far fa-clock bg-gray"></i>
+                                    <div class="col-md-12">
+                                        <table class="table table-bordered table-hover" id="tbAnhSanPham">
+                                            <thead>
+                                                <tr>
+                                                    <th class="text-center">STT</th>
+                                                    <th class="text-center">Ảnh Đại Diện</th>
+                                                    <th class="text-center">Ảnh</th>
+                                                    <th class="text-center">(*)</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody id="tbHtml">
+                                            </tbody>
+                                        </table>
+                                        <input type="hidden" id="CurrentId" value="1" />
                                     </div>
                                 </div>
                             </div>
                             <!-- /.tab-pane -->
-
                             <div class="tab-pane" id="settings">
-                                <form class="form-horizontal">
+                                <div class="form-horizontal">
                                     <div class="form-group row">
-                                        <label for="inputName" class="col-sm-2 col-form-label">Name</label>
+                                        <label for="inputName" class="col-sm-2 col-form-label">SeoTitle</label>
                                         <div class="col-sm-10">
-                                            <input type="email" class="form-control" id="inputName" placeholder="Name">
+                                            <input name="SeoTitle" type="text" class="form-control" id="inputName" placeholder="SeoTitle">
                                         </div>
                                     </div>
                                     <div class="form-group row">
-                                        <label for="inputEmail" class="col-sm-2 col-form-label">Email</label>
+                                        <label for="inputEmail" class="col-sm-2 col-form-label">SeoKeyWord</label>
                                         <div class="col-sm-10">
-                                            <input type="email" class="form-control" id="inputEmail" placeholder="Email">
+                                            <input name="SeoKeyWord" type="text" class="form-control" id="inputEmail" placeholder="SeoKeyWord">
                                         </div>
                                     </div>
                                     <div class="form-group row">
-                                        <label for="inputName2" class="col-sm-2 col-form-label">Name</label>
+                                        <label for="inputExperience" class="col-sm-2 col-form-label">SeoDescription</label>
                                         <div class="col-sm-10">
-                                            <input type="text" class="form-control" id="inputName2" placeholder="Name">
+                                            <textarea name="SeoDescription" class="form-control" id="inputExperience" placeholder="SeoDescription"></textarea>
                                         </div>
                                     </div>
-                                    <div class="form-group row">
-                                        <label for="inputExperience" class="col-sm-2 col-form-label">Experience</label>
-                                        <div class="col-sm-10">
-                                            <textarea class="form-control" id="inputExperience" placeholder="Experience"></textarea>
+                                    <div class="form-group">
+                                        <div class="col-md-10">
+                                            <input type="hidden" name="CreatedDate" class="form-control" value="@DateTime.Now.ToString("yyyy-MM-dd")">
                                         </div>
                                     </div>
-                                    <div class="form-group row">
-                                        <label for="inputSkills" class="col-sm-2 col-form-label">Skills</label>
-                                        <div class="col-sm-10">
-                                            <input type="text" class="form-control" id="inputSkills" placeholder="Skills">
-                                        </div>
-                                    </div>
-                                    <div class="form-group row">
-                                        <div class="offset-sm-2 col-sm-10">
-                                            <div class="checkbox">
-                                                <label>
-                                                    <input type="checkbox"> I agree to the <a href="#">terms and conditions</a>
-                                                </label>
+
+                                    @*<div class="form-group">
+                                            @Html.LabelFor(model => model.CreatedBy, htmlAttributes: new { @class = "control-label col-md-2" })
+                                            <div class="col-md-10">
+                                                @Html.EditorFor(model => model.CreatedBy, new { htmlAttributes = new { @class = "form-control" } })
+                                                @Html.ValidationMessageFor(model => model.CreatedBy, "", new { @class = "text-danger" })
                                             </div>
+                                        </div>*@
+
+                                    @*<div class="form-group">
+                                            @Html.LabelFor(model => model.ModifierBy, htmlAttributes: new { @class = "control-label col-md-2" })
+                                            <div class="col-md-10">
+                                                @Html.EditorFor(model => model.ModifierBy, new { htmlAttributes = new { @class = "form-control" } })
+                                                @Html.ValidationMessageFor(model => model.ModifierBy, "", new { @class = "text-danger" })
+                                            </div>
+                                        </div>*@
+
+                                    <div class="form-group">
+                                        <div class="col-md-10">
+                                            <input type="hidden" name="ModifierDate" class="form-control" value="@DateTime.Now.ToString("yyyy-MM-dd")">
                                         </div>
                                     </div>
+
                                     <div class="form-group row">
                                         <div class="offset-sm-2 col-sm-10">
                                             <button type="submit" class="btn btn-danger">Submit</button>
                                         </div>
                                     </div>
-                                </form>
+                                </div>
                             </div>
                             <!-- /.tab-pane -->
                         </div>
@@ -300,7 +251,7 @@
 </div>
 
 @section childNavBar{
-    <a href="~/Admin/Product/Create" class="nav-link">Create News</a>
+    <a href="~/Admin/Product/Create" class="nav-link">Create Product</a>
 }
 
 @section style{
@@ -308,8 +259,91 @@
         .btn-create {
             margin: 10px 0px;
         }
+
+        .btn_upload {
+            margin: 0 0 12px;
+        }
     </style>
 }
+
+@*// Khi chua dinh dang tien => van chay duoc co gi xoa script duoi thay bang doan nay boi chi khac moi dinh dang hien thi tien*@
+@*@section script{
+        <script>
+            $(document).ready(function () {
+                // Khởi tạo CKEditor
+                CKEDITOR.replace('txtDetail', {
+                    customConfig: '~/assets/Plugin/ckeditor/ckeditor/config.js',
+                    extraAllowedContent: 'span',
+                });
+
+                // Đồng bộ dữ liệu từ CKEditor khi submit
+                $('form').submit(function (e) {
+                    var editorContent = CKEDITOR.instances['txtDetail'].getData();
+                    $('textarea#txtDetail').val(editorContent);
+                });
+
+                // Cập nhật tên file khi chọn ảnh
+                $('#exampleInputFile').on('change', function () {
+                    var fileName = $(this)[0].files[0] ? $(this)[0].files[0].name : 'Chọn File';
+                    $(this).next('.custom-file-label').text(fileName);
+                });
+
+                // Xử lý sự kiện xóa dòng khi nhấn nút "Xóa"
+                $(document).on('click', '.delete-btn', function (e) {
+                    e.preventDefault(); // Ngăn hành vi mặc định của thẻ <a>
+                    if (confirm('Bạn có chắc muốn xóa không?')) {
+                        deleteRow(this);
+                    }
+                });
+            });
+
+            function BrowseServer() { // Bỏ tham số field vì không dùng
+                var finder = new CKFinder();
+                finder.selectActionFunction = function (fileUrl) {
+                    //document.getElementById(field).value = fileUrl;
+                    addImgProduct(fileUrl);
+                };
+                finder.popup();
+            }
+
+            function addImgProduct(url) {
+                if (!url) { // Kiểm tra url có hợp lệ không
+                    alert('Đường dẫn ảnh không hợp lệ!');
+                    return;
+                }
+                var isFirstRow = $('#tbHtml tr').length === 0;
+                var checkedAttr = isFirstRow ? 'checked' : '';
+                var idx = $('#CurrentId').val();
+                var str = `<tr>
+                        <td class="text-center">${idx}</td>
+                        <td class="text-center">
+                            <img width="80" src="${url}"/>
+                        </td>
+                        <td class="text-center">
+                            <input type="radio" name="mainImage" value="${idx}" ${checkedAttr}/>
+                        </td>
+                        <td class="text-center">
+                            <a href="#" class="btn btn-danger delete-btn">Xóa</a>
+                        </td>
+                    </tr>`;
+                $('#tbHtml').append(str);
+                var updateValue = parseInt(idx) + 1;
+                $('#CurrentId').val(updateValue);
+            }
+
+            function deleteRow(element) {
+                $(element).closest('tr').remove();
+                // Cập nhật lại STT
+                $('#tbHtml tr').each(function (index) {
+                    $(this).find('td:first').text(index + 1);
+                });
+                // Cập nhật CurrentId
+                var newIdx = $('#tbHtml tr').length + 1;
+                $('#CurrentId').val(newIdx);
+            }
+        </script>
+    }*@
+
 
 @section script{
     <script>
@@ -320,17 +354,139 @@
                 extraAllowedContent: 'span',
             });
 
+            // Hàm định dạng số với dấu phân cách hàng nghìn
+            function formatNumberInput(input) {
+                let value = input.val().replace(/[^0-9]/g, '');
+                if (value) {
+                    value = parseInt(value).toLocaleString('en-US');
+                    input.val(value);
+                } else {
+                    input.val(''); // Đảm bảo input rỗng nếu không có giá trị
+                }
+            }
+
+            // Định dạng giá trị ban đầu cho Price và PriceSale
+            let initialPrice = $('input[name="Price"]').val().replace(/[^0-9]/g, '');
+            if (initialPrice) {
+                $('input[name="Price"]').val(parseInt(initialPrice).toLocaleString('en-US'));
+            }
+            let initialPriceSale = $('input[name="PriceSale"]').val().replace(/[^0-9]/g, '');
+            if (initialPriceSale) {
+                $('input[name="PriceSale"]').val(parseInt(initialPriceSale).toLocaleString('en-US'));
+            }
+
+            // Định dạng giá trị khi nhập cho Price và PriceSale
+            $('input[name="Price"], input[name="PriceSale"]').on('input', function () {
+                formatNumberInput($(this));
+            });
+
+            // Đồng bộ dữ liệu từ CKEditor và xử lý form khi submit
+            $('#productForm').submit(function (e) {
+                var editorContent = CKEDITOR.instances['txtDetail'].getData();
+                $('textarea#txtDetail').val(editorContent);
+
+                // Kiểm tra Quantity
+                var quantity = $('input[name="Quantity"]').val();
+                if (quantity < 1) {
+                    e.preventDefault();
+                    alert('Số lượng phải lớn hơn hoặc bằng 1!');
+                    return;
+                }
+
+                // Kiểm tra Price
+                let price = $('input[name="Price"]').val().replace(/,/g, '');
+                if (price < 0) {
+                    e.preventDefault();
+                    alert('Giá bán không được nhỏ hơn 0!');
+                    return;
+                }
+                $('input[name="Price"]').val(price);
+
+                // Kiểm tra PriceSale
+                let priceSale = $('input[name="PriceSale"]').val().replace(/,/g, '');
+                if (priceSale < 0) {
+                    e.preventDefault();
+                    alert('Giá khuyến mại không được nhỏ hơn 0!');
+                    return;
+                }
+                if (parseInt(priceSale) > parseInt(price)) {
+                    e.preventDefault();
+                    alert('Giá khuyến mại không được lớn hơn giá bán!');
+                    return;
+                }
+                $('input[name="PriceSale"]').val(priceSale);
+            });
+
             // Cập nhật tên file khi chọn ảnh
             $('#exampleInputFile').on('change', function () {
                 var fileName = $(this)[0].files[0] ? $(this)[0].files[0].name : 'Chọn File';
                 $(this).next('.custom-file-label').text(fileName);
             });
 
-            // Đồng bộ dữ liệu từ CKEditor khi submit
-            $('form').submit(function (e) {
-                var editorContent = CKEDITOR.instances['txtDetail'].getData();
-                $('textarea#txtDetail').val(editorContent);
+            // Xử lý sự kiện xóa dòng khi nhấn nút "Xóa"
+            $(document).on('click', '.delete-btn', function (e) {
+                e.preventDefault();
+                if (confirm('Bạn có chắc muốn xóa không?')) {
+                    deleteRow(this);
+                }
+            });
+
+            // Xử lý khi checkbox thay đổi (nếu có)
+            $('#customSwitch1').on('change', function () {
+                var isChecked = $(this).is(':checked');
+                $('#IsActiveHidden').val(isChecked ? 'true' : 'false');
             });
         });
+
+        function BrowseServer() {
+            var finder = new CKFinder();
+            finder.selectActionFunction = function (fileUrl) {
+                addImgProduct(fileUrl);
+            };
+            finder.popup();
+        }
+
+        function addImgProduct(url) {
+            if (!url) {
+                alert('Đường dẫn ảnh không hợp lệ!');
+                return;
+            }
+            var idx = $('#CurrentId').val();
+            var isFirstRow = $('#tbHtml tr').length === 0;
+            var checkedAttr = isFirstRow ? 'checked' : '';
+            var str = `<tr>
+                        <td class="text-center">${idx}</td>
+                        <td class="text-center">
+                            <img width="80" src="${url}"/>
+                            <input type="hidden" name="Img" value="${url}"/>
+                        </td>
+                        <td class="text-center">
+                            <input type="radio" name="radioButton" value="${idx}" ${checkedAttr}/>
+                        </td>
+                        <td class="text-center">
+                            <a href="#" class="btn btn-danger delete-btn">Xóa</a>
+                        </td>
+                    </tr>`;
+            $('#tbHtml').append(str);
+            var updateValue = parseInt(idx) + 1;
+            $('#CurrentId').val(updateValue);
+        }
+
+        function deleteRow(element) {
+            $(element).closest('tr').remove();
+            // Cập nhật lại STT
+            $('#tbHtml tr').each(function (index) {
+                $(this).find('td:first').text(index + 1);
+                // Cập nhật value của radio button
+                $(this).find('input[type="radio"]').val(index + 1);
+                // Tự động chọn dòng đầu tiên nếu có
+                if (index === 0) {
+                    $(this).find('input[type="radio"]').prop('checked', true);
+                }
+            });
+            // Cập nhật CurrentId
+            var newIdx = $('#tbHtml tr').length + 1;
+            $('#CurrentId').val(newIdx);
+        }
     </script>
 }
