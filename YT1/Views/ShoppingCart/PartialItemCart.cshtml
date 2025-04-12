@@ -1,0 +1,57 @@
+﻿@model IEnumerable<YT1.Models.ShoppingCartItem>
+
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th>STT</th>
+            <th>Tên Sản Phẩm</th>
+            <th>Hình Ảnh</th>
+            <th>Giá</th>
+            <th>Số Lượng</th>
+            <th>Thành Tiền</th>
+            <th>*</th>
+        </tr>
+    </thead>
+    <tbody>
+        @if (Model != null && Model.Any())
+        {
+            int idx = 0;
+            var totalAmout = decimal.Zero;
+            foreach (var item in Model)
+            {
+                totalAmout += item.TotalPrice;
+                <tr id="trow_@item.ProductId">
+                    <td>@(++idx)</td>
+                    <td>
+                        <a href="/chi-tiet/@item.Alias/@item.ProductId">@item.ProductName</a>
+                    </td>
+                    <td>
+                        <div class="item_image">
+                            <img src="@item.ProductImg" alt="@item.ProductName" />
+                        </div>
+                    </td>
+                    <th>@string.Format("{0:#,##0}", item.Price) VND</th>
+                    <td>
+                        @*<input id="Quantity_@item.ProductId" class="product_quantity" value="@item.Quantity" type="number"/>*@
+                        <input data-id="@item.ProductId" class="input_product_quantity product_quantity" value="@item.Quantity" type="number"/>
+                    </td>
+                    <th>@string.Format("{0:#,##0}", item.TotalPrice) VND</th>
+                    <td>
+                        <a data-id="@item.ProductId" class="btn btn-sm btn-outline-danger btnDelete" href="#">Delete</a>
+                        @*<a data-id="@item.ProductId" class="btn btn-sm btn-outline-success btnUpdate" href="#">Update</a>*@
+                    </td>
+                </tr>
+            }
+            <tr>
+                <th style="text-align: right" colspan="5">Tổng Tiền</th>
+                <th colspan="2">@string.Format("{0:#,##0}", totalAmout) VND </th>
+            </tr>
+        }
+        else
+        {
+            <tr>
+                <td colspan="7">Không có sản phẩm nào trong giỏ hàng</td>
+            </tr>
+        }
+    </tbody>
+</table>

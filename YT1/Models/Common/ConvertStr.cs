@@ -7,6 +7,40 @@ namespace YT1.Models.Common
 {
     public class ConvertStr
     {
+        private static bool IsNumeric(object value)
+        {
+            return value is byte
+                || value is short
+                || value is ushort
+                || value is int
+                || value is uint
+                || value is long
+                || value is ulong
+                || value is float
+                || value is double
+                || value is decimal;
+        }
+        public static string FormatNumber(object value, int soSauDauPhay = 2)
+        {
+            bool isNumber = IsNumeric(value);
+            decimal GT = 0;
+            if (isNumber)
+            {
+                GT = Convert.ToDecimal(value);
+            }
+
+            string str = "";
+            string thapPhan = "";
+            for (int i = 0; i < soSauDauPhay; i++)
+            {
+                thapPhan += "#";
+            }
+            if (thapPhan.Length > 0) thapPhan = "." + thapPhan;
+            string sNumFormat = string.Format("0:#,###0{0}", thapPhan);
+            str = string.Format("{" + sNumFormat + "}", GT);
+
+            return str;
+        }
         private static readonly string[] VietNamChar = new string[]
         {
             "AaEeOoUuIiDdYy",

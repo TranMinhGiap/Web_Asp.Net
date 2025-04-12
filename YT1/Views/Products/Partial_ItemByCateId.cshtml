@@ -1,0 +1,69 @@
+﻿@*@model IEnumerable<YT1.Models.EF.Product>
+
+    @if (Model != null && Model.Any())
+    {
+        foreach (var item in Model)
+        {
+            <div class="product-item @item.ProductCategory.Alias">
+                <div class="product discount product_filter">
+                    <div class="product_image">
+                        <img src="@item.Images" alt="@item.Title">
+                    </div>
+                    <div class="favorite favorite_left"></div>
+                    <div class="product_bubble product_bubble_right product_bubble_red d-flex flex-column align-items-center"><span>-$20</span></div>
+                    <div class="product_info">
+                        <h6 class="product_name"><a href="@item.Alias">@item.Title</a></h6>
+                        @if (item.PriceSale > 0)
+                        {
+                            <div class="product_price">@item.PriceSale<span>@item.Price</span></div>
+                        }
+                        else
+                        {
+                            <div class="product_price">@item.Price</div>
+                        }
+
+                    </div>
+                </div>
+                <div class="red_button add_to_cart_button"><a href="#">add to cart</a></div>
+            </div>
+        }
+    }*@
+
+@model IEnumerable<YT1.Models.EF.Product>
+
+@if (Model != null && Model.Any())
+{
+    foreach (var item in Model)
+    {
+        <div class="product-item @(item.ProductCategory != null ? item.ProductCategory.Alias : "")">
+            <div class="product discount product_filter">
+                <div class="product_image">
+                    <img src="@item.Images" alt="@item.Title">
+                </div>
+                <div class="favorite favorite_left"></div>
+                <!-- Chỉ hiển thị phần giảm giá nếu PriceSale > 0 -->
+                @if (item.PriceSale > 0)
+                {
+                    var discount = item.Price - item.PriceSale;
+                    <div class="product_bubble product_bubble_right product_bubble_red d-flex flex-column align-items-center">
+                        <span>
+                            -@(discount >= 1000 ? (discount / 1000).ToString("N0", new System.Globalization.CultureInfo("vi-VN")) + "K" : discount.ToString("N0", new System.Globalization.CultureInfo("vi-VN")))
+                        </span>
+                    </div>
+                }
+                <div class="product_info">
+                    <h6 class="product_name"><a href="/chi-tiet/@item.Alias/@item.Id">@item.Title</a></h6>
+                    @if (item.PriceSale > 0)
+                    {
+                        <div class="product_price">@item.PriceSale.ToString("N0", new System.Globalization.CultureInfo("vi-VN"))<span>@item.Price.ToString("N0", new System.Globalization.CultureInfo("vi-VN"))</span></div>
+                    }
+                    else
+                    {
+                        <div class="product_price">@item.Price.ToString("N0", new System.Globalization.CultureInfo("vi-VN"))</div>
+                    }
+                </div>
+            </div>
+            <div class="red_button add_to_cart_button"><a href="#" class="btnAddToCart" data-id="@item.Id">add to cart</a></div>
+        </div>
+    }
+}

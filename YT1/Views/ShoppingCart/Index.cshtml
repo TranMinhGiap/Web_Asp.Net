@@ -1,0 +1,73 @@
+﻿
+@{
+    ViewBag.Title = "Cart";
+}
+
+<div class="container product_section_container">
+    <div class="row">
+        <div class="col product_section clearfix">
+
+            <!-- Breadcrumbs -->
+
+            <div class="breadcrumbs d-flex flex-row align-items-center">
+                <ul>
+                    <li><a href="/">Home</a></li>
+                    <li class="active"><a href="/"><i class="fa fa-angle-right" aria-hidden="true"></i>Cart</a></li>
+                </ul>
+            </div>
+
+            <!-- Main Content -->
+
+            <div class="main_content" id="cartList">
+                <div id="load_data">
+                    @Html.Action("PartialItemCart", "ShoppingCart")
+                </div>
+                <div class="text-right">
+                    <a href="#" class="btn btn-success">Thanh Toán</a>
+                    <a href="#" class="btn btn-danger btnDeleteAll">Xóa</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section style{
+    <link rel="stylesheet" type="text/css" href="~/assets/User/styles/categories_styles.css">
+    <link rel="stylesheet" type="text/css" href="~/assets/User/styles/categories_responsive.css">
+    <style>
+        #cartList{
+            width: 100%;
+            padding: 0px;
+        }
+        .item_image{
+            width: 120px;
+            aspect-ratio: 4/3;
+            margin: 0 auto;
+        }
+        .item_image img{
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        .table td,
+        .table th {
+            vertical-align: middle !important;
+            text-align: center;
+        }
+        .product_quantity{
+            width: 50px;
+            text-align: center;
+            border-color: transparent;
+            transition: 0.5s ease-in-out;
+        }
+        .product_quantity:hover {
+            border-color: black;
+            cursor: pointer;
+        }
+    </style>
+}
+
+@section script{
+    <script src="~/assets/User/js/categories_custom.js"></script>
+}
+

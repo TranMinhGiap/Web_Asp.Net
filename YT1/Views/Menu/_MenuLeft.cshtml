@@ -1,0 +1,29 @@
+﻿@model IEnumerable<YT1.Models.EF.ProductCategory>
+
+@if (Model != null && Model.Any())
+{
+    <ul class="sidebar_categories">
+
+        @if (ViewBag.Category == null)
+        {
+            <li class="active"><a href="/san-pham"><span><i class="fa fa-angle-double-right" aria-hidden="true"></i></span>ALL</a></li>
+        }
+        else
+        {
+            <li><a href="/san-pham">ALL</a></li>
+        }
+        @foreach (var item in Model)
+        {
+            if (ViewBag.Category == item.Id)
+            {
+                <li class="active"><a href="/danh-muc-san-pham/@item.Id"><span><i class="fa fa-angle-double-right" aria-hidden="true"></i></span>@item.Title</a></li>
+            }
+            else
+            {
+                <li><a href="/danh-muc-san-pham/@item.Id">@item.Title</a></li>
+            }
+
+        }
+
+    </ul>
+}

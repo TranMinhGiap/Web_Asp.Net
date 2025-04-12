@@ -13,6 +13,33 @@ namespace YT1
         {
             routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
 
+            //
+            routes.MapRoute(
+                name: "CategoryProduct",
+                url: "san-pham",
+                defaults: new { controller = "Products", action = "Index", alias = UrlParameter.Optional },
+                namespaces: new[] { "YT1.Controllers" }
+            );
+            routes.MapRoute(
+                name: "Home",
+                url: "trang-chu",
+                defaults: new { controller = "Home", action = "Index", alias = UrlParameter.Optional },
+                namespaces: new[] { "YT1.Controllers" }
+            );
+            routes.MapRoute(
+                name: "PaginationProduct",
+                url: "danh-muc-san-pham/{id}",
+                defaults: new { controller = "Products", action = "Index", id = UrlParameter.Optional },
+                namespaces: new[] { "YT1.Controllers" }
+            );
+            routes.MapRoute(
+                name: "DetailProduct",
+                url: "chi-tiet/{alias}/{id}",
+                defaults: new { controller = "Products", action = "Details", id = UrlParameter.Optional },
+                namespaces: new[] { "YT1.Controllers" }
+            );
+            //
+
             routes.MapRoute(
                 name: "Default",
                 url: "{controller}/{action}/{id}",
