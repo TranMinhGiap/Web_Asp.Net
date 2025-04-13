@@ -1,0 +1,41 @@
+﻿
+@{
+    ViewBag.Title = "CheckOutSuccess";
+}
+
+<div class="container product_section_container">
+    <div class="row">
+        <div class="col product_section clearfix">
+
+            <!-- Breadcrumbs -->
+
+            <div class="breadcrumbs d-flex flex-row align-items-center">
+                <ul>
+                    <li><a href="/">Home</a></li>
+                    <li class="active"><a href="/"><i class="fa fa-angle-right" aria-hidden="true"></i>Cart</a></li>
+                </ul>
+            </div>
+
+            <!-- Main Content -->
+
+            <div style="width: 100%">
+                <div class="CheckOutSuccess">
+                    <h2 class="text-center">Đặt Hàng Thành Công !</h2>
+                    <a style="display:inline-block; margin: 4px auto" href="/Home" class="btn btn-outline-success">Trở Về Trang Chủ</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section style{
+    <link rel="stylesheet" type="text/css" href="~/assets/User/styles/categories_styles.css">
+    <link rel="stylesheet" type="text/css" href="~/assets/User/styles/categories_responsive.css">
+}
+
+@section script{
+    <script src="~/assets/User/js/categories_custom.js"></script>
+}
+
+
+

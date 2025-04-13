@@ -251,9 +251,22 @@
     <Compile Include="Migrations\202504040611281_RepairAntPriceProduct.Designer.cs">
       <DependentUpon>202504040611281_RepairAntPriceProduct.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202504130127378_addPaymentMethod.cs" />
+    <Compile Include="Migrations\202504130127378_addPaymentMethod.Designer.cs">
+      <DependentUpon>202504130127378_addPaymentMethod.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202504130145038_AddAntOrder.cs" />
+    <Compile Include="Migrations\202504130145038_AddAntOrder.Designer.cs">
+      <DependentUpon>202504130145038_AddAntOrder.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202504130710112_AddEmailOrder.cs" />
+    <Compile Include="Migrations\202504130710112_AddEmailOrder.Designer.cs">
+      <DependentUpon>202504130710112_AddEmailOrder.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Common\ConvertStr.cs" />
+    <Compile Include="Models\CustomerView.cs" />
     <Compile Include="Models\EF\Adv.cs" />
     <Compile Include="Models\EF\Category.cs" />
     <Compile Include="Models\EF\CommonAbs.cs" />
@@ -3348,6 +3361,9 @@
     <Content Include="Views\Products\Details.cshtml" />
     <Content Include="Views\ShoppingCart\Index.cshtml" />
     <Content Include="Views\ShoppingCart\PartialItemCart.cshtml" />
+    <Content Include="Views\ShoppingCart\CheckOut.cshtml" />
+    <Content Include="Views\ShoppingCart\PartialItemPayment.cshtml" />
+    <Content Include="Views\ShoppingCart\CheckOutSuccess.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -3424,6 +3440,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202504040611281_RepairAntPriceProduct.resx">
       <DependentUpon>202504040611281_RepairAntPriceProduct.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202504130127378_addPaymentMethod.resx">
+      <DependentUpon>202504130127378_addPaymentMethod.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202504130145038_AddAntOrder.resx">
+      <DependentUpon>202504130145038_AddAntOrder.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202504130710112_AddEmailOrder.resx">
+      <DependentUpon>202504130710112_AddEmailOrder.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

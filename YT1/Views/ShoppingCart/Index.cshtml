@@ -23,8 +23,11 @@
                     @Html.Action("PartialItemCart", "ShoppingCart")
                 </div>
                 <div class="text-right">
-                    <a href="#" class="btn btn-success">Thanh Toán</a>
-                    <a href="#" class="btn btn-danger btnDeleteAll">Xóa</a>
+                    @if (ViewBag.checkCart != null)
+                    {
+                        <a href="~/ShoppingCart/Checkout" class="btn btn-success">Thanh Toán</a>
+                        <a href="#" class="btn btn-danger btnDeleteAll">Xóa</a>
+                    }
                 </div>
             </div>
         </div>

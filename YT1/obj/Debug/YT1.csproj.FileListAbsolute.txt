@@ -127,3 +127,6 @@ D:\C#\Web_ASP\CNPM2\YT1\YT1\obj\Debug\YT1.csproj.CoreCompileInputs.cache
 D:\C#\Web_ASP\CNPM2\YT1\YT1\obj\Debug\YT1.csproj.Up2Date
 D:\C#\Web_ASP\CNPM2\YT1\YT1\obj\Debug\YT1.dll
 D:\C#\Web_ASP\CNPM2\YT1\YT1\obj\Debug\YT1.pdb
+D:\C#\Web_ASP\CNPM2\YT1\YT1\obj\Debug\YT1.Migrations.addPaymentMethod.resources
+D:\C#\Web_ASP\CNPM2\YT1\YT1\obj\Debug\YT1.Migrations.AddAntOrder.resources
+D:\C#\Web_ASP\CNPM2\YT1\YT1\obj\Debug\YT1.Migrations.AddEmailOrder.resources
