@@ -286,6 +286,7 @@
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Common\ConvertStr.cs" />
+    <Compile Include="Models\Common\SendMail.cs" />
     <Compile Include="Models\Common\ThongKeTruyCap.cs" />
     <Compile Include="Models\CustomerView.cs" />
     <Compile Include="Models\EF\Adv.cs" />
@@ -3094,6 +3095,8 @@
     <Content Include="assets\Plugin\ckfinder\ckfinder\skins\v1\skin.js" />
     <Content Include="assets\Plugin\ckfinder\ckfinder\skins\v1\uipanel.css" />
     <Content Include="assets\Plugin\ckfinder\ckfinder\translations.txt" />
+    <Content Include="assets\SendMail\send1.html" />
+    <Content Include="assets\SendMail\send2.html" />
     <Content Include="assets\User\images\banner_1.jpg" />
     <Content Include="assets\User\images\banner_2.jpg" />
     <Content Include="assets\User\images\banner_3.jpg" />

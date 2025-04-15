@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Configuration;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
@@ -86,7 +87,57 @@ namespace YT1.Controllers
 
                         _dbConect.Orders.Add(order);
                         _dbConect.SaveChanges();
+                        // Send Mail Customer
+                        var paymentMethod = "";
+                        var strProduct = "";
+                        var ThanhTien = decimal.Zero;
+                        if(order.PaymentMethod == 1)
+                        {
+                            paymentMethod = "COD";
+                        }
+                        else
+                        {
+                            paymentMethod = "Thanh Toán Qua Ngân Hàng";
+                        }
+                        foreach (var pr in cart.CartList)
+                        {
+                            strProduct += "<tr>";
+                            strProduct += "<td>"+pr.ProductName+"</td>";
+                            strProduct += "<td style=\"padding:12px\">" + pr.Quantity+"</td>";
+                            strProduct += "<td style=\"padding:12px\">" + pr.TotalPrice.ToString("N0")+"</td>";
+                            strProduct += "</tr>";
+                            ThanhTien += pr.Price * pr.Quantity;
+                        }
+                        string contentCustomer = System.IO.File.ReadAllText(Server.MapPath("~/assets/SendMail/send2.html"));
+                        contentCustomer = contentCustomer.Replace("{{MaDon}}", order.Code);
+                        contentCustomer = contentCustomer.Replace("{{SanPham}}", strProduct);
+                        contentCustomer = contentCustomer.Replace("{{ThanhTien}}", ThanhTien.ToString("N0"));
+                        contentCustomer = contentCustomer.Replace("{{TongTien}}", ThanhTien.ToString("N0"));
+                        contentCustomer = contentCustomer.Replace("{{TenKhachHang}}", order.CustomerName);
+                        contentCustomer = contentCustomer.Replace("{{Phone}}", order.Phone);
+                        contentCustomer = contentCustomer.Replace("{{Email}}", order.Email);
+                        contentCustomer = contentCustomer.Replace("{{DiaChiNhanHang}}", order.Address);
+                        contentCustomer = contentCustomer.Replace("{{PaymentMethod}}", paymentMethod);
+                        contentCustomer = contentCustomer.Replace("{{NgayDat}}", order.CreatedDate.ToString("dd/MM/yyyy"));
+
+                        YT1.Models.Common.SendMail.SendMailClient("ShopClother", "Đơn Hàng: " + order.Code, contentCustomer, order.Email);
+                        // End Send Mail Customer
                         cart.ClearCart();
+                        // Send Mail Admin
+                        string contentAdmin = System.IO.File.ReadAllText(Server.MapPath("~/assets/SendMail/send1.html"));
+                        contentAdmin = contentAdmin.Replace("{{MaDon}}", order.Code);
+                        contentAdmin = contentAdmin.Replace("{{SanPham}}", strProduct);
+                        contentAdmin = contentAdmin.Replace("{{ThanhTien}}", ThanhTien.ToString("N0"));
+                        contentAdmin = contentAdmin.Replace("{{TongTien}}", ThanhTien.ToString("N0"));
+                        contentAdmin = contentAdmin.Replace("{{TenKhachHang}}", order.CustomerName);
+                        contentAdmin = contentAdmin.Replace("{{Phone}}", order.Phone);
+                        contentAdmin = contentAdmin.Replace("{{Email}}", order.Email);
+                        contentAdmin = contentAdmin.Replace("{{DiaChiNhanHang}}", order.Address);
+                        contentAdmin = contentAdmin.Replace("{{PaymentMethod}}", paymentMethod);
+                        contentAdmin = contentAdmin.Replace("{{NgayDat}}", order.CreatedDate.ToString("dd/MM/yyyy"));
+
+                        YT1.Models.Common.SendMail.SendMailClient("ShopClother", "Đơn Hàng Mới: " + order.Code, contentAdmin, ConfigurationManager.AppSettings["EmailAdmin"]);
+                        // End Send Mail Admin
                         return RedirectToAction("CheckOutSuccess");
                     }
                     catch (Exception ex)
