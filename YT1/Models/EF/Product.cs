@@ -42,6 +42,7 @@ namespace YT1.Models.EF
         [Required(ErrorMessage = "Số lượng không được để trống")]
         [Range(0, int.MaxValue, ErrorMessage = "Số lượng phải lớn hơn hoặc bằng 0")]
         public int Quantity { get; set; }
+        public int ViewCount { get; set; }
         public int ProductCategoryId { get; set; }
         public string SeoTitle { get; set; }
         public string SeoDescription { get; set; }

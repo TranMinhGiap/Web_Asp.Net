@@ -31,6 +31,7 @@ namespace YT1.Models
         }
 
         public DbSet<Category> Categories { get; set; }
+        public DbSet<Statistical> Statisticals { get; set; }
         public DbSet<Adv> Advs { get; set; }
         public DbSet<Posts> Posts { get; set; }
         public DbSet<News> News { get; set; }

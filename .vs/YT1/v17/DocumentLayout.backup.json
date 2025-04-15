@@ -3,32 +3,20 @@
   "WorkspaceRootPath": "D:\\C#\\Web_ASP\\CNPM2\\YT1\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{932BD9FC-04B1-4640-989C-FC4C768F05C5}|YT1\\YT1.csproj|d:\\c#\\web_asp\\cnpm2\\yt1\\yt1\\controllers\\shoppingcartcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{932BD9FC-04B1-4640-989C-FC4C768F05C5}|YT1\\YT1.csproj|solutionrelative:yt1\\controllers\\shoppingcartcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{932BD9FC-04B1-4640-989C-FC4C768F05C5}|YT1\\YT1.csproj|d:\\c#\\web_asp\\cnpm2\\yt1\\yt1\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{932BD9FC-04B1-4640-989C-FC4C768F05C5}|YT1\\YT1.csproj|solutionrelative:yt1\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{932BD9FC-04B1-4640-989C-FC4C768F05C5}|YT1\\YT1.csproj|D:\\C#\\Web_ASP\\CNPM2\\YT1\\yt1\\views\\shoppingcart\\checkout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{932BD9FC-04B1-4640-989C-FC4C768F05C5}|YT1\\YT1.csproj|solutionrelative:yt1\\views\\shoppingcart\\checkout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{932BD9FC-04B1-4640-989C-FC4C768F05C5}|YT1\\YT1.csproj|d:\\c#\\web_asp\\cnpm2\\yt1\\yt1\\views\\home\\refresh.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{932BD9FC-04B1-4640-989C-FC4C768F05C5}|YT1\\YT1.csproj|solutionrelative:yt1\\views\\home\\refresh.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{932BD9FC-04B1-4640-989C-FC4C768F05C5}|YT1\\YT1.csproj|d:\\c#\\web_asp\\cnpm2\\yt1\\yt1\\views\\shoppingcart\\checkoutsuccess.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{932BD9FC-04B1-4640-989C-FC4C768F05C5}|YT1\\YT1.csproj|solutionrelative:yt1\\views\\shoppingcart\\checkoutsuccess.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{932BD9FC-04B1-4640-989C-FC4C768F05C5}|YT1\\YT1.csproj|d:\\c#\\web_asp\\cnpm2\\yt1\\yt1\\views\\products\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{932BD9FC-04B1-4640-989C-FC4C768F05C5}|YT1\\YT1.csproj|solutionrelative:yt1\\views\\products\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{932BD9FC-04B1-4640-989C-FC4C768F05C5}|YT1\\YT1.csproj|D:\\C#\\Web_ASP\\CNPM2\\YT1\\yt1\\models\\ef\\order.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{932BD9FC-04B1-4640-989C-FC4C768F05C5}|YT1\\YT1.csproj|solutionrelative:yt1\\models\\ef\\order.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{932BD9FC-04B1-4640-989C-FC4C768F05C5}|YT1\\YT1.csproj|D:\\C#\\Web_ASP\\CNPM2\\YT1\\yt1\\models\\customerview.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{932BD9FC-04B1-4640-989C-FC4C768F05C5}|YT1\\YT1.csproj|solutionrelative:yt1\\models\\customerview.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{932BD9FC-04B1-4640-989C-FC4C768F05C5}|YT1\\YT1.csproj|D:\\C#\\Web_ASP\\CNPM2\\YT1\\yt1\\views\\shoppingcart\\partialitemcart.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{932BD9FC-04B1-4640-989C-FC4C768F05C5}|YT1\\YT1.csproj|solutionrelative:yt1\\views\\shoppingcart\\partialitemcart.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{932BD9FC-04B1-4640-989C-FC4C768F05C5}|YT1\\YT1.csproj|D:\\C#\\Web_ASP\\CNPM2\\YT1\\yt1\\assets\\user\\jsshopping.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
-      "RelativeMoniker": "D:0:0:{932BD9FC-04B1-4640-989C-FC4C768F05C5}|YT1\\YT1.csproj|solutionrelative:yt1\\assets\\user\\jsshopping.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
+      "AbsoluteMoniker": "D:0:0:{932BD9FC-04B1-4640-989C-FC4C768F05C5}|YT1\\YT1.csproj|d:\\c#\\web_asp\\cnpm2\\yt1\\yt1\\controllers\\productscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{932BD9FC-04B1-4640-989C-FC4C768F05C5}|YT1\\YT1.csproj|solutionrelative:yt1\\controllers\\productscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -38,99 +26,59 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 3,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "ShoppingCartController.cs",
-              "DocumentMoniker": "D:\\C#\\Web_ASP\\CNPM2\\YT1\\YT1\\Controllers\\ShoppingCartController.cs",
-              "RelativeDocumentMoniker": "YT1\\Controllers\\ShoppingCartController.cs",
-              "ToolTip": "D:\\C#\\Web_ASP\\CNPM2\\YT1\\YT1\\Controllers\\ShoppingCartController.cs",
-              "RelativeToolTip": "YT1\\Controllers\\ShoppingCartController.cs",
-              "ViewState": "AgIAACUAAAAAAAAAAAAgwCMAAAA0AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-11T14:01:16.296Z",
-              "IsPinned": true,
+              "DocumentIndex": 2,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "D:\\C#\\Web_ASP\\CNPM2\\YT1\\YT1\\Views\\Products\\Index.cshtml",
+              "RelativeDocumentMoniker": "YT1\\Views\\Products\\Index.cshtml",
+              "ToolTip": "D:\\C#\\Web_ASP\\CNPM2\\YT1\\YT1\\Views\\Products\\Index.cshtml",
+              "RelativeToolTip": "YT1\\Views\\Products\\Index.cshtml",
+              "ViewState": "AgIAABUAAAAAAAAAAAAAAC0AAAAzAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-04-15T00:55:55.464Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 3,
-              "Title": "Order.cs",
-              "DocumentMoniker": "D:\\C#\\Web_ASP\\CNPM2\\YT1\\YT1\\Models\\EF\\Order.cs",
-              "RelativeDocumentMoniker": "YT1\\Models\\EF\\Order.cs",
-              "ToolTip": "D:\\C#\\Web_ASP\\CNPM2\\YT1\\YT1\\Models\\EF\\Order.cs",
-              "RelativeToolTip": "YT1\\Models\\EF\\Order.cs",
-              "ViewState": "AgIAABIAAAAAAAAAAAAYwCIAAAAqAAAAAAAAAA==",
+              "Title": "ProductsController.cs",
+              "DocumentMoniker": "D:\\C#\\Web_ASP\\CNPM2\\YT1\\YT1\\Controllers\\ProductsController.cs",
+              "RelativeDocumentMoniker": "YT1\\Controllers\\ProductsController.cs",
+              "ToolTip": "D:\\C#\\Web_ASP\\CNPM2\\YT1\\YT1\\Controllers\\ProductsController.cs",
+              "RelativeToolTip": "YT1\\Controllers\\ProductsController.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAAA0AAAAfAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-12T14:05:22.726Z",
-              "IsPinned": true,
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "CheckOutSuccess.cshtml",
-              "DocumentMoniker": "D:\\C#\\Web_ASP\\CNPM2\\YT1\\YT1\\Views\\ShoppingCart\\CheckOutSuccess.cshtml",
-              "RelativeDocumentMoniker": "YT1\\Views\\ShoppingCart\\CheckOutSuccess.cshtml",
-              "ToolTip": "D:\\C#\\Web_ASP\\CNPM2\\YT1\\YT1\\Views\\ShoppingCart\\CheckOutSuccess.cshtml",
-              "RelativeToolTip": "YT1\\Views\\ShoppingCart\\CheckOutSuccess.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAMAAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-04-13T08:52:18.292Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "CustomerView.cs",
-              "DocumentMoniker": "D:\\C#\\Web_ASP\\CNPM2\\YT1\\YT1\\Models\\CustomerView.cs",
-              "RelativeDocumentMoniker": "YT1\\Models\\CustomerView.cs",
-              "ToolTip": "D:\\C#\\Web_ASP\\CNPM2\\YT1\\YT1\\Models\\CustomerView.cs",
-              "RelativeToolTip": "YT1\\Models\\CustomerView.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAFAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-12T16:12:46.855Z",
+              "WhenOpened": "2025-04-15T00:55:41.028Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "CheckOut.cshtml",
-              "DocumentMoniker": "D:\\C#\\Web_ASP\\CNPM2\\YT1\\YT1\\Views\\ShoppingCart\\CheckOut.cshtml",
-              "RelativeDocumentMoniker": "YT1\\Views\\ShoppingCart\\CheckOut.cshtml",
-              "ToolTip": "D:\\C#\\Web_ASP\\CNPM2\\YT1\\YT1\\Views\\ShoppingCart\\CheckOut.cshtml",
-              "RelativeToolTip": "YT1\\Views\\ShoppingCart\\CheckOut.cshtml",
-              "ViewState": "AgIAACwAAAAAAAAAAADgv0MAAAAmAAAAAAAAAA==",
+              "Title": "Refresh.cshtml",
+              "DocumentMoniker": "D:\\C#\\Web_ASP\\CNPM2\\YT1\\YT1\\Views\\Home\\Refresh.cshtml",
+              "RelativeDocumentMoniker": "YT1\\Views\\Home\\Refresh.cshtml",
+              "ToolTip": "D:\\C#\\Web_ASP\\CNPM2\\YT1\\YT1\\Views\\Home\\Refresh.cshtml",
+              "RelativeToolTip": "YT1\\Views\\Home\\Refresh.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABQAAAApAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-04-12T13:52:18.769Z",
+              "WhenOpened": "2025-04-15T00:51:05.19Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "PartialItemCart.cshtml",
-              "DocumentMoniker": "D:\\C#\\Web_ASP\\CNPM2\\YT1\\YT1\\Views\\ShoppingCart\\PartialItemCart.cshtml",
-              "RelativeDocumentMoniker": "YT1\\Views\\ShoppingCart\\PartialItemCart.cshtml",
-              "ToolTip": "D:\\C#\\Web_ASP\\CNPM2\\YT1\\YT1\\Views\\ShoppingCart\\PartialItemCart.cshtml",
-              "RelativeToolTip": "YT1\\Views\\ShoppingCart\\PartialItemCart.cshtml",
-              "ViewState": "AgIAAAwAAAAAAAAAAAAswCoAAAAVAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-04-12T07:34:11.553Z",
+              "DocumentIndex": 0,
+              "Title": "HomeController.cs",
+              "DocumentMoniker": "D:\\C#\\Web_ASP\\CNPM2\\YT1\\YT1\\Controllers\\HomeController.cs",
+              "RelativeDocumentMoniker": "YT1\\Controllers\\HomeController.cs",
+              "ToolTip": "D:\\C#\\Web_ASP\\CNPM2\\YT1\\YT1\\Controllers\\HomeController.cs",
+              "RelativeToolTip": "YT1\\Controllers\\HomeController.cs",
+              "ViewState": "AgIAAA4AAAAAAAAAAAAQwB0AAAAlAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-15T00:23:49.063Z",
               "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "jsShopping.js",
-              "DocumentMoniker": "D:\\C#\\Web_ASP\\CNPM2\\YT1\\YT1\\assets\\User\\jsShopping.js",
-              "RelativeDocumentMoniker": "YT1\\assets\\User\\jsShopping.js",
-              "ToolTip": "D:\\C#\\Web_ASP\\CNPM2\\YT1\\YT1\\assets\\User\\jsShopping.js",
-              "RelativeToolTip": "YT1\\assets\\User\\jsShopping.js",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAEMAAAAJAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
-              "WhenOpened": "2025-04-11T12:52:17.116Z"
             }
           ]
         }

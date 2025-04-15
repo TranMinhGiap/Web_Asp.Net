@@ -38,7 +38,13 @@ namespace YT1.Controllers
         public ActionResult Details(int id, string alias)
         {
             var item = _dbConect.products.Find(id);
-            return View(item);
+            if(item != null)
+            {
+                item.ViewCount = item.ViewCount + 1;
+                _dbConect.SaveChanges();
+                return View(item);
+            }
+            return HttpNotFound();
         }
         protected override void Dispose(bool disposing)
         {

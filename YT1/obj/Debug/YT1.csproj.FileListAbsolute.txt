@@ -130,3 +130,13 @@ D:\C#\Web_ASP\CNPM2\YT1\YT1\obj\Debug\YT1.pdb
 D:\C#\Web_ASP\CNPM2\YT1\YT1\obj\Debug\YT1.Migrations.addPaymentMethod.resources
 D:\C#\Web_ASP\CNPM2\YT1\YT1\obj\Debug\YT1.Migrations.AddAntOrder.resources
 D:\C#\Web_ASP\CNPM2\YT1\YT1\obj\Debug\YT1.Migrations.AddEmailOrder.resources
+D:\C#\Web_ASP\CNPM2\YT1\YT1\obj\Debug\YT1.Migrations.AddStatistical.resources
+D:\C#\Web_ASP\CNPM2\YT1\YT1\obj\Debug\YT1.Migrations.UpdateStatistical.resources
+D:\C#\Web_ASP\CNPM2\YT1\YT1\bin\Dapper.dll
+D:\C#\Web_ASP\CNPM2\YT1\YT1\bin\Microsoft.Bcl.AsyncInterfaces.dll
+D:\C#\Web_ASP\CNPM2\YT1\YT1\bin\System.Runtime.CompilerServices.Unsafe.dll
+D:\C#\Web_ASP\CNPM2\YT1\YT1\bin\System.Threading.Tasks.Extensions.dll
+D:\C#\Web_ASP\CNPM2\YT1\YT1\bin\Dapper.xml
+D:\C#\Web_ASP\CNPM2\YT1\YT1\bin\Microsoft.Bcl.AsyncInterfaces.xml
+D:\C#\Web_ASP\CNPM2\YT1\YT1\bin\System.Runtime.CompilerServices.Unsafe.xml
+D:\C#\Web_ASP\CNPM2\YT1\YT1\bin\System.Threading.Tasks.Extensions.xml
