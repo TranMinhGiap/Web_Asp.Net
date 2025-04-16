@@ -140,3 +140,5 @@ D:\C#\Web_ASP\CNPM2\YT1\YT1\bin\Dapper.xml
 D:\C#\Web_ASP\CNPM2\YT1\YT1\bin\Microsoft.Bcl.AsyncInterfaces.xml
 D:\C#\Web_ASP\CNPM2\YT1\YT1\bin\System.Runtime.CompilerServices.Unsafe.xml
 D:\C#\Web_ASP\CNPM2\YT1\YT1\bin\System.Threading.Tasks.Extensions.xml
+D:\C#\Web_ASP\CNPM2\YT1\YT1\obj\Debug\YT1.Migrations.UpdateClassOrder.resources
+D:\C#\Web_ASP\CNPM2\YT1\YT1\obj\Debug\YT1.Migrations.AddStatus.resources

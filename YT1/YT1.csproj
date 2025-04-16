@@ -194,6 +194,7 @@
     <Compile Include="Areas\Admin\Controllers\CategoryController.cs" />
     <Compile Include="Areas\Admin\Controllers\HomeController.cs" />
     <Compile Include="Areas\Admin\Controllers\NewsController.cs" />
+    <Compile Include="Areas\Admin\Controllers\OrderController.cs" />
     <Compile Include="Areas\Admin\Controllers\PostsController.cs" />
     <Compile Include="Areas\Admin\Controllers\ProductCategoryController.cs" />
     <Compile Include="Areas\Admin\Controllers\ProductController.cs" />
@@ -282,6 +283,14 @@
     <Compile Include="Migrations\202504141303330_UpdateStatistical.cs" />
     <Compile Include="Migrations\202504141303330_UpdateStatistical.Designer.cs">
       <DependentUpon>202504141303330_UpdateStatistical.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202504151455291_UpdateClassOrder.cs" />
+    <Compile Include="Migrations\202504151455291_UpdateClassOrder.Designer.cs">
+      <DependentUpon>202504151455291_UpdateClassOrder.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202504151528123_AddStatus.cs" />
+    <Compile Include="Migrations\202504151528123_AddStatus.Designer.cs">
+      <DependentUpon>202504151528123_AddStatus.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -3332,6 +3341,8 @@
     <Content Include="assets\User\plugins\themify-icons\fonts\themify.eot" />
     <Content Include="assets\User\plugins\themify-icons\fonts\themify.ttf" />
     <Content Include="assets\User\plugins\themify-icons\fonts\themify.woff" />
+    <Content Include="Areas\Admin\Views\Order\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\Order\Details.cshtml" />
     <None Include="Scripts\jquery-3.7.0.intellisense.js" />
     <Content Include="Scripts\jquery-3.7.0.js" />
     <Content Include="Scripts\jquery-3.7.0.min.js" />
@@ -3482,6 +3493,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202504141303330_UpdateStatistical.resx">
       <DependentUpon>202504141303330_UpdateStatistical.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202504151455291_UpdateClassOrder.resx">
+      <DependentUpon>202504151455291_UpdateClassOrder.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202504151528123_AddStatus.resx">
+      <DependentUpon>202504151528123_AddStatus.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

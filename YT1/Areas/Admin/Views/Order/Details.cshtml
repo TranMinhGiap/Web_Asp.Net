@@ -1,0 +1,113 @@
+﻿@model YT1.Models.EF.Order
+@{
+    ViewBag.title = "Chi Tiết Đơn Hàng";
+    ViewBag.action = "Details";
+    Layout = "~/Areas/Admin/Views/Shared/_LayoutAdmin.cshtml";
+    var idx = 0;
+}
+
+<section style="width: 100%" class="content">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-12">
+                <!-- Default box -->
+                <div class="card">
+                    <div class="card-header">
+                        <h3 class="card-title">Thông Tin</h3>
+
+                        <div class="card-tools">
+                            <button type="button" class="btn btn-tool" data-card-widget="collapse" title="Collapse">
+                                <i class="fas fa-minus"></i>
+                            </button>
+                            <button type="button" class="btn btn-tool" data-card-widget="remove" title="Remove">
+                                <i class="fas fa-times"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label>Mã Đơn Hàng</label>
+                                    <p class="form-control">@Model.Code</p>
+                                </div>
+                                <div class="form-group">
+                                    <label>Tổng Tiền</label>
+                                    <p class="form-control">@Model.TotalAmount.ToString("N0") VNĐ</p>
+                                </div>
+                                <div class="form-group">
+                                    <label>Ngày Tạo</label>
+                                    <p class="form-control">@Model.CreatedDate.ToString("dd/MM/yyyy")</p>
+                                </div>
+                                <div class="form-group">
+                                    <label>Trạng Thái</label>
+                                    <p class="form-control">Chưa Thanh Toán</p>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label>Họ Tên Khách Hàng</label>
+                                    <p class="form-control">@Model.CustomerName</p>
+                                </div>
+                                <div class="form-group">
+                                    <label>Số Điện Thoại</label>
+                                    <p class="form-control">@Model.Phone</p>
+                                </div>
+                                <div class="form-group">
+                                    <label>Email</label>
+                                    <p class="form-control">@Model.Email</p>
+                                </div>
+                                <div class="form-group">
+                                    <label>Địa Chỉ</label>
+                                    <p class="form-control">@Model.Address</p>
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <h2>Danh Sách Sản Phẩm</h2>
+                            </div>
+                            <div class="col-12">
+                                <table class="table table-bordered">
+                                    <thead>
+                                        <tr>
+                                            <th>STT</th>
+                                            <th>Tên Sản Phẩm</th>
+                                            <th>Giá</th>
+                                            <th>Số Lượng</th>
+                                            <th>Thành Tiền</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        @foreach (var item in ViewBag.orderDetails)
+                                        {
+                                            <tr>
+                                                <td>@(++idx)</td>
+                                                <td>@item.Product.Title</td>
+                                                <td>@((item.Price).ToString("N0")) VNĐ</td>
+                                                <td>@item.Quantity</td>
+                                                <td>@((item.Price * item.Quantity).ToString("N0")) VNĐ</td>
+                                            </tr>
+                                        }
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- /.card-body -->
+                    <div class="card-footer">
+                    </div>
+                    <!-- /.card-footer-->
+                </div>
+                <!-- /.card -->
+            </div>
+        </div>
+    </div>
+</section>
+
+@section style{
+    <style>
+        td, th{
+            text-align: center;
+        }
+    </style>    
+}
+

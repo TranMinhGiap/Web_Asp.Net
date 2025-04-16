@@ -34,7 +34,8 @@ namespace YT1.Models.EF
         public decimal TotalAmount { get; set; } 
         public int Quantity { get; set; } 
         public int PaymentMethod { get; set; } 
+        public int Status { get; set; } 
 
-        public ICollection<OrderDetail> OrderDetails { get; set; }
+        public virtual ICollection<OrderDetail> OrderDetails { get; set; }
     }
 }
