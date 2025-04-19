@@ -211,7 +211,7 @@
                 <nav class="mt-2">
                     <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
                         <!-- Add icons to the links using the .nav-icon class
-                             with font-awesome or any other icon font library -->
+                        with font-awesome or any other icon font library -->
                         <li class="nav-item menu-open">
                             <a href="#" class="nav-link active">
                                 <i class="nav-icon fas fa-tachometer-alt"></i>
@@ -242,10 +242,19 @@
                             </ul>
                         </li>
                         <li class="nav-item">
-                            <a href="~/Admin/Product" class="nav-link">
+                            <a href="javascript:document.getElementById('logOffForm').submit()" class="nav-link">
                                 <i class="nav-icon fas fa-th"></i>
                                 <p>
-                                    Product
+                                    Đăng Xuất
+                                    <span class="right badge badge-danger">New</span>
+                                </p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="~/Admin/Role" class="nav-link">
+                                <i class="nav-icon fas fa-th"></i>
+                                <p>
+                                    Role
                                     <span class="right badge badge-danger">New</span>
                                 </p>
                             </a>
@@ -443,21 +452,21 @@
                             <a href="#" class="nav-link">
                                 <i class="nav-icon fas fa-table"></i>
                                 <p>
-                                    Tables
+                                    Thông Tin
                                     <i class="fas fa-angle-left right"></i>
                                 </p>
                             </a>
                             <ul class="nav nav-treeview">
                                 <li class="nav-item">
-                                    <a href="pages/tables/simple.html" class="nav-link">
+                                    <a href="/Admin/Account" class="nav-link">
                                         <i class="far fa-circle nav-icon"></i>
-                                        <p>Simple Tables</p>
+                                        <p>Tài Khoản</p>
                                     </a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="pages/tables/data.html" class="nav-link">
+                                    <a href="/Admin/Role" class="nav-link">
                                         <i class="far fa-circle nav-icon"></i>
-                                        <p>DataTables</p>
+                                        <p>Phân Quyền</p>
                                     </a>
                                 </li>
                                 <li class="nav-item">
@@ -857,15 +866,15 @@
                     <div class="row mb-2">
                         <div class="col-sm-6">
                             <h1 class="m-0">@ViewBag.title</h1>
-                        </div> 
+                        </div>
                         <div class="col-sm-6">
                             <ol class="breadcrumb float-sm-right">
                                 <li class="breadcrumb-item"><a href="#">@ViewBag.title</a></li>
                                 <li class="breadcrumb-item active">@ViewBag.action</li>
                             </ol>
-                        </div> 
-                    </div> 
-                </div> 
+                        </div>
+                    </div>
+                </div>
             </div>
             <!-- /.content-header -->
             <!-- Main content -->
@@ -936,6 +945,16 @@
     <!--End Plugin-->
 
     @RenderSection("script", false);
+
+    @if (Request.IsAuthenticated)
+    {
+        <div style="display: none">
+            @using (Html.BeginForm("LogOff", "Account", FormMethod.Post, new { id = "logOffForm" }))
+            {
+                @Html.AntiForgeryToken()
+            }
+        </div>
+    }
 </body>
 </html>
 

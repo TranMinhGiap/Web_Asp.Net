@@ -1,0 +1,96 @@
+﻿@using Microsoft.AspNet.Identity.EntityFramework
+@model IEnumerable<IdentityRole>
+@{
+    ViewBag.Title = "Role";
+    Layout = "~/Areas/Admin/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<section style="width: 100%" class="content">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-12">
+                <!-- Default box -->
+                <div class="card">
+                    <div class="card-header">
+                        <h3 class="card-title">Danh Sách Quyền</h3>
+
+                        <div class="card-tools">
+                            <a href="/Admin/Role/Create" class="btn btn-outline-success">Thêm Mới</a>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <table class="table table-bordered">
+                            <thead>
+                                <tr>
+                                    <th>STT</th>
+                                    <th>Tên</th>
+                                    <th>*</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @if (Model != null && Model.Any())
+                                {
+                                    var idx = 0;
+                                    foreach (var item in Model)
+                                    {
+                                        <tr id="trow_@item.Id">
+                                            <td>@(++idx)</td>
+                                            <td>@item.Name</td>
+                                            <td>
+                                                <a href="@Url.Action("Update", "Role", new { id = item.Id })" class="btn btn-outline-primary">Sửa</a>
+                                                <a data-id="@item.Id" class="btn-delete btn btn-outline-danger">Xóa</a>
+                                            </td>
+                                        </tr>
+                                    }
+                                }
+                            </tbody>
+                        </table>
+                    </div>
+                    <!-- /.card-body -->
+                    <div class="card-footer">
+                    </div>
+                    <!-- /.card-footer-->
+                </div>
+                <!-- /.card -->
+            </div>
+        </div>
+    </div>
+</section>
+
+@section childNavBar{
+    <a href="~/Admin/Role" class="nav-link">Role</a>
+}
+
+@section style{
+    <style>
+        th, td {
+            text-align: center;
+        }
+    </style>
+}
+@section script{
+    <script>
+        $(document).ready(function () {
+            $('body').on('click', '.btn-delete', function () {
+                var id = $(this).data("id");
+                var conf = confirm('Bạn có muốn xóa bản Role này không ?');
+                if (conf == true) {
+                    $.ajax({
+                        url: '/Admin/Role/Delete',
+                        type: 'POST',
+                        data: { id: id },
+                        success: function (rs) {
+                            if (rs.success) {
+                                $('#trow_' + id).remove();
+                            }
+                            else {
+                                alert("Xóa thất bại: " + rs.message);
+                            }
+                        }
+                    });
+                }
+            });
+        });
+    </script>
+}
+

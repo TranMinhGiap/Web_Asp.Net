@@ -11,6 +11,7 @@ using YT1.Models.EF;
 
 namespace YT1.Areas.Admin.Controllers
 {
+    [Authorize(Roles = "Admin")]
     public class PostsController : Controller
     {
         ApplicationDbContext _dbConect = new ApplicationDbContext();

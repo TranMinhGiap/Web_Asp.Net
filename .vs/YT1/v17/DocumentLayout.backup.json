@@ -3,32 +3,24 @@
   "WorkspaceRootPath": "D:\\C#\\Web_ASP\\CNPM2\\YT1\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{932BD9FC-04B1-4640-989C-FC4C768F05C5}|YT1\\YT1.csproj|d:\\c#\\web_asp\\cnpm2\\yt1\\yt1\\areas\\admin\\controllers\\ordercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{932BD9FC-04B1-4640-989C-FC4C768F05C5}|YT1\\YT1.csproj|solutionrelative:yt1\\areas\\admin\\controllers\\ordercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{932BD9FC-04B1-4640-989C-FC4C768F05C5}|YT1\\YT1.csproj|d:\\c#\\web_asp\\cnpm2\\yt1\\yt1\\areas\\admin\\controllers\\accountcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{932BD9FC-04B1-4640-989C-FC4C768F05C5}|YT1\\YT1.csproj|solutionrelative:yt1\\areas\\admin\\controllers\\accountcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{932BD9FC-04B1-4640-989C-FC4C768F05C5}|YT1\\YT1.csproj|D:\\C#\\Web_ASP\\CNPM2\\YT1\\yt1\\areas\\admin\\views\\order\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{932BD9FC-04B1-4640-989C-FC4C768F05C5}|YT1\\YT1.csproj|solutionrelative:yt1\\areas\\admin\\views\\order\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{932BD9FC-04B1-4640-989C-FC4C768F05C5}|YT1\\YT1.csproj|D:\\C#\\Web_ASP\\CNPM2\\YT1\\yt1\\areas\\admin\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{932BD9FC-04B1-4640-989C-FC4C768F05C5}|YT1\\YT1.csproj|solutionrelative:yt1\\areas\\admin\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{932BD9FC-04B1-4640-989C-FC4C768F05C5}|YT1\\YT1.csproj|D:\\C#\\Web_ASP\\CNPM2\\YT1\\yt1\\areas\\admin\\views\\order\\details.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{932BD9FC-04B1-4640-989C-FC4C768F05C5}|YT1\\YT1.csproj|solutionrelative:yt1\\areas\\admin\\views\\order\\details.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{932BD9FC-04B1-4640-989C-FC4C768F05C5}|YT1\\YT1.csproj|D:\\C#\\Web_ASP\\CNPM2\\YT1\\yt1\\controllers\\accountcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{932BD9FC-04B1-4640-989C-FC4C768F05C5}|YT1\\YT1.csproj|solutionrelative:yt1\\controllers\\accountcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{932BD9FC-04B1-4640-989C-FC4C768F05C5}|YT1\\YT1.csproj|D:\\C#\\Web_ASP\\CNPM2\\YT1\\yt1\\models\\ef\\orderdetail.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{932BD9FC-04B1-4640-989C-FC4C768F05C5}|YT1\\YT1.csproj|solutionrelative:yt1\\models\\ef\\orderdetail.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{932BD9FC-04B1-4640-989C-FC4C768F05C5}|YT1\\YT1.csproj|D:\\C#\\Web_ASP\\CNPM2\\YT1\\yt1\\areas\\admin\\views\\account\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{932BD9FC-04B1-4640-989C-FC4C768F05C5}|YT1\\YT1.csproj|solutionrelative:yt1\\areas\\admin\\views\\account\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{932BD9FC-04B1-4640-989C-FC4C768F05C5}|YT1\\YT1.csproj|D:\\C#\\Web_ASP\\CNPM2\\YT1\\yt1\\areas\\admin\\views\\product\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{932BD9FC-04B1-4640-989C-FC4C768F05C5}|YT1\\YT1.csproj|solutionrelative:yt1\\areas\\admin\\views\\product\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{932BD9FC-04B1-4640-989C-FC4C768F05C5}|YT1\\YT1.csproj|D:\\C#\\Web_ASP\\CNPM2\\YT1\\yt1\\areas\\admin\\controllers\\productcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{932BD9FC-04B1-4640-989C-FC4C768F05C5}|YT1\\YT1.csproj|solutionrelative:yt1\\areas\\admin\\controllers\\productcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{932BD9FC-04B1-4640-989C-FC4C768F05C5}|YT1\\YT1.csproj|D:\\C#\\Web_ASP\\CNPM2\\YT1\\yt1\\areas\\admin\\views\\shared\\_layoutadmin.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{932BD9FC-04B1-4640-989C-FC4C768F05C5}|YT1\\YT1.csproj|solutionrelative:yt1\\areas\\admin\\views\\shared\\_layoutadmin.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{932BD9FC-04B1-4640-989C-FC4C768F05C5}|YT1\\YT1.csproj|D:\\C#\\Web_ASP\\CNPM2\\YT1\\yt1\\areas\\admin\\views\\account\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{932BD9FC-04B1-4640-989C-FC4C768F05C5}|YT1\\YT1.csproj|solutionrelative:yt1\\areas\\admin\\views\\account\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     }
   ],
   "DocumentGroupContainers": [
@@ -43,91 +35,67 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "OrderController.cs",
-              "DocumentMoniker": "D:\\C#\\Web_ASP\\CNPM2\\YT1\\YT1\\Areas\\Admin\\Controllers\\OrderController.cs",
-              "RelativeDocumentMoniker": "YT1\\Areas\\Admin\\Controllers\\OrderController.cs",
-              "ToolTip": "D:\\C#\\Web_ASP\\CNPM2\\YT1\\YT1\\Areas\\Admin\\Controllers\\OrderController.cs",
-              "RelativeToolTip": "YT1\\Areas\\Admin\\Controllers\\OrderController.cs",
-              "ViewState": "AgIAAAYAAAAAAAAAAAAAABcAAAAhAAAAAAAAAA==",
+              "Title": "AccountController.cs",
+              "DocumentMoniker": "D:\\C#\\Web_ASP\\CNPM2\\YT1\\YT1\\Areas\\Admin\\Controllers\\AccountController.cs",
+              "RelativeDocumentMoniker": "YT1\\Areas\\Admin\\Controllers\\AccountController.cs",
+              "ToolTip": "D:\\C#\\Web_ASP\\CNPM2\\YT1\\YT1\\Areas\\Admin\\Controllers\\AccountController.cs",
+              "RelativeToolTip": "YT1\\Areas\\Admin\\Controllers\\AccountController.cs",
+              "ViewState": "AgIAAHcAAAAAAAAAAAAIwA4AAAAgAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-15T11:03:26.27Z",
+              "WhenOpened": "2025-04-19T06:15:03.266Z",
               "IsPinned": true,
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "AccountController.cs",
+              "DocumentMoniker": "D:\\C#\\Web_ASP\\CNPM2\\YT1\\YT1\\Controllers\\AccountController.cs",
+              "RelativeDocumentMoniker": "YT1\\Controllers\\AccountController.cs",
+              "ToolTip": "D:\\C#\\Web_ASP\\CNPM2\\YT1\\YT1\\Controllers\\AccountController.cs",
+              "RelativeToolTip": "YT1\\Controllers\\AccountController.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAADwv8MBAAAqAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-19T10:49:14.116Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "Index.cshtml",
-              "DocumentMoniker": "D:\\C#\\Web_ASP\\CNPM2\\YT1\\YT1\\Areas\\Admin\\Views\\Order\\Index.cshtml",
-              "RelativeDocumentMoniker": "YT1\\Areas\\Admin\\Views\\Order\\Index.cshtml",
-              "ToolTip": "D:\\C#\\Web_ASP\\CNPM2\\YT1\\YT1\\Areas\\Admin\\Views\\Order\\Index.cshtml",
-              "RelativeToolTip": "YT1\\Areas\\Admin\\Views\\Order\\Index.cshtml",
-              "ViewState": "AgIAAHcAAAAAAAAAAAAvwIwAAAA1AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-04-15T11:09:13.054Z",
-              "IsPinned": true,
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "OrderDetail.cs",
-              "DocumentMoniker": "D:\\C#\\Web_ASP\\CNPM2\\YT1\\YT1\\Models\\EF\\OrderDetail.cs",
-              "RelativeDocumentMoniker": "YT1\\Models\\EF\\OrderDetail.cs",
-              "ToolTip": "D:\\C#\\Web_ASP\\CNPM2\\YT1\\YT1\\Models\\EF\\OrderDetail.cs",
-              "RelativeToolTip": "YT1\\Models\\EF\\OrderDetail.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Title": "HomeController.cs",
+              "DocumentMoniker": "D:\\C#\\Web_ASP\\CNPM2\\YT1\\YT1\\Areas\\Admin\\Controllers\\HomeController.cs",
+              "RelativeDocumentMoniker": "YT1\\Areas\\Admin\\Controllers\\HomeController.cs",
+              "ToolTip": "D:\\C#\\Web_ASP\\CNPM2\\YT1\\YT1\\Areas\\Admin\\Controllers\\HomeController.cs",
+              "RelativeToolTip": "YT1\\Areas\\Admin\\Controllers\\HomeController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAEAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-15T14:35:57.928Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "Details.cshtml",
-              "DocumentMoniker": "D:\\C#\\Web_ASP\\CNPM2\\YT1\\YT1\\Areas\\Admin\\Views\\Order\\Details.cshtml",
-              "RelativeDocumentMoniker": "YT1\\Areas\\Admin\\Views\\Order\\Details.cshtml",
-              "ToolTip": "D:\\C#\\Web_ASP\\CNPM2\\YT1\\YT1\\Areas\\Admin\\Views\\Order\\Details.cshtml",
-              "RelativeToolTip": "YT1\\Areas\\Admin\\Views\\Order\\Details.cshtml",
-              "ViewState": "AgIAAEcAAAAAAAAAAAAswFsAAAAiAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-04-15T13:54:13.895Z",
+              "WhenOpened": "2025-04-19T07:49:17.616Z",
               "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "_LayoutAdmin.cshtml",
-              "DocumentMoniker": "D:\\C#\\Web_ASP\\CNPM2\\YT1\\YT1\\Areas\\Admin\\Views\\Shared\\_LayoutAdmin.cshtml",
-              "RelativeDocumentMoniker": "YT1\\Areas\\Admin\\Views\\Shared\\_LayoutAdmin.cshtml",
-              "ToolTip": "D:\\C#\\Web_ASP\\CNPM2\\YT1\\YT1\\Areas\\Admin\\Views\\Shared\\_LayoutAdmin.cshtml",
-              "RelativeToolTip": "YT1\\Areas\\Admin\\Views\\Shared\\_LayoutAdmin.cshtml",
-              "ViewState": "AgIAACwBAAAAAAAAAAAAAD8BAAAgAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-04-15T13:34:28.218Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 4,
-              "Title": "Index.cshtml",
-              "DocumentMoniker": "D:\\C#\\Web_ASP\\CNPM2\\YT1\\YT1\\Areas\\Admin\\Views\\Product\\Index.cshtml",
-              "RelativeDocumentMoniker": "YT1\\Areas\\Admin\\Views\\Product\\Index.cshtml",
-              "ToolTip": "D:\\C#\\Web_ASP\\CNPM2\\YT1\\YT1\\Areas\\Admin\\Views\\Product\\Index.cshtml",
-              "RelativeToolTip": "YT1\\Areas\\Admin\\Views\\Product\\Index.cshtml",
-              "ViewState": "AgIAADgAAAAAAAAAAAAIwEMAAAAiAAAAAAAAAA==",
+              "Title": "Create.cshtml",
+              "DocumentMoniker": "D:\\C#\\Web_ASP\\CNPM2\\YT1\\YT1\\Areas\\Admin\\Views\\Account\\Create.cshtml",
+              "RelativeDocumentMoniker": "YT1\\Areas\\Admin\\Views\\Account\\Create.cshtml",
+              "ToolTip": "D:\\C#\\Web_ASP\\CNPM2\\YT1\\YT1\\Areas\\Admin\\Views\\Account\\Create.cshtml",
+              "RelativeToolTip": "YT1\\Areas\\Admin\\Views\\Account\\Create.cshtml",
+              "ViewState": "AgIAAB4AAAAAAAAAAAAAAFEAAAAfAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-04-15T11:10:21.357Z"
+              "WhenOpened": "2025-04-19T06:37:55.875Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "ProductController.cs",
-              "DocumentMoniker": "D:\\C#\\Web_ASP\\CNPM2\\YT1\\YT1\\Areas\\Admin\\Controllers\\ProductController.cs",
-              "RelativeDocumentMoniker": "YT1\\Areas\\Admin\\Controllers\\ProductController.cs",
-              "ToolTip": "D:\\C#\\Web_ASP\\CNPM2\\YT1\\YT1\\Areas\\Admin\\Controllers\\ProductController.cs",
-              "RelativeToolTip": "YT1\\Areas\\Admin\\Controllers\\ProductController.cs",
-              "ViewState": "AgIAAAoAAAAAAAAAAAAwwBMAAAAfAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-15T11:03:38.223Z"
+              "DocumentIndex": 3,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "D:\\C#\\Web_ASP\\CNPM2\\YT1\\YT1\\Areas\\Admin\\Views\\Account\\Index.cshtml",
+              "RelativeDocumentMoniker": "YT1\\Areas\\Admin\\Views\\Account\\Index.cshtml",
+              "ToolTip": "D:\\C#\\Web_ASP\\CNPM2\\YT1\\YT1\\Areas\\Admin\\Views\\Account\\Index.cshtml",
+              "RelativeToolTip": "YT1\\Areas\\Admin\\Views\\Account\\Index.cshtml",
+              "ViewState": "AgIAADAAAAAAAAAAAAAAAEEAAAAfAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-04-19T06:21:00.884Z",
+              "EditorCaption": ""
             }
           ]
         }

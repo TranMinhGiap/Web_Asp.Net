@@ -191,6 +191,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Areas\Admin\AdminAreaRegistration.cs" />
+    <Compile Include="Areas\Admin\Controllers\AccountController.cs" />
     <Compile Include="Areas\Admin\Controllers\CategoryController.cs" />
     <Compile Include="Areas\Admin\Controllers\HomeController.cs" />
     <Compile Include="Areas\Admin\Controllers\NewsController.cs" />
@@ -199,6 +200,7 @@
     <Compile Include="Areas\Admin\Controllers\ProductCategoryController.cs" />
     <Compile Include="Areas\Admin\Controllers\ProductController.cs" />
     <Compile Include="Areas\Admin\Controllers\ProductImageController.cs" />
+    <Compile Include="Areas\Admin\Controllers\RoleController.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
@@ -334,6 +336,7 @@
     <Content Include="assets\Admin\dist\css\alt\adminlte.pages.min.css" />
     <Content Include="assets\Admin\dist\css\alt\adminlte.plugins.css" />
     <Content Include="assets\Admin\dist\css\alt\adminlte.plugins.min.css" />
+    <Content Include="assets\Admin\dist\css\LoginCssAdmin.css" />
     <Content Include="assets\Admin\dist\img\AdminLTELogo.png" />
     <Content Include="assets\Admin\dist\img\avatar.png" />
     <Content Include="assets\Admin\dist\img\avatar2.png" />
@@ -370,6 +373,7 @@
     <Content Include="assets\Admin\dist\js\adminlte.js" />
     <Content Include="assets\Admin\dist\js\adminlte.min.js" />
     <Content Include="assets\Admin\dist\js\demo.js" />
+    <Content Include="assets\Admin\dist\js\LoginJsAdmin.js" />
     <Content Include="assets\Admin\dist\js\pages\dashboard.js" />
     <Content Include="assets\Admin\dist\js\pages\dashboard2.js" />
     <Content Include="assets\Admin\dist\js\pages\dashboard3.js" />
@@ -3343,6 +3347,12 @@
     <Content Include="assets\User\plugins\themify-icons\fonts\themify.woff" />
     <Content Include="Areas\Admin\Views\Order\Index.cshtml" />
     <Content Include="Areas\Admin\Views\Order\Details.cshtml" />
+    <Content Include="Areas\Admin\Views\Role\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\Role\Create.cshtml" />
+    <Content Include="Areas\Admin\Views\Role\Update.cshtml" />
+    <Content Include="Areas\Admin\Views\Account\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\Account\Create.cshtml" />
+    <Content Include="Areas\Admin\Views\Account\Login.cshtml" />
     <None Include="Scripts\jquery-3.7.0.intellisense.js" />
     <Content Include="Scripts\jquery-3.7.0.js" />
     <Content Include="Scripts\jquery-3.7.0.min.js" />

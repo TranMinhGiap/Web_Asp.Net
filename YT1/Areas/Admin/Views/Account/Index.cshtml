@@ -1,0 +1,69 @@
+﻿@model IEnumerable<YT1.Models.ApplicationUser>
+@{
+    ViewBag.Title = "Quản Lý Tài Khoản";
+    Layout = "~/Areas/Admin/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<section style="width: 100%" class="content">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-12">
+                <!-- Default box -->
+                <div class="card">
+                    <div class="card-header">
+                        <h3 class="card-title">Danh Sách Tài Khoản</h3>
+
+                        <div class="card-tools">
+                            <a href="/Admin/Account/Create" class="btn btn-outline-success">Thêm Mới</a>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <table class="table table-bordered">
+                            <thead>
+                                <tr>
+                                    <th>STT</th>
+                                    <th>Tài Khoản</th>
+                                    <th>Họ Tên</th>
+                                    <th>Email</th>
+                                    <th>*</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @if(Model != null && Model.Any())
+                                {
+                                    var idx = 0;
+                                    foreach(var item in Model)
+                                    {
+                                        <tr>
+                                            <td>@(++idx)</td>
+                                            <td>@item.UserName</td>
+                                            <td>@item.FullName</td>
+                                            <td>@item.Email</td>
+                                            <td>
+                                                <a class="btn btn-outline-primary" href="/Admin/Account/Update/@item.Id">Sửa</a>
+                                                <a data-user="@item.Id" class="btn btn-outline-danger btnDelete" href="#">Xóa</a>
+                                            </td>
+                                        </tr>
+                                    }
+                                }
+                            </tbody>
+                        </table>
+                    </div>
+                    <!-- /.card-body -->
+                    <div class="card-footer">
+                    </div>
+                    <!-- /.card-footer-->
+                </div>
+                <!-- /.card -->
+            </div>
+        </div>
+    </div>
+</section>
+
+@section style{
+    <style>
+        th,td{
+            text-align: center;
+        }
+    </style>    
+}
