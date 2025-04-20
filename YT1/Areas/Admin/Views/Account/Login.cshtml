@@ -26,6 +26,10 @@
                     <label for="password" class="input-label">Password</label>
                     <input type="password" name="Password" id="password" placeholder="Password" value="@Model.Password">
                 </div>
+                <div style="display: flex; align-items: center; font-size: 11px; color: #8c7569">
+                    @Html.CheckBoxFor(m => m.RememberMe, new { id = "rememberAdmin" })
+                    <label for="rememberAdmin">Remember Password</label>
+                </div>
                 <div class="modal-buttons">
                     <a href="#">Forgot your password?</a>
                     <button class="input-button">Login</button>
@@ -47,4 +51,10 @@
 
 <script src="~/assets/Admin/dist/js/LoginJsAdmin.js"></script>
 
-
+<style>
+    ul {
+        list-style-type: none;
+        padding: 0;
+        color: red;
+    }
+</style>

@@ -4,28 +4,40 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using YT1.Models;
+using YT1.Models.EF;
 
 namespace YT1.Controllers
 {
     public class HomeController : Controller
     {
+        ApplicationDbContext _dbConect = new ApplicationDbContext();
         public ActionResult Index()
         {
             return View();
         }
-
-        public ActionResult About()
+        public ActionResult Partial_Subcribe()
         {
-            ViewBag.Message = "Your application description page.";
-
-            return View();
+            return PartialView();
         }
-
-        public ActionResult Contact()
+        [HttpPost]
+        public ActionResult Subcribe(string email)
         {
-            ViewBag.Message = "Your contact page.";
-
-            return View();
+            if(ModelState.IsValid)
+            {
+                if (_dbConect.Subcribe.Any(x => x.Email == email))
+                {
+                    return Json(new { success = false, message = "Email đã tồn tại trong hệ thống!" });
+                }
+                else
+                {
+                    Subcribe subcribe = new Subcribe();
+                    subcribe.Email = email;
+                    _dbConect.Subcribe.Add(subcribe);
+                    _dbConect.SaveChanges();
+                    return Json(new { success = true });
+                }
+            }
+            return Json(new { success = false, message = "Dữ liệu không hợp lệ" });
         }
         public ActionResult Refresh()
         {
@@ -40,6 +52,14 @@ namespace YT1.Controllers
             item.ThangTruoc = HttpContext.Application["ThangTruoc"] != null ? (long)HttpContext.Application["ThangTruoc"] : 0;
             item.TatCa = HttpContext.Application["TatCa"] != null ? (long)HttpContext.Application["TatCa"] : 0;
             return PartialView(item);
+        }
+        protected override void Dispose(bool disposing)
+        {
+            if (disposing)
+            {
+                _dbConect.Dispose();
+            }
+            base.Dispose(disposing);
         }
     }
 }

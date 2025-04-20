@@ -13,7 +13,12 @@ namespace YT1.Models.EF
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int Id { get; set; }
+        [Required(ErrorMessage = "Vui lòng nhập Email")]
+        [EmailAddress(ErrorMessage = "Email không hợp lệ")]
+        [MaxLength(150, ErrorMessage = "Email không được vượt quá 150 ký tự")]
+        [Display(Name = "Địa chỉ Email")]
         public string Email { get; set; }
-        public DateTime CreatedDate { get; set; }
+        [Display(Name = "Ngày đăng ký")]
+        public DateTime CreatedDate { get; set; } = DateTime.Now;
     }
 }

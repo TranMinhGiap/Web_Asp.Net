@@ -63,7 +63,7 @@ namespace YT1.Areas.Admin.Controllers
         [AllowAnonymous]
         public ActionResult Login(string returnUrl)
         {
-            var model = new LoginViewModel(); // đảm bảo không null
+            var model = new LoginViewModel(); 
             ViewBag.ReturnUrl = returnUrl;
             return View(model);
         }
@@ -93,7 +93,7 @@ namespace YT1.Areas.Admin.Controllers
                     return RedirectToAction("SendCode", new { ReturnUrl = returnUrl, RememberMe = model.RememberMe });
                 case SignInStatus.Failure:
                 default:
-                    ModelState.AddModelError("", "Invalid login attempt.");
+                    ModelState.AddModelError("", "Tài khoản hoặc mật khẩu không đúng !");
                     return View(model);
             }
         }

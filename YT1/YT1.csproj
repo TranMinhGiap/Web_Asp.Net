@@ -201,10 +201,12 @@
     <Compile Include="Areas\Admin\Controllers\ProductController.cs" />
     <Compile Include="Areas\Admin\Controllers\ProductImageController.cs" />
     <Compile Include="Areas\Admin\Controllers\RoleController.cs" />
+    <Compile Include="Areas\Admin\Controllers\SettingSystemController.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\MenuController.cs" />
+    <Compile Include="Controllers\NewsController.cs" />
     <Compile Include="Controllers\ProductsController.cs" />
     <Compile Include="Controllers\ShoppingCartController.cs" />
     <Compile Include="Global.asax.cs">
@@ -294,10 +296,16 @@
     <Compile Include="Migrations\202504151528123_AddStatus.Designer.cs">
       <DependentUpon>202504151528123_AddStatus.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202504200154021_AddAntTbSubcribe.cs" />
+    <Compile Include="Migrations\202504200154021_AddAntTbSubcribe.Designer.cs">
+      <DependentUpon>202504200154021_AddAntTbSubcribe.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Common\ConvertStr.cs" />
+    <Compile Include="Models\Common\CustomAuthorizeAttribute.cs" />
     <Compile Include="Models\Common\SendMail.cs" />
+    <Compile Include="Models\Common\SettingHelper.cs" />
     <Compile Include="Models\Common\ThongKeTruyCap.cs" />
     <Compile Include="Models\CustomerView.cs" />
     <Compile Include="Models\EF\Adv.cs" />
@@ -316,6 +324,7 @@
     <Compile Include="Models\EF\Subcribe.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
+    <Compile Include="Models\SettingSystemViewModel.cs" />
     <Compile Include="Models\ShoppingCart.cs" />
     <Compile Include="Models\ThongKeView.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -3143,6 +3152,7 @@
     <Content Include="assets\User\js\contact_custom.js" />
     <Content Include="assets\User\js\custom.js" />
     <Content Include="assets\User\js\jquery-3.2.1.min.js" />
+    <Content Include="assets\User\js\LoginJsUser.js" />
     <Content Include="assets\User\js\single_custom.js" />
     <Content Include="assets\User\plugins\easing\easing.js" />
     <Content Include="assets\User\plugins\font-awesome-4.7.0\css\font-awesome.css" />
@@ -3167,6 +3177,7 @@
     <Content Include="assets\User\styles\categories_styles.css" />
     <Content Include="assets\User\styles\contact_responsive.css" />
     <Content Include="assets\User\styles\contact_styles.css" />
+    <Content Include="assets\User\styles\LoginCssUser.css" />
     <Content Include="assets\User\styles\main_styles.css" />
     <Content Include="assets\User\styles\responsive.css" />
     <Content Include="assets\User\styles\single_responsive.css" />
@@ -3353,6 +3364,8 @@
     <Content Include="Areas\Admin\Views\Account\Index.cshtml" />
     <Content Include="Areas\Admin\Views\Account\Create.cshtml" />
     <Content Include="Areas\Admin\Views\Account\Login.cshtml" />
+    <Content Include="Areas\Admin\Views\SettingSystem\Partial_Setting.cshtml" />
+    <Content Include="Areas\Admin\Views\SettingSystem\Index.cshtml" />
     <None Include="Scripts\jquery-3.7.0.intellisense.js" />
     <Content Include="Scripts\jquery-3.7.0.js" />
     <Content Include="Scripts\jquery-3.7.0.min.js" />
@@ -3412,6 +3425,8 @@
     <Content Include="Views\ShoppingCart\PartialItemPayment.cshtml" />
     <Content Include="Views\ShoppingCart\CheckOutSuccess.cshtml" />
     <Content Include="Views\Home\Refresh.cshtml" />
+    <Content Include="Views\News\Partial_News_Home.cshtml" />
+    <Content Include="Views\Home\Partial_Subcribe.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -3509,6 +3524,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202504151528123_AddStatus.resx">
       <DependentUpon>202504151528123_AddStatus.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202504200154021_AddAntTbSubcribe.resx">
+      <DependentUpon>202504200154021_AddAntTbSubcribe.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

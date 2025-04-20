@@ -6,9 +6,11 @@ using System.Web;
 using System.Web.Mvc;
 using YT1.Models;
 using YT1.Models.EF;
+using YT1.Models.Common;
 
 namespace YT1.Controllers
 {
+    [CustomAuthorize(Roles = "Admin, Customer")]
     public class ShoppingCartController : Controller
     {
         ApplicationDbContext _dbConect = new ApplicationDbContext();
