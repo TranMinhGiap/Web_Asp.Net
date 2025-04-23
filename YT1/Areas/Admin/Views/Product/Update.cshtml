@@ -7,11 +7,9 @@
 }
 
 <div class="col-12">
-
-    @using (Html.BeginForm("Update", "Product", FormMethod.Post, new { enctype = "multipart/form-data" }))
+    @using (Html.BeginForm("Update", "Product", FormMethod.Post, new { enctype = "multipart/form-data", id = "productForm" }))
     {
         @Html.AntiForgeryToken()
-
         <div class="form-horizontal">
             <hr />
             @Html.ValidationSummary(true, "", new { @class = "text-danger" })
@@ -24,7 +22,7 @@
                             <li class="nav-item"><a class="nav-link active" href="#activity" data-toggle="tab">Thông Tin Chung</a></li>
                             <li class="nav-item"><a class="nav-link" href="#settings" data-toggle="tab">SEO</a></li>
                         </ul>
-                    </div><!-- /.card-header -->
+                    </div>
                     <div class="card-body">
                         <div class="tab-content">
                             <div class="active tab-pane" id="activity">
@@ -78,28 +76,38 @@
                                 </div>
 
                                 <div class="row">
-                                    <div class="col-4">
+                                    <div class="col-3">
                                         <div class="form-group">
                                             <label class="control-label">Số Lượng</label>
                                             <div>
-                                                <input type="number" name="Quantity" class="form-control" value="1" />
+                                                @Html.TextBoxFor(model => model.Quantity, new { @class = "form-control", @type = "number", @min = "0", @step = "1" })
+                                                @Html.ValidationMessageFor(model => model.Quantity, "", new { @class = "text-danger" })
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="col-4">
+                                    <div class="col-3">
+                                        <div class="form-group">
+                                            <label class="control-label">Giá Gốc</label>
+                                            <div>
+                                                @Html.TextBoxFor(model => model.OriginPrice, new { @class = "form-control", @type = "text" })
+                                                @Html.ValidationMessageFor(model => model.OriginPrice, "", new { @class = "text-danger" })
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-3">
                                         <div class="form-group">
                                             <label class="control-label">Giá Bán</label>
                                             <div>
-                                                @Html.TextBoxFor(model => model.Price, "{0:N0}", new { @class = "form-control", @type = "text" })
+                                                @Html.TextBoxFor(model => model.Price, new { @class = "form-control", @type = "text" })
                                                 @Html.ValidationMessageFor(model => model.Price, "", new { @class = "text-danger" })
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="col-4">
+                                    <div class="col-3">
                                         <div class="form-group">
                                             <label class="control-label">Giá Khuyến Mại</label>
                                             <div>
-                                                @Html.TextBoxFor(model => model.PriceSale, "{0:N0}", new { @class = "form-control", @type = "text" })
+                                                @Html.TextBoxFor(model => model.PriceSale, new { @class = "form-control", @type = "text" })
                                                 @Html.ValidationMessageFor(model => model.PriceSale, "", new { @class = "text-danger" })
                                             </div>
                                         </div>
@@ -107,43 +115,35 @@
                                 </div>
 
                                 <div class="row">
-                                    <div class="col-3">
+                                    <div class="col-4">
                                         <div class="form-group">
                                             <div class="custom-control custom-switch">
-                                                <input @(Model.IsActive == true ? "checked" : "") name="IsActive" value="true" type="checkbox" class="custom-control-input" id="customSwitch1">
+                                                <input type="hidden" name="IsActive" value="false" id="IsActiveHidden" />
+                                                <input @(Model.IsActive ? "checked" : "") name="IsActive" value="true" type="checkbox" class="custom-control-input" id="customSwitch1">
                                                 <label class="custom-control-label" for="customSwitch1">Hiển Thị</label>
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="col-3">
+                                    <div class="col-4">
                                         <div class="form-group">
                                             <div class="custom-control custom-switch">
-                                                <input @(Model.IsHot == true ? "checked" : "") name="IsHot" value="true" type="checkbox" class="custom-control-input" id="customSwitch2">
+                                                <input type="hidden" name="IsHot" value="false" id="IsHotHidden" />
+                                                <input @(Model.IsHot ? "checked" : "") name="IsHot" value="true" type="checkbox" class="custom-control-input" id="customSwitch2">
                                                 <label class="custom-control-label" for="customSwitch2">Sản Phẩm Hot</label>
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="col-3">
+                                    <div class="col-4">
                                         <div class="form-group">
                                             <div class="custom-control custom-switch">
-                                                <input @(Model.IsFeature == true ? "checked" : "") name="IsFeature" value="true" type="checkbox" class="custom-control-input" id="customSwitch3">
+                                                <input type="hidden" name="IsFeature" value="false" id="IsFeatureHidden" />
+                                                <input @(Model.IsFeature ? "checked" : "") name="IsFeature" value="true" type="checkbox" class="custom-control-input" id="customSwitch3">
                                                 <label class="custom-control-label" for="customSwitch3">Nổi Bật</label>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-3">
-                                        <div class="form-group">
-                                            <div class="custom-control custom-switch">
-                                                <input @(Model.IsSale == true ? "checked" : "") name="IsSale" value="true" type="checkbox" class="custom-control-input" id="customSwitch4">
-                                                <label class="custom-control-label" for="customSwitch4">Khuyến Mãi</label>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                            <!-- /.tab-pane -->
-                            
-                            <!-- /.tab-pane -->
                             <div class="tab-pane" id="settings">
                                 <div class="form-horizontal">
                                     <div class="form-group row">
@@ -167,28 +167,9 @@
                                             @Html.ValidationMessageFor(model => model.SeoDescription, "", new { @class = "text-danger" })
                                         </div>
                                     </div>
-                                    <div class="form-group">
-                                        <div class="col-md-10">
-                                            @Html.EditorFor(model => model.CreatedDate, new { htmlAttributes = new { @class = "form-control", @type = "hidden" } })
-                                            @Html.ValidationMessageFor(model => model.CreatedDate, "", new { @class = "text-danger" })
-                                        </div>
-                                    </div>
-
-                                    @*<div class="form-group">
-                                            @Html.LabelFor(model => model.CreatedBy, htmlAttributes: new { @class = "control-label col-md-2" })
-                                            <div class="col-md-10">
-                                                @Html.EditorFor(model => model.CreatedBy, new { htmlAttributes = new { @class = "form-control" } })
-                                                @Html.ValidationMessageFor(model => model.CreatedBy, "", new { @class = "text-danger" })
-                                            </div>
-                                        </div>*@
-
-                                    @*<div class="form-group">
-                                            @Html.LabelFor(model => model.ModifierBy, htmlAttributes: new { @class = "control-label col-md-2" })
-                                            <div class="col-md-10">
-                                                @Html.EditorFor(model => model.ModifierBy, new { htmlAttributes = new { @class = "form-control" } })
-                                                @Html.ValidationMessageFor(model => model.ModifierBy, "", new { @class = "text-danger" })
-                                            </div>
-                                        </div>*@
+                                    @Html.HiddenFor(model => model.CreatedDate)
+                                    @Html.HiddenFor(model => model.CreatedBy)
+                                    @Html.HiddenFor(model => model.ModifierBy)
 
                                     <div class="form-group">
                                         <div class="col-md-10">
@@ -203,22 +184,19 @@
                                     </div>
                                 </div>
                             </div>
-                            <!-- /.tab-pane -->
                         </div>
-                        <!-- /.tab-content -->
-                    </div><!-- /.card-body -->
+                    </div>
                 </div>
-                <!-- /.card -->
             </div>
         </div>
     }
 </div>
 
-@section childNavBar{
+@section childNavBar {
     <a href="~/Admin/Product/Update" class="nav-link">Update Product</a>
 }
 
-@section style{
+@section style {
     <style>
         .btn-create {
             margin: 10px 0px;
@@ -230,7 +208,7 @@
     </style>
 }
 
-@section script{
+@section script {
     <script>
         $(document).ready(function () {
             // Khởi tạo CKEditor
@@ -250,18 +228,22 @@
                 }
             }
 
-            // Định dạng giá trị ban đầu cho Price và PriceSale
-            let initialPrice = $('input[name="Price"]').val().replace(/[^0-9]/g, '');
-            if (initialPrice || initialPrice === '0') {
-                $('input[name="Price"]').val(parseInt(initialPrice).toLocaleString('en-US'));
+            // Định dạng giá trị ban đầu từ model
+            let originPriceInput = $('input[name="OriginPrice"]');
+            if (originPriceInput.val()) {
+                originPriceInput.val(parseFloat(originPriceInput.val()).toLocaleString('en-US'));
             }
-            let initialPriceSale = $('input[name="PriceSale"]').val().replace(/[^0-9]/g, '');
-            if (initialPriceSale || initialPriceSale === '0') {
-                $('input[name="PriceSale"]').val(parseInt(initialPriceSale).toLocaleString('en-US'));
+            let priceInput = $('input[name="Price"]');
+            if (priceInput.val()) {
+                priceInput.val(parseFloat(priceInput.val()).toLocaleString('en-US'));
+            }
+            let priceSaleInput = $('input[name="PriceSale"]');
+            if (priceSaleInput.val()) {
+                priceSaleInput.val(parseFloat(priceSaleInput.val()).toLocaleString('en-US'));
             }
 
-            // Định dạng giá trị khi nhập cho Price và PriceSale
-            $('input[name="Price"], input[name="PriceSale"]').on('input', function () {
+            // Định dạng giá trị khi nhập
+            $('input[name="OriginPrice"], input[name="Price"], input[name="PriceSale"]').on('input', function () {
                 formatNumberInput($(this));
             });
 
@@ -272,41 +254,52 @@
 
                 // Kiểm tra Quantity
                 var quantity = $('input[name="Quantity"]').val();
-                if (quantity < 1) {
+                if (quantity < 0) {
                     e.preventDefault();
-                    alert('Số lượng phải lớn hơn hoặc bằng 1!');
+                    alert('Số lượng phải lớn hơn hoặc bằng 0!');
                     return;
                 }
 
+                // Kiểm tra OriginPrice
+                let originPrice = $('input[name="OriginPrice"]').val().replace(/,/g, '');
+                if (!originPrice || originPrice < 1000) {
+                    e.preventDefault();
+                    alert('Giá gốc phải lớn hơn hoặc bằng 1000!');
+                    return;
+                }
+                $('input[name="OriginPrice"]').val(originPrice);
+
                 // Kiểm tra Price
                 let price = $('input[name="Price"]').val().replace(/,/g, '');
-                if (price < 0) {
+                if (!price || price < 1000) {
                     e.preventDefault();
-                    alert('Giá bán không được nhỏ hơn 0!');
+                    alert('Giá bán phải lớn hơn hoặc bằng 1000!');
                     return;
                 }
                 $('input[name="Price"]').val(price);
 
                 // Kiểm tra PriceSale
                 let priceSale = $('input[name="PriceSale"]').val().replace(/,/g, '');
-                if (priceSale < 0) {
+                if (priceSale && priceSale < 0) {
                     e.preventDefault();
                     alert('Giá khuyến mại không được nhỏ hơn 0!');
                     return;
                 }
-                if (parseInt(priceSale) > parseInt(price)) {
+                if (priceSale && parseInt(priceSale) > parseInt(price)) {
                     e.preventDefault();
                     alert('Giá khuyến mại không được lớn hơn giá bán!');
                     return;
                 }
-                $('input[name="PriceSale"]').val(priceSale);
-            });
+                $('input[name="PriceSale"]').val(priceSale || 0);
 
-            // Cập nhật tên file khi chọn ảnh
-            //$('#exampleInputFile').on('change', function () {
-            //    var fileName = $(this)[0].files[0] ? $(this)[0].files[0].name : 'Chọn File';
-            //    $(this).next('.custom-file-label').text(fileName);
-            //});
+                // Kiểm tra ProductCategoryId
+                let productCategoryId = $('select[name="ProductCategoryId"]').val();
+                if (!productCategoryId) {
+                    e.preventDefault();
+                    alert('Vui lòng chọn danh mục sản phẩm!');
+                    return;
+                }
+            });
 
             // Xử lý sự kiện xóa dòng khi nhấn nút "Xóa"
             $(document).on('click', '.delete-btn', function (e) {
@@ -316,60 +309,32 @@
                 }
             });
 
-            // Xử lý khi checkbox thay đổi (nếu có)
+            // Xử lý khi checkbox thay đổi
             $('#customSwitch1').on('change', function () {
                 var isChecked = $(this).is(':checked');
                 $('#IsActiveHidden').val(isChecked ? 'true' : 'false');
             });
+
+            $('#customSwitch2').on('change', function () {
+                var isChecked = $(this).is(':checked');
+                $('#IsHotHidden').val(isChecked ? 'true' : 'false');
+            });
+
+            $('#customSwitch3').on('change', function () {
+                var isChecked = $(this).is(':checked');
+                $('#IsFeatureHidden').val(isChecked ? 'true' : 'false');
+            });
         });
-
-        //function BrowseServer() {
-        //    var finder = new CKFinder();
-        //    finder.selectActionFunction = function (fileUrl) {
-        //        addImgProduct(fileUrl);
-        //    };
-        //    finder.popup();
-        //}
-
-        //function addImgProduct(url) {
-        //    if (!url) {
-        //        alert('Đường dẫn ảnh không hợp lệ!');
-        //        return;
-        //    }
-        //    var idx = $('#CurrentId').val();
-        //    var isFirstRow = $('#tbHtml tr').length === 0;
-        //    var checkedAttr = isFirstRow ? 'checked' : '';
-        //    var str = `<tr>
-        //                    <td class="text-center">${idx}</td>
-        //                    <td class="text-center">
-        //                        <img width="80" src="${url}"/>
-        //                        <input type="hidden" name="Img" value="${url}"/>
-        //                    </td>
-        //                    <td class="text-center">
-        //                        <input type="radio" name="radioButton" value="${idx}" ${checkedAttr}/>
-        //                    </td>
-        //                    <td class="text-center">
-        //                        <a href="#" class="btn btn-danger delete-btn">Xóa</a>
-        //                    </td>
-        //                </tr>`;
-        //    $('#tbHtml').append(str);
-        //    var updateValue = parseInt(idx) + 1;
-        //    $('#CurrentId').val(updateValue);
-        //}
 
         function deleteRow(element) {
             $(element).closest('tr').remove();
-            // Cập nhật lại STT
             $('#tbHtml tr').each(function (index) {
                 $(this).find('td:first').text(index + 1);
-                // Cập nhật value của radio button
                 $(this).find('input[type="radio"]').val(index + 1);
-                // Tự động chọn dòng đầu tiên nếu có
                 if (index === 0) {
                     $(this).find('input[type="radio"]').prop('checked', true);
                 }
             });
-            // Cập nhật CurrentId
             var newIdx = $('#tbHtml tr').length + 1;
             $('#CurrentId').val(newIdx);
         }

@@ -30,7 +30,10 @@ namespace YT1.Models.EF
         [AllowHtml]
         public string Detail { get; set; }
         public string Images { get; set; }
-        [Required(ErrorMessage = "Giá sản phẩm không được để trống")]
+        [Required(ErrorMessage = "Giá gốc sản phẩm không được để trống")]
+        [Range(1000, double.MaxValue, ErrorMessage = "Giá sản phẩm phải lớn hơn hoặc bằng 1000")]
+        public decimal OriginPrice {  get; set; }
+        [Required(ErrorMessage = "Giá bán sản phẩm không được để trống")]
         [Range(1000, double.MaxValue, ErrorMessage = "Giá sản phẩm phải lớn hơn hoặc bằng 1000")]
         public decimal Price { get; set; }
         [Range(0, double.MaxValue, ErrorMessage = "Giá khuyến mãi phải lớn hơn hoặc bằng 0")]
@@ -42,6 +45,8 @@ namespace YT1.Models.EF
         [Required(ErrorMessage = "Số lượng không được để trống")]
         [Range(0, int.MaxValue, ErrorMessage = "Số lượng phải lớn hơn hoặc bằng 0")]
         public int Quantity { get; set; }
+        public string Size {  get; set; }
+        public string Color {  get; set; }
         public int ViewCount { get; set; }
         public int ProductCategoryId { get; set; }
         public string SeoTitle { get; set; }

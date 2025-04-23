@@ -1,4 +1,5 @@
-﻿using System;
+﻿using PagedList;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -11,9 +12,20 @@ namespace YT1.Controllers
     {
         ApplicationDbContext _dbConect = new ApplicationDbContext();
         // GET: News
-        public ActionResult Index()
+        public ActionResult Index(int? page)
         {
-            return View();
+            int pageSize = 2;
+            int pageIndex = page ?? 1;
+
+            var productNews = _dbConect.News.AsQueryable();
+
+            var items = productNews.OrderByDescending(x => x.CreatedDate).ToPagedList(pageIndex, pageSize);
+            return View(items);
+        }
+        public ActionResult Details(int id)
+        {
+            var item = _dbConect.News.Find(id);
+            return View(item);
         }
         public ActionResult Partial_News_Home()
         {

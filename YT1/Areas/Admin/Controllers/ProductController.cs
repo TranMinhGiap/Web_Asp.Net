@@ -76,6 +76,12 @@ namespace YT1.Areas.Admin.Controllers
                         }
                     }
                 }
+                item.CreatedBy = User.Identity.Name;
+                item.ModifierBy = User.Identity.Name;
+                if(item.PriceSale > 0)
+                {
+                    item.IsSale = true;
+                }
                 item.Alias = ConvertStr.FilterChar(item.Title);
                 if (string.IsNullOrEmpty(item.SeoTitle))
                 {
@@ -145,8 +151,12 @@ namespace YT1.Areas.Admin.Controllers
                         items.Images = "/assets/Admin/Img/" + uniqueFileName;
                     }
                     // End Images
-
+                    items.ModifierBy = User.Identity.Name;
                     items.Alias = ConvertStr.FilterChar(productItem.Title);
+                    if(items.PriceSale > 0)
+                    {
+                        items.IsSale = true;
+                    }
                     _dbConect.SaveChanges();
                     return RedirectToAction("Index");
                 }

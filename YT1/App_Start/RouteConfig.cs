@@ -38,6 +38,18 @@ namespace YT1
                 defaults: new { controller = "Products", action = "Details", id = UrlParameter.Optional },
                 namespaces: new[] { "YT1.Controllers" }
             );
+            routes.MapRoute(
+                name: "DetailsNews",
+                url: "tin-tuc/d-{id}",
+                defaults: new { controller = "News", action = "Details", id = UrlParameter.Optional },
+                namespaces: new[] { "YT1.Controllers" }
+            );
+            routes.MapRoute(
+                name: "News",
+                url: "tin-tuc/{id}",
+                defaults: new { controller = "News", action = "Index", id = UrlParameter.Optional },
+                namespaces: new[] { "YT1.Controllers" }
+            );
             //
 
             routes.MapRoute(

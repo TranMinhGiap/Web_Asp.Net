@@ -87,10 +87,8 @@
                         </div>
                     </div>
                     <!-- /.card-body -->
-                    <div class="card-footer">
-                        <div class="navPagination">
+                    <div class="navPagination">
                             @Html.PagedListPager(Model, page => Url.Action("Index", "ProductCategory", new { area = "Admin", page }))
-                        </div>
                     </div>
                     <!-- /.card-footer-->
                 </div>

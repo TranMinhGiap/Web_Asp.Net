@@ -31,11 +31,11 @@
                     <input type="checkbox" id="selectAll" />
                 </th>
                 <th class="text-center">STT</th>
-                <th class="text-center">Mã SP</th>
                 <th class="text-center">Tên Sản Phẩm</th>
                 <th class="text-center">Danh Mục</th>
                 <th class="text-center">Số Lượng</th>
-                <th class="text-center">Giá</th>
+                <th class="text-center">Giá Nhập</th>
+                <th class="text-center">Giá Bán</th>
                 <th class="text-center">Hiển Thị</th>
                 <th class="text-center">Ảnh Đại Diện</th>
                 <th class="text-center">*</th>
@@ -51,13 +51,13 @@
                             <input type="checkbox" class="cbkItem" value="@item.Id" />
                         </td>
                         <td class="text-center">@(++cnt)</td>
-                        <td class="text-center">@item.ProductCode</td>
                         <td class="text-center">
                             <span class="product-title" data-id="@item.Id">@item.Title</span>
                         </td>
                         <td class="text-center">@(item.ProductCategory?.Title ?? "Không có danh mục")</td>
                         <td class="text-center">@item.Quantity</td>
-                        <td class="text-center">@item.Price.ToString("#,##0") VNĐ</td>
+                        <td class="text-center">@item.OriginPrice.ToString("#,##0") VNĐ</td>
+                        <td class="text-center">@(item.PriceSale > 0 ? item.PriceSale.ToString("#,##0") : item.Price.ToString("#,##0")) VNĐ</td>
                         <td class="text-center">
                             <input type="checkbox" checked="@item.IsActive" disabled />
                         </td>

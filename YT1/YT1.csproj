@@ -300,6 +300,14 @@
     <Compile Include="Migrations\202504200154021_AddAntTbSubcribe.Designer.cs">
       <DependentUpon>202504200154021_AddAntTbSubcribe.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202504230112436_AddOriginPrice.cs" />
+    <Compile Include="Migrations\202504230112436_AddOriginPrice.Designer.cs">
+      <DependentUpon>202504230112436_AddOriginPrice.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202504230151576_UpdateModelProduct.cs" />
+    <Compile Include="Migrations\202504230151576_UpdateModelProduct.Designer.cs">
+      <DependentUpon>202504230151576_UpdateModelProduct.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Common\ConvertStr.cs" />
@@ -3427,6 +3435,8 @@
     <Content Include="Views\Home\Refresh.cshtml" />
     <Content Include="Views\News\Partial_News_Home.cshtml" />
     <Content Include="Views\Home\Partial_Subcribe.cshtml" />
+    <Content Include="Views\News\Index.cshtml" />
+    <Content Include="Views\News\Details.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -3527,6 +3537,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202504200154021_AddAntTbSubcribe.resx">
       <DependentUpon>202504200154021_AddAntTbSubcribe.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202504230112436_AddOriginPrice.resx">
+      <DependentUpon>202504230112436_AddOriginPrice.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202504230151576_UpdateModelProduct.resx">
+      <DependentUpon>202504230151576_UpdateModelProduct.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

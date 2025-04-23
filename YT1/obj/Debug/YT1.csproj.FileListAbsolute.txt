@@ -143,3 +143,5 @@ D:\C#\Web_ASP\CNPM2\YT1\YT1\bin\System.Threading.Tasks.Extensions.xml
 D:\C#\Web_ASP\CNPM2\YT1\YT1\obj\Debug\YT1.Migrations.UpdateClassOrder.resources
 D:\C#\Web_ASP\CNPM2\YT1\YT1\obj\Debug\YT1.Migrations.AddStatus.resources
 D:\C#\Web_ASP\CNPM2\YT1\YT1\obj\Debug\YT1.Migrations.AddAntTbSubcribe.resources
+D:\C#\Web_ASP\CNPM2\YT1\YT1\obj\Debug\YT1.Migrations.AddOriginPrice.resources
+D:\C#\Web_ASP\CNPM2\YT1\YT1\obj\Debug\YT1.Migrations.UpdateModelProduct.resources
