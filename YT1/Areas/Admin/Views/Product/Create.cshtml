@@ -342,18 +342,17 @@
                 extraAllowedContent: 'span',
             });
 
-            // Hàm định dạng số với dấu phân cách hàng nghìn
+         
             function formatNumberInput(input) {
                 let value = input.val().replace(/[^0-9]/g, '');
                 if (value) {
                     value = parseInt(value).toLocaleString('en-US');
                     input.val(value);
                 } else {
-                    input.val(''); // Đảm bảo input rỗng nếu không có giá trị
+                    input.val('');
                 }
             }
 
-            // Định dạng giá trị ban đầu cho Price và PriceSale
             let initialPrice = $('input[name="Price"]').val().replace(/[^0-9]/g, '');
             if (initialPrice) {
                 $('input[name="Price"]').val(parseInt(initialPrice).toLocaleString('en-US'));
@@ -393,6 +392,14 @@
                     return;
                 }
                 $('input[name="Price"]').val(price);
+                // Kiểm tra OriginPrice
+                let originPrice = $('input[name="OriginPrice"]').val().replace(/,/g, '');
+                if (originPrice < 0) {
+                    e.preventDefault();
+                    alert('Giá nhập không được nhỏ hơn 0!');
+                    return;
+                }
+                $('input[name="OriginPrice"]').val(originPrice);
 
                 // Kiểm tra PriceSale
                 let priceSale = $('input[name="PriceSale"]').val().replace(/,/g, '');

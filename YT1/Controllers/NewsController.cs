@@ -14,7 +14,7 @@ namespace YT1.Controllers
         // GET: News
         public ActionResult Index(int? page)
         {
-            int pageSize = 2;
+            int pageSize = 12;
             int pageIndex = page ?? 1;
 
             var productNews = _dbConect.News.AsQueryable();

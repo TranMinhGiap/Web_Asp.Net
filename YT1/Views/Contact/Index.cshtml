@@ -1,0 +1,112 @@
+﻿@model PagedList.PagedList<YT1.Models.EF.Posts>
+@using PagedList.Mvc;
+@{
+    ViewBag.Title = "Liên Hệ";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="news_list container news_section_container">
+    <div class="row">
+        <div class="col-md-12">
+            <h1 class="title-news">Thông Tin Liên Hệ</h1>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <div style="position: relative; min-height: 350px">
+                @if (Model != null && Model.Any())
+                {
+                    foreach (var item in Model)
+                    {
+                        <div class="row row-item-new">
+                            <div class="col-md-3">
+                                <div>
+                                    <div class="img-box">
+                                        <a href="/lien-he/lh-@(item.Id)" title="@item.Title"><img src="@item.Images" alt="@item.Title" /></a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-9">
+                                <div class="content-box">
+                                    <h3><a class="avtNews" href="/lien-he/lh-@(item.Id)" title="@item.Title">@item.Title</a></h3>
+                                    <div class="description-box">
+                                        @item.Description
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    }
+                    <div class="row navPagination">
+                        @Html.PagedListPager(Model, page => Url.Action("Index", "Contact", new { page }))
+                    </div>
+                }
+                else
+                {
+                    <div class="row row-item-new">
+                        <h3 style="text-align: center; width: 100%" class="title-news">Hiện tại chưa có thông tin liên hệ !</h3>
+                    </div>
+                }
+            </div>
+        </div>
+    </div>
+</div>
+
+@section style{
+    <link rel="stylesheet" type="text/css" href="~/assets/User/styles/main_styles.css">
+    <style>
+        .news_list {
+            padding: 170px 0 0;
+        }
+
+        h1.title-news {
+            font-size: 30px;
+            text-align: center;
+            border-bottom: 1px solid red;
+            padding: 0 0 15px;
+            margin-bottom: 25px;
+        }
+
+        .img-box {
+            width: 100%;
+            aspect-ratio: 4/3;
+        }
+
+            .img-box img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
+
+        .row-item-new {
+            margin-bottom: 20px;
+        }
+
+        .avtNews {
+            font-size: 20px;
+            color: black;
+        }
+
+        .navPagination {
+            position: absolute;
+            top: 100%;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+        }
+
+        ul.pagination li {
+            width: 40px;
+            height: 30px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border: 1px solid blue;
+        }
+
+            ul.pagination li.active {
+                background-color: blue;
+                color: white;
+            }
+    </style>
+}
+

@@ -17,6 +17,14 @@
                     $('#checkout_items').html(rs.Count);
                     alert(rs.msg);
                 }
+            },
+            error: function (xhr) {
+                if (xhr.status === 401) {
+                    const currentUrl = window.location.pathname + window.location.search;
+                    window.location.href = "/Account/Login?returnUrl=" + encodeURIComponent(currentUrl);
+                } else {
+                    alert("Đã xảy ra lỗi khi thêm sản phẩm.");
+                }
             }
         });
     });

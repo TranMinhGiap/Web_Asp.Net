@@ -50,6 +50,42 @@ namespace YT1
                 defaults: new { controller = "News", action = "Index", id = UrlParameter.Optional },
                 namespaces: new[] { "YT1.Controllers" }
             );
+            routes.MapRoute(
+                name: "DetailsPromotion",
+                url: "khuyen-mai/km-{id}",
+                defaults: new { controller = "Promotion", action = "Details", id = UrlParameter.Optional },
+                namespaces: new[] { "YT1.Controllers" }
+            );
+            routes.MapRoute(
+                name: "Promotion",
+                url: "khuyen-mai",
+                defaults: new { controller = "Promotion", action = "Index" },
+                namespaces: new[] { "YT1.Controllers" }
+            );
+            routes.MapRoute(
+                name: "DetailsContact",
+                url: "lien-he/lh-{id}",
+                defaults: new { controller = "Contact", action = "Details", id = UrlParameter.Optional },
+                namespaces: new[] { "YT1.Controllers" }
+            );
+            routes.MapRoute(
+                name: "Contact",
+                url: "lien-he",
+                defaults: new { controller = "Contact", action = "Index" },
+                namespaces: new[] { "YT1.Controllers" }
+            );
+            routes.MapRoute(
+                name: "DetailsIntroduce",
+                url: "gioi-thieu/gt-{id}",
+                defaults: new { controller = "Introduce", action = "Details", id = UrlParameter.Optional },
+                namespaces: new[] { "YT1.Controllers" }
+            );
+            routes.MapRoute(
+                name: "Introduce",
+                url: "gioi-thieu",
+                defaults: new { controller = "Introduce", action = "Index" },
+                namespaces: new[] { "YT1.Controllers" }
+            );
             //
 
             routes.MapRoute(

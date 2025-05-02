@@ -217,18 +217,18 @@
                 extraAllowedContent: 'span',
             });
 
-            // Hàm định dạng số với dấu phân cách hàng nghìn
+            
             function formatNumberInput(input) {
-                let value = input.val().replace(/[^0-9]/g, ''); // Chỉ giữ số
+                let value = input.val().replace(/[^0-9]/g, ''); 
                 if (value || value === '0') {
-                    value = parseInt(value).toLocaleString('en-US'); // Không cần thập phân
+                    value = parseInt(value).toLocaleString('en-US'); 
                     input.val(value);
                 } else {
                     input.val('');
                 }
             }
 
-            // Định dạng giá trị ban đầu từ model
+            
             let originPriceInput = $('input[name="OriginPrice"]');
             if (originPriceInput.val()) {
                 originPriceInput.val(parseFloat(originPriceInput.val()).toLocaleString('en-US'));

@@ -1,0 +1,30 @@
+﻿@model YT1.Models.ThongKeView
+
+@if (Model != null)
+{
+    <div class="col-lg-3 col-6">
+        <!-- small box -->
+        <div class="small-box bg-success">
+            <div class="inner">
+                <table class="table">
+                    <tr>
+                        <td>Hôm Nay</td>
+                        <td>@Model.HomNay.ToString("N0")</td>
+                    </tr>
+                    <tr>
+                        <td>Tuần Này</td>
+                        <td>@Model.TuanNay.ToString("N0")</td>
+                    </tr>
+                    <tr>
+                        <td>Tháng Này</td>
+                        <td>@Model.ThangNay.ToString("N0")</td>
+                    </tr>
+                    <tr>
+                        <td>Online</td>
+                        <td>@Model.VisitorsOnline.ToString("N0")</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+}
