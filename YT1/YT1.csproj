@@ -312,6 +312,10 @@
     <Compile Include="Migrations\202504230151576_UpdateModelProduct.Designer.cs">
       <DependentUpon>202504230151576_UpdateModelProduct.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202505090617510_PaymentVn.cs" />
+    <Compile Include="Migrations\202505090617510_PaymentVn.Designer.cs">
+      <DependentUpon>202505090617510_PaymentVn.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Common\ConvertStr.cs" />
@@ -336,6 +340,7 @@
     <Compile Include="Models\EF\Subcribe.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
+    <Compile Include="Models\Payments\VnPayLibrary.cs" />
     <Compile Include="Models\SettingSystemViewModel.cs" />
     <Compile Include="Models\ShoppingCart.cs" />
     <Compile Include="Models\ThongKeView.cs" />
@@ -3449,6 +3454,7 @@
     <Content Include="Views\Contact\Index.cshtml" />
     <Content Include="Views\Introduce\Index.cshtml" />
     <Content Include="Views\Introduce\Details.cshtml" />
+    <Content Include="Views\ShoppingCart\vnpayReturn.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -3555,6 +3561,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202504230151576_UpdateModelProduct.resx">
       <DependentUpon>202504230151576_UpdateModelProduct.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202505090617510_PaymentVn.resx">
+      <DependentUpon>202505090617510_PaymentVn.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

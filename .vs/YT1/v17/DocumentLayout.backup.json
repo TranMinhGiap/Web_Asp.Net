@@ -3,48 +3,40 @@
   "WorkspaceRootPath": "D:\\C#\\Web_ASP\\CNPM2\\YT1\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{932BD9FC-04B1-4640-989C-FC4C768F05C5}|YT1\\YT1.csproj|D:\\C#\\Web_ASP\\CNPM2\\YT1\\yt1\\areas\\admin\\controllers\\productcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{932BD9FC-04B1-4640-989C-FC4C768F05C5}|YT1\\YT1.csproj|solutionrelative:yt1\\areas\\admin\\controllers\\productcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{932BD9FC-04B1-4640-989C-FC4C768F05C5}|YT1\\YT1.csproj|D:\\C#\\Web_ASP\\CNPM2\\YT1\\yt1\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{932BD9FC-04B1-4640-989C-FC4C768F05C5}|YT1\\YT1.csproj|solutionrelative:yt1\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{932BD9FC-04B1-4640-989C-FC4C768F05C5}|YT1\\YT1.csproj|d:\\c#\\web_asp\\cnpm2\\yt1\\yt1\\controllers\\contactcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{932BD9FC-04B1-4640-989C-FC4C768F05C5}|YT1\\YT1.csproj|solutionrelative:yt1\\controllers\\contactcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{932BD9FC-04B1-4640-989C-FC4C768F05C5}|YT1\\YT1.csproj|D:\\C#\\Web_ASP\\CNPM2\\YT1\\yt1\\views\\shoppingcart\\vnpayreturn.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{932BD9FC-04B1-4640-989C-FC4C768F05C5}|YT1\\YT1.csproj|solutionrelative:yt1\\views\\shoppingcart\\vnpayreturn.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{932BD9FC-04B1-4640-989C-FC4C768F05C5}|YT1\\YT1.csproj|d:\\c#\\web_asp\\cnpm2\\yt1\\yt1\\controllers\\introducecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{932BD9FC-04B1-4640-989C-FC4C768F05C5}|YT1\\YT1.csproj|solutionrelative:yt1\\controllers\\introducecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{932BD9FC-04B1-4640-989C-FC4C768F05C5}|YT1\\YT1.csproj|d:\\c#\\web_asp\\cnpm2\\yt1\\yt1\\controllers\\shoppingcartcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{932BD9FC-04B1-4640-989C-FC4C768F05C5}|YT1\\YT1.csproj|solutionrelative:yt1\\controllers\\shoppingcartcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{932BD9FC-04B1-4640-989C-FC4C768F05C5}|YT1\\YT1.csproj|d:\\c#\\web_asp\\cnpm2\\yt1\\yt1\\views\\introduce\\details.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{932BD9FC-04B1-4640-989C-FC4C768F05C5}|YT1\\YT1.csproj|solutionrelative:yt1\\views\\introduce\\details.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{932BD9FC-04B1-4640-989C-FC4C768F05C5}|YT1\\YT1.csproj|D:\\C#\\Web_ASP\\CNPM2\\YT1\\yt1\\views\\shoppingcart\\checkout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{932BD9FC-04B1-4640-989C-FC4C768F05C5}|YT1\\YT1.csproj|solutionrelative:yt1\\views\\shoppingcart\\checkout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{932BD9FC-04B1-4640-989C-FC4C768F05C5}|YT1\\YT1.csproj|d:\\c#\\web_asp\\cnpm2\\yt1\\yt1\\views\\contact\\details.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{932BD9FC-04B1-4640-989C-FC4C768F05C5}|YT1\\YT1.csproj|solutionrelative:yt1\\views\\contact\\details.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{932BD9FC-04B1-4640-989C-FC4C768F05C5}|YT1\\YT1.csproj|d:\\c#\\web_asp\\cnpm2\\yt1\\yt1\\views\\shoppingcart\\checkoutsuccess.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{932BD9FC-04B1-4640-989C-FC4C768F05C5}|YT1\\YT1.csproj|solutionrelative:yt1\\views\\shoppingcart\\checkoutsuccess.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{932BD9FC-04B1-4640-989C-FC4C768F05C5}|YT1\\YT1.csproj|D:\\C#\\Web_ASP\\CNPM2\\YT1\\yt1\\app_start\\routeconfig.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{932BD9FC-04B1-4640-989C-FC4C768F05C5}|YT1\\YT1.csproj|solutionrelative:yt1\\app_start\\routeconfig.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{932BD9FC-04B1-4640-989C-FC4C768F05C5}|YT1\\YT1.csproj|D:\\C#\\Web_ASP\\CNPM2\\YT1\\yt1\\models\\payments\\vnpaylibrary.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{932BD9FC-04B1-4640-989C-FC4C768F05C5}|YT1\\YT1.csproj|solutionrelative:yt1\\models\\payments\\vnpaylibrary.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{932BD9FC-04B1-4640-989C-FC4C768F05C5}|YT1\\YT1.csproj|D:\\C#\\Web_ASP\\CNPM2\\YT1\\yt1\\views\\news\\details.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{932BD9FC-04B1-4640-989C-FC4C768F05C5}|YT1\\YT1.csproj|solutionrelative:yt1\\views\\news\\details.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{932BD9FC-04B1-4640-989C-FC4C768F05C5}|YT1\\YT1.csproj|D:\\C#\\Web_ASP\\CNPM2\\YT1\\yt1\\models\\ef\\order.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{932BD9FC-04B1-4640-989C-FC4C768F05C5}|YT1\\YT1.csproj|solutionrelative:yt1\\models\\ef\\order.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{932BD9FC-04B1-4640-989C-FC4C768F05C5}|YT1\\YT1.csproj|d:\\c#\\web_asp\\cnpm2\\yt1\\yt1\\views\\news\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{932BD9FC-04B1-4640-989C-FC4C768F05C5}|YT1\\YT1.csproj|solutionrelative:yt1\\views\\news\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{932BD9FC-04B1-4640-989C-FC4C768F05C5}|YT1\\YT1.csproj|d:\\c#\\web_asp\\cnpm2\\yt1\\yt1\\areas\\admin\\controllers\\ordercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{932BD9FC-04B1-4640-989C-FC4C768F05C5}|YT1\\YT1.csproj|solutionrelative:yt1\\areas\\admin\\controllers\\ordercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{932BD9FC-04B1-4640-989C-FC4C768F05C5}|YT1\\YT1.csproj|d:\\c#\\web_asp\\cnpm2\\yt1\\yt1\\controllers\\newscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{932BD9FC-04B1-4640-989C-FC4C768F05C5}|YT1\\YT1.csproj|solutionrelative:yt1\\controllers\\newscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{932BD9FC-04B1-4640-989C-FC4C768F05C5}|YT1\\YT1.csproj|D:\\C#\\Web_ASP\\CNPM2\\YT1\\yt1\\models\\ef\\posts.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{932BD9FC-04B1-4640-989C-FC4C768F05C5}|YT1\\YT1.csproj|solutionrelative:yt1\\models\\ef\\posts.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{932BD9FC-04B1-4640-989C-FC4C768F05C5}|YT1\\YT1.csproj|D:\\C#\\Web_ASP\\CNPM2\\YT1\\yt1\\models\\ef\\category.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{932BD9FC-04B1-4640-989C-FC4C768F05C5}|YT1\\YT1.csproj|solutionrelative:yt1\\models\\ef\\category.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{932BD9FC-04B1-4640-989C-FC4C768F05C5}|YT1\\YT1.csproj|D:\\C#\\Web_ASP\\CNPM2\\YT1\\yt1\\web.config||{FA3CD31E-987B-443A-9B81-186104E8DAC1}",
+      "RelativeMoniker": "D:0:0:{932BD9FC-04B1-4640-989C-FC4C768F05C5}|YT1\\YT1.csproj|solutionrelative:yt1\\web.config||{FA3CD31E-987B-443A-9B81-186104E8DAC1}"
     }
   ],
   "DocumentGroupContainers": [
@@ -54,148 +46,123 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 10,
+          "SelectedChildIndex": 5,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "ContactController.cs",
-              "DocumentMoniker": "D:\\C#\\Web_ASP\\CNPM2\\YT1\\YT1\\Controllers\\ContactController.cs",
-              "RelativeDocumentMoniker": "YT1\\Controllers\\ContactController.cs",
-              "ToolTip": "D:\\C#\\Web_ASP\\CNPM2\\YT1\\YT1\\Controllers\\ContactController.cs",
-              "RelativeToolTip": "YT1\\Controllers\\ContactController.cs",
-              "ViewState": "AgIAAAYAAAAAAAAAAAAAAA4AAAAeAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-02T01:31:10.437Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "Details.cshtml",
-              "DocumentMoniker": "D:\\C#\\Web_ASP\\CNPM2\\YT1\\YT1\\Views\\Introduce\\Details.cshtml",
-              "RelativeDocumentMoniker": "YT1\\Views\\Introduce\\Details.cshtml",
-              "ToolTip": "D:\\C#\\Web_ASP\\CNPM2\\YT1\\YT1\\Views\\Introduce\\Details.cshtml",
-              "RelativeToolTip": "YT1\\Views\\Introduce\\Details.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAjAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-05-02T01:27:15.786Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "IntroduceController.cs",
-              "DocumentMoniker": "D:\\C#\\Web_ASP\\CNPM2\\YT1\\YT1\\Controllers\\IntroduceController.cs",
-              "RelativeDocumentMoniker": "YT1\\Controllers\\IntroduceController.cs",
-              "ToolTip": "D:\\C#\\Web_ASP\\CNPM2\\YT1\\YT1\\Controllers\\IntroduceController.cs",
-              "RelativeToolTip": "YT1\\Controllers\\IntroduceController.cs",
-              "ViewState": "AgIAAAcAAAAAAAAAAAAAAA4AAAAfAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-02T01:21:41.272Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 4,
-              "Title": "Details.cshtml",
-              "DocumentMoniker": "D:\\C#\\Web_ASP\\CNPM2\\YT1\\YT1\\Views\\Contact\\Details.cshtml",
-              "RelativeDocumentMoniker": "YT1\\Views\\Contact\\Details.cshtml",
-              "ToolTip": "D:\\C#\\Web_ASP\\CNPM2\\YT1\\YT1\\Views\\Contact\\Details.cshtml",
-              "RelativeToolTip": "YT1\\Views\\Contact\\Details.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAAdAAAAAAAAAA==",
+              "Title": "CheckOutSuccess.cshtml",
+              "DocumentMoniker": "D:\\C#\\Web_ASP\\CNPM2\\YT1\\YT1\\Views\\ShoppingCart\\CheckOutSuccess.cshtml",
+              "RelativeDocumentMoniker": "YT1\\Views\\ShoppingCart\\CheckOutSuccess.cshtml",
+              "ToolTip": "D:\\C#\\Web_ASP\\CNPM2\\YT1\\YT1\\Views\\ShoppingCart\\CheckOutSuccess.cshtml",
+              "RelativeToolTip": "YT1\\Views\\ShoppingCart\\CheckOutSuccess.cshtml",
+              "ViewState": "AgIAAAkAAAAAAAAAAAAAACcAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-05-02T01:08:53.222Z",
+              "WhenOpened": "2025-05-09T09:16:50.13Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 7,
-              "Title": "Index.cshtml",
-              "DocumentMoniker": "D:\\C#\\Web_ASP\\CNPM2\\YT1\\YT1\\Views\\News\\Index.cshtml",
-              "RelativeDocumentMoniker": "YT1\\Views\\News\\Index.cshtml",
-              "ToolTip": "D:\\C#\\Web_ASP\\CNPM2\\YT1\\YT1\\Views\\News\\Index.cshtml",
-              "RelativeToolTip": "YT1\\Views\\News\\Index.cshtml",
-              "ViewState": "AgIAAAMAAAAAAAAAAAAAAA8AAAA9AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-05-02T00:42:52.593Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "NewsController.cs",
-              "DocumentMoniker": "D:\\C#\\Web_ASP\\CNPM2\\YT1\\YT1\\Controllers\\NewsController.cs",
-              "RelativeDocumentMoniker": "YT1\\Controllers\\NewsController.cs",
-              "ToolTip": "D:\\C#\\Web_ASP\\CNPM2\\YT1\\YT1\\Controllers\\NewsController.cs",
-              "RelativeToolTip": "YT1\\Controllers\\NewsController.cs",
-              "ViewState": "AgIAAAYAAAAAAAAAAAAAAA4AAAAdAAAAAAAAAA==",
+              "Title": "OrderController.cs",
+              "DocumentMoniker": "D:\\C#\\Web_ASP\\CNPM2\\YT1\\YT1\\Areas\\Admin\\Controllers\\OrderController.cs",
+              "RelativeDocumentMoniker": "YT1\\Areas\\Admin\\Controllers\\OrderController.cs",
+              "ToolTip": "D:\\C#\\Web_ASP\\CNPM2\\YT1\\YT1\\Areas\\Admin\\Controllers\\OrderController.cs",
+              "RelativeToolTip": "YT1\\Areas\\Admin\\Controllers\\OrderController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAfAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-02T00:08:39.349Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 10,
-              "Title": "Category.cs",
-              "DocumentMoniker": "D:\\C#\\Web_ASP\\CNPM2\\YT1\\YT1\\Models\\EF\\Category.cs",
-              "RelativeDocumentMoniker": "YT1\\Models\\EF\\Category.cs",
-              "ToolTip": "D:\\C#\\Web_ASP\\CNPM2\\YT1\\YT1\\Models\\EF\\Category.cs",
-              "RelativeToolTip": "YT1\\Models\\EF\\Category.cs",
-              "ViewState": "AgIAABYAAAAAAAAAAAA5wAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-01T13:56:21.985Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "Posts.cs",
-              "DocumentMoniker": "D:\\C#\\Web_ASP\\CNPM2\\YT1\\YT1\\Models\\EF\\Posts.cs",
-              "RelativeDocumentMoniker": "YT1\\Models\\EF\\Posts.cs",
-              "ToolTip": "D:\\C#\\Web_ASP\\CNPM2\\YT1\\YT1\\Models\\EF\\Posts.cs",
-              "RelativeToolTip": "YT1\\Models\\EF\\Posts.cs",
-              "ViewState": "AgIAAA8AAAAAAAAAAAAuwAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-01T13:53:02.74Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "Details.cshtml",
-              "DocumentMoniker": "D:\\C#\\Web_ASP\\CNPM2\\YT1\\YT1\\Views\\News\\Details.cshtml",
-              "RelativeDocumentMoniker": "YT1\\Views\\News\\Details.cshtml",
-              "ToolTip": "D:\\C#\\Web_ASP\\CNPM2\\YT1\\YT1\\Views\\News\\Details.cshtml",
-              "RelativeToolTip": "YT1\\Views\\News\\Details.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAXAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-05-01T13:31:31.929Z",
+              "WhenOpened": "2025-05-09T09:10:36.516Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 5,
-              "Title": "RouteConfig.cs",
-              "DocumentMoniker": "D:\\C#\\Web_ASP\\CNPM2\\YT1\\YT1\\App_Start\\RouteConfig.cs",
-              "RelativeDocumentMoniker": "YT1\\App_Start\\RouteConfig.cs",
-              "ToolTip": "D:\\C#\\Web_ASP\\CNPM2\\YT1\\YT1\\App_Start\\RouteConfig.cs",
-              "RelativeToolTip": "YT1\\App_Start\\RouteConfig.cs",
-              "ViewState": "AgIAADAAAAAAAAAAAAAAwD0AAABNAAAAAAAAAA==",
+              "Title": "VnPayLibrary.cs",
+              "DocumentMoniker": "D:\\C#\\Web_ASP\\CNPM2\\YT1\\YT1\\Models\\Payments\\VnPayLibrary.cs",
+              "RelativeDocumentMoniker": "YT1\\Models\\Payments\\VnPayLibrary.cs",
+              "ToolTip": "D:\\C#\\Web_ASP\\CNPM2\\YT1\\YT1\\Models\\Payments\\VnPayLibrary.cs",
+              "RelativeToolTip": "YT1\\Models\\Payments\\VnPayLibrary.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-24T06:29:49.48Z",
+              "WhenOpened": "2025-05-09T06:09:46.101Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "Web.config",
+              "DocumentMoniker": "D:\\C#\\Web_ASP\\CNPM2\\YT1\\YT1\\Web.config",
+              "RelativeDocumentMoniker": "YT1\\Web.config",
+              "ToolTip": "D:\\C#\\Web_ASP\\CNPM2\\YT1\\YT1\\Web.config",
+              "RelativeToolTip": "YT1\\Web.config",
+              "ViewState": "AgIAAAkAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000601|",
+              "WhenOpened": "2025-05-09T06:07:57.69Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "vnpayReturn.cshtml",
+              "DocumentMoniker": "D:\\C#\\Web_ASP\\CNPM2\\YT1\\YT1\\Views\\ShoppingCart\\vnpayReturn.cshtml",
+              "RelativeDocumentMoniker": "YT1\\Views\\ShoppingCart\\vnpayReturn.cshtml",
+              "ToolTip": "D:\\C#\\Web_ASP\\CNPM2\\YT1\\YT1\\Views\\ShoppingCart\\vnpayReturn.cshtml*",
+              "RelativeToolTip": "YT1\\Views\\ShoppingCart\\vnpayReturn.cshtml*",
+              "ViewState": "AgIAAA8AAAAAAAAAAAAUwCEAAAAOAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-05-02T13:37:45.356Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "ProductController.cs",
-              "DocumentMoniker": "D:\\C#\\Web_ASP\\CNPM2\\YT1\\YT1\\Areas\\Admin\\Controllers\\ProductController.cs",
-              "RelativeDocumentMoniker": "YT1\\Areas\\Admin\\Controllers\\ProductController.cs",
-              "ToolTip": "D:\\C#\\Web_ASP\\CNPM2\\YT1\\YT1\\Areas\\Admin\\Controllers\\ProductController.cs",
-              "RelativeToolTip": "YT1\\Areas\\Admin\\Controllers\\ProductController.cs",
-              "ViewState": "AgIAAMkAAAAAAAAAAAAiwOIAAAA3AAAAAAAAAA==",
+              "Title": "HomeController.cs",
+              "DocumentMoniker": "D:\\C#\\Web_ASP\\CNPM2\\YT1\\YT1\\Controllers\\HomeController.cs",
+              "RelativeDocumentMoniker": "YT1\\Controllers\\HomeController.cs",
+              "ToolTip": "D:\\C#\\Web_ASP\\CNPM2\\YT1\\YT1\\Controllers\\HomeController.cs",
+              "RelativeToolTip": "YT1\\Controllers\\HomeController.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAAA0AAAAfAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-23T08:34:50.6Z",
+              "WhenOpened": "2025-05-02T13:32:02.393Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "CheckOut.cshtml",
+              "DocumentMoniker": "D:\\C#\\Web_ASP\\CNPM2\\YT1\\YT1\\Views\\ShoppingCart\\CheckOut.cshtml",
+              "RelativeDocumentMoniker": "YT1\\Views\\ShoppingCart\\CheckOut.cshtml",
+              "ToolTip": "D:\\C#\\Web_ASP\\CNPM2\\YT1\\YT1\\Views\\ShoppingCart\\CheckOut.cshtml",
+              "RelativeToolTip": "YT1\\Views\\ShoppingCart\\CheckOut.cshtml",
+              "ViewState": "AgIAAD8AAAAAAAAAAAAAAFAAAABNAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-05-02T06:40:22.841Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "ShoppingCartController.cs",
+              "DocumentMoniker": "D:\\C#\\Web_ASP\\CNPM2\\YT1\\YT1\\Controllers\\ShoppingCartController.cs",
+              "RelativeDocumentMoniker": "YT1\\Controllers\\ShoppingCartController.cs",
+              "ToolTip": "D:\\C#\\Web_ASP\\CNPM2\\YT1\\YT1\\Controllers\\ShoppingCartController.cs",
+              "RelativeToolTip": "YT1\\Controllers\\ShoppingCartController.cs",
+              "ViewState": "AgIAAEYAAAAAAAAAAAAkwE4AAAA0AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-02T06:24:19.373Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "Order.cs",
+              "DocumentMoniker": "D:\\C#\\Web_ASP\\CNPM2\\YT1\\YT1\\Models\\EF\\Order.cs",
+              "RelativeDocumentMoniker": "YT1\\Models\\EF\\Order.cs",
+              "ToolTip": "D:\\C#\\Web_ASP\\CNPM2\\YT1\\YT1\\Models\\EF\\Order.cs",
+              "RelativeToolTip": "YT1\\Models\\EF\\Order.cs",
+              "ViewState": "AgIAABcAAAAAAAAAAAAgwCAAAAAqAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-02T06:33:58.382Z",
               "EditorCaption": ""
             }
           ]
