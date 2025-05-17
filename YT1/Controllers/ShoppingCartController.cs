@@ -8,6 +8,8 @@ using YT1.Models;
 using YT1.Models.EF;
 using YT1.Models.Common;
 using YT1.Models.Payments;
+using Microsoft.AspNet.Identity.Owin;
+using System.Threading.Tasks;
 
 namespace YT1.Controllers
 {
@@ -15,6 +17,46 @@ namespace YT1.Controllers
     public class ShoppingCartController : Controller
     {
         ApplicationDbContext _dbConect = new ApplicationDbContext();
+
+        // Lấy thông tin user
+        private ApplicationSignInManager _signInManager;
+        private ApplicationUserManager _userManager;
+
+        public ShoppingCartController()
+        {
+        }
+
+        public ShoppingCartController(ApplicationUserManager userManager, ApplicationSignInManager signInManager)
+        {
+            UserManager = userManager;
+            SignInManager = signInManager;
+        }
+
+        public ApplicationSignInManager SignInManager
+        {
+            get
+            {
+                return _signInManager ?? HttpContext.GetOwinContext().Get<ApplicationSignInManager>();
+            }
+            private set
+            {
+                _signInManager = value;
+            }
+        }
+
+        public ApplicationUserManager UserManager
+        {
+            get
+            {
+                return _userManager ?? HttpContext.GetOwinContext().GetUserManager<ApplicationUserManager>();
+            }
+            private set
+            {
+                _userManager = value;
+            }
+        }
+        // end user
+
         // GET: ShoppingCart
         public ActionResult Index()
         {
@@ -102,14 +144,30 @@ namespace YT1.Controllers
         {
             return View();
         }
-        public ActionResult CheckOut()
+        public async Task<ActionResult> CheckOut()
         {
+            var user = await UserManager.FindByNameAsync(User.Identity.Name);
+            if (user != null)
+            {
+                ViewBag.User = user;
+            }
+            else
+            {
+                ViewBag.User = null;
+            }
             ShoppingCart cart = (ShoppingCart)Session["Cart"];
             if (cart != null && cart.CartList.Any())
             {
                 ViewBag.checkCart = cart;
             }
-            return View();
+            var model = new Order
+            {
+                CustomerName = user.FullName,
+                Phone = user.Phone,
+                Address = user.Address,
+                Email = user.Email,
+            };
+            return View(model);
         }
         [HttpPost]
         [ValidateAntiForgeryToken]

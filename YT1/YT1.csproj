@@ -316,6 +316,10 @@
     <Compile Include="Migrations\202505090617510_PaymentVn.Designer.cs">
       <DependentUpon>202505090617510_PaymentVn.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202505171108327_UpdateAddressUser.cs" />
+    <Compile Include="Migrations\202505171108327_UpdateAddressUser.Designer.cs">
+      <DependentUpon>202505171108327_UpdateAddressUser.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Common\ConvertStr.cs" />
@@ -3455,6 +3459,7 @@
     <Content Include="Views\Introduce\Index.cshtml" />
     <Content Include="Views\Introduce\Details.cshtml" />
     <Content Include="Views\ShoppingCart\vnpayReturn.cshtml" />
+    <Content Include="Views\Account\UserProfile.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -3564,6 +3569,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202505090617510_PaymentVn.resx">
       <DependentUpon>202505090617510_PaymentVn.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202505171108327_UpdateAddressUser.resx">
+      <DependentUpon>202505171108327_UpdateAddressUser.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

@@ -100,6 +100,9 @@ namespace YT1.Models
         [Display(Name = "Email")]
         public string Email { get; set; }
 
+        [Display(Name = "Address")]
+        public string Address { get; set; }
+
         [Required(ErrorMessage = "Password không được để trống.")]
         [StringLength(100, ErrorMessage = "The {0} must be at least {2} characters long.", MinimumLength = 6)]
         [DataType(DataType.Password)]

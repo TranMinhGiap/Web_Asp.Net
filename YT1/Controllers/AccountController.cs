@@ -93,6 +93,35 @@ namespace YT1.Controllers
             }
         }
 
+        // Profile
+        public async Task<ActionResult> UserProfile()
+        {
+            var user = await UserManager.FindByNameAsync(User.Identity.Name);
+            var item = new CreateAccountViewModel();
+            item.Email = user.Email;
+            item.Address = user.Address;
+            item.FullName = user.FullName;
+            item.Phone = user.Phone;
+            item.UserName = user.UserName;
+            return View(item);
+        }
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<ActionResult> PostProfile(CreateAccountViewModel req)
+        {
+            var user = await UserManager.FindByNameAsync(req.UserName);
+            user.FullName = req.FullName;
+            user.Phone = req.Phone;
+            user.Address = req.Address;
+            var rs = await UserManager.UpdateAsync(user);
+            if (rs.Succeeded)
+            {
+                return RedirectToAction("UserProfile");
+            }
+            return View(req);
+        }
+        //
+
         //
         // GET: /Account/VerifyCode
         [AllowAnonymous]

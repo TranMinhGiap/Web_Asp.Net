@@ -1,6 +1,11 @@
 ﻿@model YT1.Models.EF.Order
 @{
     ViewBag.Title = "Thanh Toán";
+    YT1.Models.ApplicationUser user = null;
+    if (ViewBag.User != null)
+    {
+        user = ViewBag.User as YT1.Models.ApplicationUser;
+    }
 }
 
 <div class="container product_section_container">
@@ -34,22 +39,22 @@
                                 <h3>Thông Tin Khách Hàng</h3>
                                 <div class="form-group">
                                     <label>Họ Và Tên</label>
-                                    @Html.TextBoxFor(model => model.CustomerName, new { @class = "form-control", autocomplete = "off" })
+                                    @Html.TextBoxFor(model => model.CustomerName, new { @class = "form-control", autocomplete = "off", @value = user != null ? user.FullName : "" })
                                     @Html.ValidationMessageFor(model => model.CustomerName, "", new { @class = "text-danger" })
                                 </div>
                                 <div class="form-group">
                                     <label>Số Điện Thoại</label>
-                                    @Html.TextBoxFor(model => model.Phone, new { @class = "form-control", autocomplete = "off" })
+                                    @Html.TextBoxFor(model => model.Phone, new { @class = "form-control", autocomplete = "off", @value = user != null ? user.PhoneNumber : "" })
                                     @Html.ValidationMessageFor(model => model.Phone, "", new { @class = "text-danger" })
                                 </div>
                                 <div class="form-group">
                                     <label>Địa Chỉ</label>
-                                    @Html.TextBoxFor(model => model.Address, new { @class = "form-control", autocomplete = "off" })
+                                    @Html.TextBoxFor(model => model.Address, new { @class = "form-control", autocomplete = "off", @value = user != null ? user.Address : "" })
                                     @Html.ValidationMessageFor(model => model.Address, "", new { @class = "text-danger" })
                                 </div>
                                 <div class="form-group">
                                     <label>Email</label>
-                                    @Html.TextBoxFor(model => model.Email, new { @class = "form-control", autocomplete = "off" })
+                                    @Html.TextBoxFor(model => model.Email, new { @class = "form-control", autocomplete = "off", @value = user != null ? user.Email : "" })
                                     @Html.ValidationMessageFor(model => model.Email, "", new { @class = "text-danger" })
                                 </div>
                                 <div class="form-group">
