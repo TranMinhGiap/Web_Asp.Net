@@ -1,0 +1,87 @@
+﻿@model List<YT1.Models.EF.OrderDetail>
+@{
+    ViewBag.Title = "PurchaseDetails";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    int idx = 0;
+}
+
+<div class="container news_section_container">
+    <h2>Chi tiết đơn hàng - @ViewBag.PurchaseId</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>STT</th>
+                <th>Sản phẩm</th>
+                <th>Hình Ảnh</th>
+                <th>Số lượng</th>
+                <th>Thông tin</th>
+                <th>Giá</th>
+            </tr>
+        </thead>
+        <tbody>
+            @if (Model != null && Model.Any())
+            {
+                foreach (var item in Model)
+                {
+                    <tr>
+                        <td>@(++idx)</td>
+                        <td>@item.Product.Title</td>
+                        <td>
+                            <div class="image_product">
+                                <img src="@item.Product.Images" alt="@item.Product.Title" />
+                            </div>
+                        </td>
+                        <td>@item.Quantity</td>
+                        <td>Size - @item.Size; Color - @item.Color</td>
+                        <td>@item.Price.ToString("N0", new System.Globalization.CultureInfo("vi-VN")) VNĐ</td>
+                    </tr>
+                }
+            }
+            else
+            {
+                <tr>
+                    <th colspan="5">Error !</th>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
+
+@section style{
+    <link rel="stylesheet" type="text/css" href="~/assets/User/styles/main_styles.css">
+    <link rel="stylesheet" type="text/css" href="~/assets/styles/main_styles.css">
+    <style>
+        .news_section_container {
+            margin-top: 180px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            text-align: center;
+        }
+
+        th, td {
+            text-align: center;
+            vertical-align: middle;
+            padding: 8px;
+            border: 1px solid #ccc;
+        }
+        .image_product{
+            width: 100px;
+            aspect-ratio: 4/3;
+            margin: 0 auto;
+        }
+        .image_product img{
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        h2{
+            text-align: center;
+            font-family: sans-serif;
+            font-weight: 500;
+        }
+    </style>
+}
+

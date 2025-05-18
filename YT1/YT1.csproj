@@ -212,6 +212,7 @@
     <Compile Include="Controllers\NewsController.cs" />
     <Compile Include="Controllers\ProductsController.cs" />
     <Compile Include="Controllers\PromotionController.cs" />
+    <Compile Include="Controllers\PurchaseHistoryController.cs" />
     <Compile Include="Controllers\ShoppingCartController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -319,6 +320,10 @@
     <Compile Include="Migrations\202505171108327_UpdateAddressUser.cs" />
     <Compile Include="Migrations\202505171108327_UpdateAddressUser.Designer.cs">
       <DependentUpon>202505171108327_UpdateAddressUser.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202505180256586_UpdateSizeColorCustomerId.cs" />
+    <Compile Include="Migrations\202505180256586_UpdateSizeColorCustomerId.Designer.cs">
+      <DependentUpon>202505180256586_UpdateSizeColorCustomerId.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -3460,6 +3465,8 @@
     <Content Include="Views\Introduce\Details.cshtml" />
     <Content Include="Views\ShoppingCart\vnpayReturn.cshtml" />
     <Content Include="Views\Account\UserProfile.cshtml" />
+    <Content Include="Views\PurchaseHistory\PurchaseDetails.cshtml" />
+    <Content Include="Views\PurchaseHistory\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -3572,6 +3579,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202505171108327_UpdateAddressUser.resx">
       <DependentUpon>202505171108327_UpdateAddressUser.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202505180256586_UpdateSizeColorCustomerId.resx">
+      <DependentUpon>202505180256586_UpdateSizeColorCustomerId.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

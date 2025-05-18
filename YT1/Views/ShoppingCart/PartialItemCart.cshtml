@@ -7,6 +7,7 @@
             <th>Tên Sản Phẩm</th>
             <th>Hình Ảnh</th>
             <th>Giá</th>
+            <th>Thông tin</th>
             <th>Số Lượng</th>
             <th>Thành Tiền</th>
             <th>*</th>
@@ -17,10 +18,12 @@
         {
             int idx = 0;
             var totalAmout = decimal.Zero;
+            string tmp = "";
             foreach (var item in Model)
             {
+                tmp += item.ProductId + "_" + item.Size + "_" +  item.Color;
                 totalAmout += item.TotalPrice;
-                <tr id="trow_@item.ProductId">
+                <tr id="trow_@tmp">
                     <td>@(++idx)</td>
                     <td>
                         <a href="/chi-tiet/@item.Alias/@item.ProductId">@item.ProductName</a>
@@ -31,13 +34,14 @@
                         </div>
                     </td>
                     <th>@string.Format("{0:#,##0}", item.Price) VND</th>
+                    <th>Size: @item.Size; Color: @item.Color</th>
                     <td>
                         @*<input id="Quantity_@item.ProductId" class="product_quantity" value="@item.Quantity" type="number"/>*@
-                        <input data-id="@item.ProductId" class="input_product_quantity product_quantity" value="@item.Quantity" type="number"/>
+                        <input data-id="@item.ProductId" data-size="@item.Size" data-color="@item.Color" class="input_product_quantity product_quantity" value="@item.Quantity" type="number"/>
                     </td>
                     <th>@string.Format("{0:#,##0}", item.TotalPrice) VND</th>
                     <td>
-                        <a data-id="@item.ProductId" class="btn btn-sm btn-outline-danger btnDelete" href="#">Delete</a>
+                        <a data-id="@item.ProductId" data-size="@item.Size" data-color="@item.Color" class="btn btn-sm btn-outline-danger btnDelete" href="#">Delete</a>
                         @*<a data-id="@item.ProductId" class="btn btn-sm btn-outline-success btnUpdate" href="#">Update</a>*@
                     </td>
                 </tr>

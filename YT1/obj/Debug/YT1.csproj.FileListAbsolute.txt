@@ -147,3 +147,4 @@ D:\C#\Web_ASP\CNPM2\YT1\YT1\obj\Debug\YT1.Migrations.AddOriginPrice.resources
 D:\C#\Web_ASP\CNPM2\YT1\YT1\obj\Debug\YT1.Migrations.UpdateModelProduct.resources
 D:\C#\Web_ASP\CNPM2\YT1\YT1\obj\Debug\YT1.Migrations.PaymentVn.resources
 D:\C#\Web_ASP\CNPM2\YT1\YT1\obj\Debug\YT1.Migrations.UpdateAddressUser.resources
+D:\C#\Web_ASP\CNPM2\YT1\YT1\obj\Debug\YT1.Migrations.UpdateSizeColorCustomerId.resources

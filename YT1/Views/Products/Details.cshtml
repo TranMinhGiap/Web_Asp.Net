@@ -64,12 +64,12 @@
                     </div>
                     @if (Model.PriceSale > 0)
                     {
-                        <div class="original_price">@YT1.Models.Common.ConvertStr.FormatNumber(Model.Price, 0)</div>
-                        <div class="product_price">@YT1.Models.Common.ConvertStr.FormatNumber(Model.PriceSale, 0)</div>
+                        <div class="original_price">@YT1.Models.Common.ConvertStr.FormatNumber(Model.Price, 0) VND</div>
+                        <div class="product_price">@YT1.Models.Common.ConvertStr.FormatNumber(Model.PriceSale, 0) VND</div>
                     }
                     else
                     {
-                        <div class="product_price">@YT1.Models.Common.ConvertStr.FormatNumber(Model.Price, 0)</div>
+                        <div class="product_price">@YT1.Models.Common.ConvertStr.FormatNumber(Model.Price, 0) VND</div>
                     }
                     <ul class="star_rating">
                         <li><i class="fa fa-star" aria-hidden="true"></i></li>
@@ -78,14 +78,31 @@
                         <li><i class="fa fa-star" aria-hidden="true"></i></li>
                         <li><i class="fa fa-star-o" aria-hidden="true"></i></li>
                     </ul>
-                    <div class="product_color">
-                        <span>Select Color:</span>
-                        <ul>
-                            <li style="background: #e54e5d"></li>
-                            <li style="background: #252525"></li>
-                            <li style="background: #60b3f3"></li>
-                        </ul>
+                    @*<div class="product_color">
+                            <span>Select Color:</span>
+                            <ul>
+                                <li style="background: #e54e5d"></li>
+                                <li style="background: #252525"></li>
+                                <li style="background: #60b3f3"></li>
+                            </ul>
+                        </div>*@
+                <div class="product_size">
+                    <span>Chọn Size:</span>
+                    <div id="sizeOptions">
+                        <label><input type="radio" name="product_size" value="S" checked> S</label>
+                        <label><input type="radio" name="product_size" value="M"> M</label>
+                        <label><input type="radio" name="product_size" value="L"> L</label>
                     </div>
+                </div>
+
+                <div class="product_color">
+                    <span>Chọn Màu:</span>
+                    <div id="colorOptions">
+                        <label><input type="radio" name="product_color" value="Đỏ" checked> <span style="display:inline-block;width:15px;height:15px;background:red;border:1px solid #ccc;"></span></label>
+                        <label><input type="radio" name="product_color" value="Vàng"> <span style="display:inline-block;width:15px;height:15px;background:yellow;border:1px solid #ccc;"></span></label>
+                        <label><input type="radio" name="product_color" value="Xanh"> <span style="display:inline-block;width:15px;height:15px;background:blue;border:1px solid #ccc;"></span></label>
+                    </div>
+                </div>
                     <div class="quantity d-flex flex-column flex-sm-row align-items-sm-center">
                         <span>Quantity:</span>
                         <div class="quantity_selector">
@@ -243,6 +260,23 @@
 @section style{
     <link rel="stylesheet" type="text/css" href="~/assets/User/styles/single_styles.css">
     <link rel="stylesheet" type="text/css" href="~/assets/User/styles/single_responsive.css">
+    <style>
+        .product_size{
+            margin-top: 20px;
+        }
+        .product_color{
+            margin-top: 4px;
+        }
+        #sizeOptions label {
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+            margin-right: 10px;
+        }
+        #colorOptions label{
+            margin-right: 15px;
+        }
+    </style>
 }
 
 @section script{

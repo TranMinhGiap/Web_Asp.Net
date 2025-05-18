@@ -8,10 +8,12 @@
         if (quantityTmp != '') {
             quantity = parseInt(quantityTmp);
         }
+        var size = $('input[name="product_size"]:checked').val() || "S";
+        var color = $('input[name="product_color"]:checked').val() || "Red";
         $.ajax({
             url: "/ShoppingCart/AddToCart",
             type: "POST",
-            data: { id: id, quantity: quantity },
+            data: { id: id, quantity: quantity, size: size, color: color },
             success: function (rs) {
                 if (rs.Success) {
                     $('#checkout_items').html(rs.Count);
@@ -34,14 +36,16 @@
         e.preventDefault();
         if (confirm("Bạn có muốn xóa sản phẩm không?")) {
             var id = $(this).data('id');
+            var size = $(this).data('size');
+            var color = $(this).data('color');
             $.ajax({
                 url: "/ShoppingCart/Delete",
                 type: "POST",
-                data: { id: id },
+                data: { id: id, size: size, color: color },
                 success: function (rs) {
                     if (rs.Success) {
                         $('#checkout_items').html(rs.Count);
-                        $('#trow_' + id).remove();
+                        $('#trow_' + id + '_' + size + '_' + color).remove();
                         alert(rs.msg);
                         LoadCart();
                     }
@@ -67,6 +71,8 @@
     $('body').on('input', '.input_product_quantity', function () {
         var $input = $(this);
         var id = $input.data("id");
+        var size = $input.data("size");
+        var color = $input.data("color");
         var quantity = parseInt($input.val());
 
         if (isNaN(quantity) || quantity < 1) {
@@ -78,7 +84,7 @@
         clearTimeout($input.data('timeout'));
 
         $input.data('timeout', setTimeout(function () {
-            Update(id, quantity);
+            Update(id, quantity, size, color);
         }, 500));
     });
     //
@@ -115,11 +121,11 @@ function LoadCart() {
     });
 }
 
-function Update(id, quantity) {
+function Update(id, quantity, size, color) {
     $.ajax({
         url: "/ShoppingCart/Update",
         type: "POST",
-        data: { id: id, quantity: quantity },
+        data: { id: id, quantity: quantity, size: size, color: color },
         success: function (rs) {
             if (rs.Success) {
                 LoadCart();

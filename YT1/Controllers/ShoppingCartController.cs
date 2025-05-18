@@ -10,6 +10,7 @@ using YT1.Models.Common;
 using YT1.Models.Payments;
 using Microsoft.AspNet.Identity.Owin;
 using System.Threading.Tasks;
+using Microsoft.AspNet.Identity;
 
 namespace YT1.Controllers
 {
@@ -183,6 +184,7 @@ namespace YT1.Controllers
                         order.Code = "DH" + DateTime.Now.Ticks.ToString().Substring(8);
                         order.TotalAmount = cart.CartList.Sum(x => x.Price * x.Quantity);
                         order.Quantity = cart.CartList.Sum(x => x.Quantity);
+                        order.CustomerId = User.Identity.GetUserId();
                         order.CreatedDate = DateTime.Now;
                         order.CreatedBy = order.CustomerName;
                         order.ModifierDate = DateTime.Now;
@@ -196,7 +198,9 @@ namespace YT1.Controllers
                                 {
                                     ProductId = item.ProductId,
                                     Quantity = item.Quantity,
-                                    Price = item.Price
+                                    Price = item.Price,
+                                    Size = item.Size,
+                                    Color = item.Color
                                 });
                             }
                         }
@@ -281,7 +285,7 @@ namespace YT1.Controllers
             return Json(new { Count = 0 }, JsonRequestBehavior.AllowGet);
         }
         [HttpPost]
-        public ActionResult AddToCart(int id, int quantity)
+        public ActionResult AddToCart(int id, int quantity, string size, string color)
         {
             var code = new { Success = false, msg = "", code = -1, Count = 0 };
             var checkProduct = _dbConect.products.Find(id);
@@ -298,7 +302,9 @@ namespace YT1.Controllers
                     ProductName = checkProduct.Title,
                     CategoryName = checkProduct.ProductCategory.Title,
                     Alias = checkProduct.Alias,
-                    Quantity = quantity
+                    Quantity = quantity,
+                    Size = size,
+                    Color = color
                 };
                 if (checkProduct.ProductImages.FirstOrDefault(x => x.isDefault) != null)
                 {
@@ -320,16 +326,16 @@ namespace YT1.Controllers
             return Json(code);
         }
         [HttpPost]
-        public ActionResult Delete(int id)
+        public ActionResult Delete(int id, string size, string color)
         {
             var code = new { Success = false, msg = "", code = -1, Count = 0 };
             ShoppingCart cart = (ShoppingCart)Session["Cart"];
             if (cart != null && cart.CartList.Any())
             {
-                var checkProduct =  cart.CartList.FirstOrDefault(x=>x.ProductId == id);
+                var checkProduct =  cart.CartList.FirstOrDefault(x=>x.ProductId == id && x.Size == size && x.Color == color);
                 if(checkProduct != null)
                 {
-                    cart.Remove(id);
+                    cart.Remove(id, size, color);
                     code = new { Success = true, msg = "Đã xóa sản phẩm", code = 1, Count = cart.CartList.Count };
                 }
             }
@@ -347,12 +353,12 @@ namespace YT1.Controllers
             return Json(new { Success = false });
         }
         [HttpPost]
-        public ActionResult Update(int id, int quantity)
+        public ActionResult Update(int id, int quantity, string size, string color)
         {
             ShoppingCart cart = (ShoppingCart)Session["Cart"];
             if (cart != null && cart.CartList.Any())
             {
-                cart.UpdateQuantity(id, quantity);
+                cart.UpdateQuantity(id, quantity, size, color);
                 return Json(new { Success = true });
             }
             return Json(new { Success = false });

@@ -1,0 +1,46 @@
+﻿@model List<YT1.Models.EF.Order>
+@{ 
+    int idx = 0;
+}
+<div class="main_container">
+    <h2>Danh sách đơn hàng đã mua</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>STT</th>
+                <th>Mã đơn hàng</th>
+                <th>Ngày đặt</th>
+                <th>Trạng thái</th>
+                <th>Tổng tiền</th>
+            </tr>
+        </thead>
+        <tbody>
+            @if (Model != null && Model.Any())
+            {
+                foreach (var item in Model)
+                {
+                    <tr>
+                        <td>@(++idx)</td>
+                        <td>
+                            <a href="@Url.Action("PurchaseDetails", "PurchaseHistory", new { purchaseId = item.Code })">
+                                @item.Code
+                            </a>
+                        </td>
+                        <td>@item.CreatedDate.ToString("dd/MM/yyyy")</td>
+                        <td>
+                            @(item.Status == 2 ? "Đã thanh toán" : "Chưa thanh toán")
+                        </td>
+                        <td>@item.TotalAmount.ToString("N0", new System.Globalization.CultureInfo("vi-VN")) VNĐ</td>
+                    </tr>
+                }
+            }
+            else
+            {
+                <tr>
+                    <th colspan="5">Bạn chưa từng mua hàng !</th>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
+

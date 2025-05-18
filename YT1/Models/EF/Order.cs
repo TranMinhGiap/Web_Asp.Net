@@ -33,6 +33,7 @@ namespace YT1.Models.EF
         public string Email { get; set; } 
         public decimal TotalAmount { get; set; } 
         public int Quantity { get; set; } 
+        public string CustomerId { get; set; }
         public int PaymentMethod { get; set; } 
         public int PaymentMethodVn { get; set;}
         public int Status { get; set; } 
