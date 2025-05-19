@@ -23,6 +23,61 @@ namespace YT1.Areas.Admin.Controllers
             ViewBag.indexItem = (pageIndex - 1) * pageSize;
             return View(orderList);
         }
+        // Xác nhận đơn hàng (status == 1)
+        public ActionResult Confirm(int? page)
+        {
+            int pageSize = 12;
+            int pageIndex = page ?? 1;
+            var orderList = _dbConect.Orders
+                .Where(x => x.Status == 1) 
+                .OrderByDescending(x => x.CreatedDate)
+                .ToPagedList(pageIndex, pageSize);
+            ViewBag.indexItem = (pageIndex - 1) * pageSize;
+            return View(orderList);
+        }
+        // =================
+
+        // Chuẩn bị đơn hàng (status == 3)
+        public ActionResult PrepareGood(int? page)
+        {
+            int pageSize = 12;
+            int pageIndex = page ?? 1;
+            var orderList = _dbConect.Orders
+                .Where(x => x.Status == 3)
+                .OrderByDescending(x => x.CreatedDate)
+                .ToPagedList(pageIndex, pageSize);
+            ViewBag.indexItem = (pageIndex - 1) * pageSize;
+            return View(orderList);
+        }
+        // =============================
+
+        // Đơn hàng được đang được giao (status == 4)
+        public ActionResult Delivery(int? page)
+        {
+            int pageSize = 12;
+            int pageIndex = page ?? 1;
+            var orderList = _dbConect.Orders
+                .Where(x => x.Status == 4)
+                .OrderByDescending(x => x.CreatedDate)
+                .ToPagedList(pageIndex, pageSize);
+            ViewBag.indexItem = (pageIndex - 1) * pageSize;
+            return View(orderList);
+        }
+        // =============================
+
+        // Hoàn tất thanh toán (các đơn hàng đã được thanh toán)
+        public ActionResult Complete(int? page)
+        {
+            int pageSize = 12;  
+            int pageIndex = page ?? 1;
+            var orderList = _dbConect.Orders
+                .Where(x => x.Status == 2)
+                .OrderByDescending(x => x.CreatedDate)
+                .ToPagedList(pageIndex, pageSize);
+            ViewBag.indexItem = (pageIndex - 1) * pageSize;
+            return View(orderList);
+        }
+        // =============================
         public ActionResult Details(int id)
         {
             var order_item = _dbConect.Orders.Find(id);

@@ -3394,6 +3394,10 @@
     <Content Include="Areas\Admin\Views\SettingSystem\Index.cshtml" />
     <Content Include="Areas\Admin\Views\Statistical\Index.cshtml" />
     <Content Include="Areas\Admin\Views\Home\Viewer.cshtml" />
+    <Content Include="Areas\Admin\Views\Order\Confirm.cshtml" />
+    <Content Include="Areas\Admin\Views\Order\PrepareGood.cshtml" />
+    <Content Include="Areas\Admin\Views\Order\Delivery.cshtml" />
+    <Content Include="Areas\Admin\Views\Order\Complete.cshtml" />
     <None Include="Scripts\jquery-3.7.0.intellisense.js" />
     <Content Include="Scripts\jquery-3.7.0.js" />
     <Content Include="Scripts\jquery-3.7.0.min.js" />
@@ -3467,6 +3471,7 @@
     <Content Include="Views\Account\UserProfile.cshtml" />
     <Content Include="Views\PurchaseHistory\PurchaseDetails.cshtml" />
     <Content Include="Views\PurchaseHistory\Index.cshtml" />
+    <Content Include="Views\PurchaseHistory\OrderPlaced.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

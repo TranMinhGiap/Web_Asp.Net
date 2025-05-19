@@ -1,0 +1,145 @@
+﻿@model List<YT1.Models.EF.Order>
+@{
+    ViewBag.Title = "OrderPlaced";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="container news_section_container">
+    <h2>Thông tin đơn hàng đang đặt</h2>
+    <div class="row">
+        <div class="col-md-12">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Mã đơn hàng</th>
+                        <th>Ngày đặt</th>
+                        <th>Trạng thái</th>
+                        <th>Tổng tiền</th>
+                        <th></th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    @if (Model != null && Model.Any())
+                    {
+                        foreach (var item in Model)
+                        {
+                            <tr id="trow_@item.Id">
+                                <td>
+                                    <a href="@Url.Action("PurchaseDetails", "PurchaseHistory", new { purchaseId = item.Code })">
+                                        @item.Code
+                                    </a>
+                                </td>
+                                <td>@item.CreatedDate.ToString("dd/MM/yyyy")</td>
+                                <td>
+                                    @switch (item.Status)
+                                    {
+                                        case 1:
+                                            @:Chờ xác nhận
+                                            break;
+                                        case 3:
+                                            @:Đã xác nhận, đơn hàng đang được chuẩn bị
+                                            break;
+                                        case 4:
+                                            @:Đang được giao
+                                            break;
+                                        default:
+                                            @:Chưa thanh toán
+                                            break;
+                                    }
+                                </td>
+                                <td>@item.TotalAmount.ToString("N0", new System.Globalization.CultureInfo("vi-VN")) VNĐ</td>
+                                <td>
+                                    @if (item.Status == 1)
+                                    {
+                                        <a data-id="@item.Id" href="#" class="btn btn-outline-danger btn-delete">Hủy đơn hàng</a>
+                                    }
+                                    else
+                                    {
+                                        <p style="margin: 0">---+---</p>
+                                    }
+                                </td>
+                            </tr>
+                        }
+                    }
+                    else
+                    {
+                        <tr>
+                            <th colspan="5">Chưa có đơn hàng nào đang được đặt !</th>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+@section style{
+    <link rel="stylesheet" type="text/css" href="~/assets/User/styles/main_styles.css">
+    <link rel="stylesheet" type="text/css" href="~/assets/styles/main_styles.css">
+    <style>
+        .news_section_container {
+            margin-top: 180px;
+        }
+
+        .row-item-new {
+            margin-bottom: 20px;
+        }
+
+        .title-news {
+            font-size: 24px;
+            border-bottom: 1px solid;
+            padding: 15px 0;
+            margin-bottom: 25px;
+        }
+
+        .img-box img {
+            max-width: 100%;
+            max-height: 100%;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            text-align: center;
+        }
+
+        th, td {
+            text-align: center;
+            vertical-align: middle;
+            padding: 8px;
+            border: 1px solid #ccc;
+        }
+
+        h2 {
+            text-align: center;
+            font-family: sans-serif;
+            font-weight: 500;
+        }
+    </style>
+}
+
+}
+@section script{
+    <script>
+        $(document).ready(function () {
+            $('body').on('click', '.btn-delete', function () {
+                debugger;
+                var id = $(this).data("id");
+                var conf = confirm('Bạn có muốn hủy đơn hàng này không?');
+                if (conf == true) {
+                    $.ajax({
+                        url: '/PurchaseHistory/DeletePurchaseHistory',
+                        type: 'POST',
+                        data: { id: id },
+                        success: function (rs) {
+                            if (rs.success) {
+                                $('#trow_' + id).remove();
+                            }
+                        }
+                    });
+                }
+            });
+        });
+    </script>
+}

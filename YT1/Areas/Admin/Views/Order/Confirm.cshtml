@@ -1,0 +1,213 @@
+﻿@model PagedList.PagedList<YT1.Models.EF.Order>
+@using PagedList.Mvc;
+@{
+    ViewBag.title = "Danh sách đơn đặt hàng";
+    ViewBag.action = "List";
+    Layout = "~/Areas/Admin/Views/Shared/_LayoutAdmin.cshtml";
+}
+<div class="col-12" id="containerParent">
+    <div class="actionNav">
+        <a href="#" class="btn btn-danger" id="btnDeleteAll">Xóa Tất Cả</a>
+    </div>
+    <table class="table table-hover table-bordered" id="tableParent">
+        <thead>
+            <tr>
+                <th class="text-center">
+                    <input type="checkbox" id="selectAll" />
+                </th>
+                <th class="text-center">Mã Đơn</th>
+                <th class="text-center">Tên Khách Hàng</th>
+                <th class="text-center">Địa Chỉ</th>
+                <th class="text-center">Ngày Đặt Hàng</th>
+                <th class="text-center">Giá Trị Đơn Hàng</th>
+                <th class="text-center">Trạng Thái</th>
+            </tr>
+        </thead>
+        <tbody>
+            @if (Model != null && Model.Any())
+            {
+                foreach (var item in Model)
+                {
+                    <tr id="trow_@item.Id">
+                        <td class="text-center">
+                            <input type="checkbox" class="cbkItem" value="@item.Id" />
+                        </td>
+                        <td class="text-center">@item.Code</td>
+                        <td class="text-center">
+                            <span>@item.CustomerName</span>
+                        </td>
+                        <td class="text-center">@item.Address</td>
+                        <td class="text-center">@item.CreatedDate.ToString("dd/MM/yyyy")</td>
+                        <td class="text-center">@item.TotalAmount.ToString("#,##0") VNĐ</td>
+                        <td class="text-center">@(item.Status == 1 ? "Đang chờ xác nhận" : "")</td>
+                        <td class="text-center">
+                            <a href="@Url.Action("Details", "Order", new { id = item.Id })" class="btn btn-outline-dark">Chi Tiết</a>
+                            <a data-id="@item.Id" href="#" class="btn btn-outline-primary btnCapNhat">Xác nhận đơn hàng</a>
+                        </td>
+                    </tr>
+                }
+            }
+            else
+            {
+                <tr>
+                    <td colspan="11">Không có dữ liệu</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+    <div class="navPagination">
+        @Html.PagedListPager(Model, page => Url.Action("Confirm", "Order", new { area = "Admin", page }))
+    </div>
+</div>
+
+<!--Model Popup-->
+<div class="modal fade" id="modal-default">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title">Cập Nhật Trạng Thái</h4>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <input type="hidden" id="txtOrderId" value="0" />
+                <form class="form-group">
+                    <label>Xác nhận đơn hàng</label>
+                    <select class="form-control" id="ddTrangThai">
+                        <option value="3">Xác nhận đơn hàng thành công</option>
+                    </select>
+                </form>
+            </div>
+            <div class="modal-footer justify-content-between">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Đóng</button>
+                <button type="button" class="btn btn-primary btnLuu">Lưu</button>
+            </div>
+        </div>
+    </div>
+</div>
+<!--Model Popup-->
+
+
+@section childNavBar{
+    <a href="~/Admin/Order" class="nav-link">Order</a>
+}
+
+@section style{
+    <style>
+        .btn-create {
+            margin: 10px 0px;
+        }
+
+        .news_images {
+            width: 220px;
+            aspect-ratio: 4/3;
+        }
+
+            .news_images img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
+
+        .navPagination {
+            text-align: right;
+        }
+
+        .inputSearch {
+            margin: 10px 0px;
+        }
+
+        #btnDeleteAll {
+            margin-bottom: 15px;
+        }
+    </style>
+}
+@section script{
+    <script>
+        $(document).ready(function () {
+            $('body').on('click', ".btnCapNhat", function () {
+                var id = $(this).data("id");
+                $('#txtOrderId').val(id);
+                $('#modal-default').modal('show');
+            });
+            $('body').on('click', ".btnLuu", function () {
+                var id = $('#txtOrderId').val();
+                var status = $('#ddTrangThai').val();
+                $.ajax({
+                    type: "POST",
+                    url: "/Admin/Order/Update",
+                    data: { id: id, status: status },
+                    success: function (rs) {
+                        if (rs.Success) {
+                            location.reload();
+                        }
+                    }
+                });
+            });
+
+            $('body').on('click', '#btnDeleteAll', function (e) {
+                e.preventDefault();
+                var str = "";
+                var checkboxes = $(this).parents('#containerParent').find('.cbkItem');
+                var i = 0;
+                checkboxes.each(function () {
+                    if (this.checked) {
+                        $(this).attr('selected', 'checked');
+                        var _id = $(this).val();
+                        if (i == 0) {
+                            str += _id;
+                        }
+                        else {
+                            str += "," + _id;
+                        }
+                        i++;
+                    } else {
+                        $(this).attr('selected', '');
+                    }
+                });
+                if (str.length > 0) {
+                    debugger;
+                    var conf = confirm("Bạn có chắc chắn muốn xóa hay không ?");
+                    if (conf == true) {
+                        $.ajax({
+                            url: '/Admin/Order/DeleteAll',
+                            type: 'POST',
+                            data: { ids: str },
+                            success: function (rs) {
+                                if (rs.success) {
+                                    location.reload();
+                                } else {
+                                    alert(rs.message);
+                                }
+                            }
+                        });
+                    }
+                }
+            });
+
+            $('body').on('click', '.btn-delete', function () {
+                var id = $(this).data("id");
+                var conf = confirm('Bạn có muốn xóa hóa đơn này không?');
+                if (conf == true) {
+                    $.ajax({
+                        url: '/Admin/Order/Delete',
+                        type: 'POST',
+                        data: { id: id },
+                        success: function (rs) {
+                            if (rs.success) {
+                                $('#trow_' + id).remove();
+                            }
+                        }
+                    });
+                }
+            });
+            $('body').on('change', '#selectAll', function () {
+                var checkStatus = this.checked;
+                $(this).parents('#tableParent').find('.cbkItem').prop('checked', checkStatus);
+            });
+        });
+    </script>
+}
+
+

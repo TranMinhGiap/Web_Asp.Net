@@ -9,6 +9,7 @@ using System.Web.Mvc;
 using YT1.Models;
 using YT1.Models.Common;
 using System.Data.Entity;
+using YT1.Models.EF;
 
 namespace YT1.Controllers
 {
@@ -66,7 +67,7 @@ namespace YT1.Controllers
             var customerId = User.Identity.GetUserId();
 
             var listOrder = _dbConect.Orders
-                .Where(o => o.CustomerId == customerId)
+                .Where(o => o.CustomerId == customerId && o.Status == 2)
                 .ToList();
             return PartialView(listOrder);
         }
@@ -84,6 +85,52 @@ namespace YT1.Controllers
                 .ToList();
 
             return View(orderDetails);
+        }
+        // Đơn hàng mà người dùng đặt
+        public ActionResult OrderPlaced()
+        {
+            var user = UserManager.FindByNameAsync(User.Identity.Name).ConfigureAwait(false).GetAwaiter().GetResult();
+            if (user == null)
+            {
+                return RedirectToAction("Login", "Account");
+            }
+            var customerId = User.Identity.GetUserId();
+
+            var listOrder = _dbConect.Orders
+                .Where(o => o.CustomerId == customerId && o.Status != 2)
+                .ToList();
+            return View(listOrder);
+        }
+        // Hủy đơn hàng
+        [HttpPost]
+        public ActionResult DeletePurchaseHistory(int id)
+        {
+            Order item = _dbConect.Orders.Find(id);
+            if (item != null)
+            {
+                try
+                {
+                    var orderDetails = _dbConect.OrderDetails
+                        .Where(od => od.OrderId == id)
+                        .ToList();
+
+                    if (orderDetails.Any())
+                    {
+                        _dbConect.OrderDetails.RemoveRange(orderDetails);
+                    }
+
+                    _dbConect.Orders.Remove(item);
+
+                    _dbConect.SaveChanges();
+
+                    return Json(new { success = true, message = "Order deleted successfully" });
+                }
+                catch (Exception ex)
+                {
+                    return Json(new { success = false, message = $"Failed to delete: {ex.Message}" });
+                }
+            }
+            return Json(new { success = false });
         }
     }
 }
