@@ -68,7 +68,7 @@ namespace YT1.Areas.Admin.Controllers
         // Hoàn tất thanh toán (các đơn hàng đã được thanh toán)
         public ActionResult Complete(int? page)
         {
-            int pageSize = 12;  
+            int pageSize = 12;
             int pageIndex = page ?? 1;
             var orderList = _dbConect.Orders
                 .Where(x => x.Status == 2)
@@ -78,6 +78,22 @@ namespace YT1.Areas.Admin.Controllers
             return View(orderList);
         }
         // =============================
+
+        // ================ TEST  Complete===============
+        public ActionResult InvoicePrint(int id)
+        {
+            var order_item = _dbConect.Orders.Find(id);
+            if (order_item != null)
+            {
+                var orderDetails = _dbConect.OrderDetails
+                                    .Where(od => od.OrderId == id)
+                                    .ToList();
+                ViewBag.orderDetails = orderDetails;
+                return View(order_item);
+            }
+            return HttpNotFound();
+        }
+        // ===============================
         public ActionResult Details(int id)
         {
             var order_item = _dbConect.Orders.Find(id);

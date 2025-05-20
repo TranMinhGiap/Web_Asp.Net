@@ -96,6 +96,11 @@
                     <div class="card-footer">
                     </div>
                     <!-- /.card-footer-->
+                    <div class="card-footer">
+                        <a href="@Url.Action("InvoicePrint", "Order", new { area = "Admin", id = Model.Id })" rel="noopener" target="_blank" class="btn btn-default">
+                            <i class="fas fa-print"></i> In Hóa Đơn
+                        </a>
+                    </div>
                 </div>
                 <!-- /.card -->
             </div>

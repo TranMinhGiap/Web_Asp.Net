@@ -222,6 +222,12 @@
                             </a>
                             <ul class="nav nav-treeview">
                                 <li class="nav-item">
+                                    <a href="~/Admin/Home" class="nav-link @(ViewBag.click == 1 ? "active" : "")">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>Dashboard</p>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
                                     <a href="~/Admin/Category" class="nav-link @(ViewBag.click == 1 ? "active" : "")">
                                         <i class="far fa-circle nav-icon"></i>
                                         <p>SideBar</p>
@@ -240,15 +246,6 @@
                                     </a>
                                 </li>
                             </ul>
-                        </li>
-                        <li class="nav-item">
-                            <a href="javascript:document.getElementById('logOffForm').submit()" class="nav-link">
-                                <i class="nav-icon fas fa-th"></i>
-                                <p>
-                                    Đăng Xuất
-                                    <span class="right badge badge-danger">New</span>
-                                </p>
-                            </a>
                         </li>
                         <li class="nav-item">
                             <a href="~/Admin/Role" class="nav-link">
@@ -484,12 +481,15 @@
                                         <p>Phân Quyền</p>
                                     </a>
                                 </li>
-                                @*<li class="nav-item">
-                                    <a href="pages/tables/jsgrid.html" class="nav-link">
-                                        <i class="far fa-circle nav-icon"></i>
-                                        <p>jsGrid</p>
+                                <li class="nav-item">
+                                    <a href="javascript:document.getElementById('logOffForm').submit()" class="nav-link">
+                                        <i class="nav-icon fas fa-th"></i>
+                                        <p>
+                                            Đăng Xuất
+                                            <span class="right badge badge-danger">New</span>
+                                        </p>
                                     </a>
-                                </li>*@
+                                </li>
                             </ul>
                         </li>
                         @*<li class="nav-header">EXAMPLES</li>
